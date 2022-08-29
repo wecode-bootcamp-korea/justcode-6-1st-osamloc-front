@@ -10,6 +10,7 @@ function Cart() {
       <div className="wrap flex-justify-center">
         {/* <header /> - fixed*/}
 
+
         <main className="page-cart">
           <section className="page-top-section">
             <div className="page-top-section-inner flex-align-center">
