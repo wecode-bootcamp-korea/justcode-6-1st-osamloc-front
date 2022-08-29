@@ -1,0 +1,81 @@
+// 페이지 전체 폼
+.cart-form {
+  .cart-form-section {
+    border-top: 1px solid #E6E6E6;
+    margin-right: 10vh;
+
+    .cart-form-section-inner {
+      display: flex;
+      flex-direction: column;
+
+      // 카트 목록 관련
+      .cart-items {
+        
+        // 카트 목록 상단 전체선택/삭제
+        .cart-check {
+          border-bottom: 2px solid #333;
+          margin-top: 40px;
+          padding: 0 8px 15px 8px;
+
+          .cart-check-left {
+            .cart-check-left-inner {
+              padding-left: 1vh;
+            }
+          }
+
+          .cart-check-right {
+            .cart-check-right-button{
+              border: none;
+              background: transparent;
+              color: #666;
+            }
+          }
+        }
+
+        // 카트 목록 출력
+        .cart-items-list {
+          padding: 1vh;
+        }
+      }
+
+      // 카트 하단 주문 버튼
+      .cart-order-button {
+        flex-direction: column;
+        padding: 30px 20px 20px;
+        .cart-order-button-select{
+          line-height: 48px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 15px;
+          color: #333;
+          box-sizing: border-box;
+          text-align: center;
+          background-color: #fff;
+          width: 160px;
+          margin: 0 4px;
+        }
+        .cart-order-button-all{
+          line-height: 48px;
+          border-radius: 4px;
+          border: none;
+          font-size: 15px;
+          color: #333;
+          box-sizing: border-box;
+          text-align: center;
+          background-color: #6C801A;
+          width: 328px;
+          color: #fff;
+          margin-top: 8px;  
+        }
+      }
+    }
+  }
+
+  .form-attention{
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: #999;
+    margin: 10px auto 0;
+  }
+}
