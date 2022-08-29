@@ -23,9 +23,9 @@ function Cart() {
                   <div className="cart-check">
                     <div className="cart-check-left">
                       <div className="cart-check-left-inner">
-                        <label>
+                        <label className="check-label">
                           <input type="checkbox" />
-                          전체선택
+                          <p>전체선택</p>
                         </label>
                       </div>
                     </div>
@@ -43,13 +43,20 @@ function Cart() {
                       </div>
                       <div className="list-item-image">
                         <div className="list-item-image-box">
-                          <img alt="" src="" />
-                          이미지
+                          <img
+                            alt=""
+                            src="./image/bottle.png"
+                            className="image-png"
+                          />
                         </div>
                         <div className="list-item-image-text">
-                          <p>프리미엄 티 컬렉션</p>
-                          <p>포장가능</p>
-                          <p>선물 가능한 상품입니다.</p>
+                          <p className="list-item-image-text-p">
+                            프리미엄 티 컬렉션
+                          </p>
+                          <p className="list-item-image-text-p">포장가능</p>
+                          <p className="list-item-image-text-p">
+                            선물 가능한 상품입니다.
+                          </p>
                         </div>
                       </div>
                       <div className="list-item-count-price">
@@ -81,36 +88,36 @@ function Cart() {
               </div>
             </section>
 
-            <section>
-              <div>
-                <ul>
-                  <li>
-                    <p></p>
-                    <p></p>
+            <section className="price-info">
+              <div className="price-info-inner">
+                <ul className="price-info-ul">
+                  <li className="price-info-li">
+                    <p>상품 금액</p>
+                    <p>16000</p>
                   </li>
-                  <li>
-                    <p></p>
-                    <p></p>
+                  <li className="price-info-li">
+                    <p>상품 할인</p>
+                    <p>0</p>
                   </li>
-                  <li>
-                    <p></p>
-                    <p></p>
+                  <li className="price-info-li">
+                    <p>포장비</p>
+                    <p>0</p>
                   </li>
-                  <li>
-                    <p></p>
-                    <p></p>
+                  <li className="price-info-li">
+                    <p>부가 쇼핑백</p>
+                    <p>0</p>
                   </li>
-                  <li>
-                    <p></p>
-                    <p></p>
+                  <li className="price-info-li">
+                    <p>배송비</p>
+                    <p>2500</p>
                   </li>
                 </ul>
               </div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="price-info-li">
+                <p>결제 예상 금액</p>
+                <p>15000</p>
               </div>
-              <div>
+              <div className="price-info-button">
                 <button>주문하기</button>
               </div>
             </section>

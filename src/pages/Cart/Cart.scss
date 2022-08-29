@@ -1,107 +1,163 @@
-.wrap{
+@font-face {
+  font-family: "Arita-dotum-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.page-font {
+  color: #333;
+  font-family: "ad", "sans-serif";
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.page-cart {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+
+  .page-top-section {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+
+    font-size: 20px;
+
+    .page-top-section-inner {
+      display: flex;
+      align-items: center;
+
+      .page_tit {
+        padding: 48px 0 30px;
+      }
+    }
+  }
 }
 
-.page-font{
-    color: #333;
-    font-family: 'ad','sans-serif';
-    font-weight: 400;
-    font-size: 13px;
-}
+.cart-form {
+  display: flex;
 
+  .cart-form-section {
+    display: flex;
+    border: 1px solid black;
+    margin-right: 3vh;
 
+    .cart-form-section-inner {
+      display: flex;
+      flex-direction: column;
 
-.page-cart{
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    
-    .page-top-section{
-        display: flex;
-        justify-content: left;
+      .cart-items {
+        .cart-check {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 2px solid #333;
+          margin-top: 40px;
+          padding: 0 8px 15px 8px;
 
-        .page-top-section-inner{
+          .cart-check-left {
             display: flex;
             align-items: center;
-
-            .page_tit{
-
+            .cart-check-left-inner {
+              padding-left: 1vh;
             }
-        }
-    }
-}
-
-.cart-form{
-    display: flex;
-
-    .cart-form-section{
-        display: flex;
-        border: 1px solid black;
-
-        .cart-form-section-inner{
+          }
+          .cart-check-right {
             display: flex;
-            flex-direction: column;
-
-            .cart-items{
-                
-                .cart-check{
-                    display: flex;
-                    justify-content: space-between;
-                    border-bottom: 1px solid black;
-                    
-                    .cart-check-left{
-                        display: flex;
-                        align-items: center;
-                        .cart-check-left-inner{
-                            padding-left: 1vh;
-                        }
-                    }
-                    .cart-check-right{
-                        display: flex;
-                        align-items: center;
-                    }
-                }
-
-                .cart-items-list{
-                    display: flex;
-
-                    .list-item{
-                        display: flex;
-                        justify-content: space-between;
-
-                        .list-item-check{
-                            display: flex;
-                            align-items: center;
-                        }
-
-                        .list-item-image{
-                            display: flex;
-                            align-items: center;
-                        }
-
-                        .list-item-count-price{
-                            display: flex;
-                            justify-content: space-between;
-                            .list-item-count{
-
-                                .list-item-count-inner{
-                                    display: flex;
-                                    justify-content: space-between;
-                                }
-                            }
-                            .list-item-price{
-                                display: flex;
-                                flex-direction: column;
-                            }
-                        }
-                        .list-item-button{
-                            display: flex;
-                            align-items: center;
-                        }
-                    }
-                }
-            }
+            align-items: center;
+          }
         }
+
+        .cart-items-list {
+          display: flex;
+          padding: 1vh;
+
+          .list-item {
+            display: flex;
+            justify-content: space-between;
+
+            .list-item-check {
+              display: flex;
+              align-items: center;
+            }
+
+            .list-item-image {
+              display: flex;
+              align-items: center;
+
+              .list-item-image-text {
+                padding-left: 2vw;
+                padding-right: 2vw;
+
+                .list-item-image-text-p {
+                  margin: 0;
+                }
+              }
+            }
+
+            .list-item-count-price {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              min-width: 20vw;
+              .list-item-count {
+                .list-item-count-inner {
+                  display: flex;
+                  justify-content: space-between;
+                }
+              }
+              .list-item-price {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+            .list-item-button {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      .cart-order-button {
+        display: flex;
+        justify-content: space-around;
+      }
     }
+  }
+  .price-info {
+    border: 1px solid black;
+    position: absolute;
+    right: 15vw;
+    .price-info-ul {
+      padding: 0;
+    }
+
+    .price-info-li {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .price-info-button {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
+.image-png {
+  max-width: 100%;
+  width: 8vw;
+  height: auto;
+  vertical-align: top;
+}
+
+.check-label {
+  display: flex;
+  align-items: center;
+}
