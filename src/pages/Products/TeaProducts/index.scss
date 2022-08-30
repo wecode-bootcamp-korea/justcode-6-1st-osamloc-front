@@ -1,0 +1,18 @@
+.tea-shop-wrap {
+    
+  .product-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    margin: 0 0 40px 0;
+    background: url('https://www.osulloc.com/kr/ko/static_cdj/images/catBanner/banner_teaprod.jpg') 50% 50% no-repeat;
+  
+    .product-title {
+      display: block;
+      font-size: 48px;
+      text-align: center;
+      font-weight: bolder;
+    }
+  }
+}

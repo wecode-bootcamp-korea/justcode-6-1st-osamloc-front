@@ -1,0 +1,68 @@
+.best {
+
+  .product-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    margin: 0 0 40px 0;
+    background: url('https://www.osulloc.com/kr/ko/static_cdj/images/top_banner/selected_banner.jpg') 50% 50% no-repeat;
+  
+    .product-title {
+      display: block;
+      font-size: 48px;
+      text-align: center;
+      font-weight: bolder;
+    }
+  }
+
+  .tab-btn-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    // height: 67px;
+    padding: 0 0 25px 0;
+    border-bottom: 2px solid #F6F6F6;
+  
+    .tab-btn {
+      box-sizing: border-box;
+      width: 880px;
+      // height: 40px;
+      padding: 0;
+      margin: 0;
+      
+      .weekly-best {
+        display: inline-block;
+        height: 18px;
+        margin: 0 15px 0 0;
+        padding: 9px 24px 13px 24px;
+        border-radius: 30px;
+        color: #999999;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: #F6F6F6;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      .best {
+        display: inline-block;
+        height: 18px;
+        padding: 9px 24px 13px 24px;
+        border-radius: 30px;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        background-color: #6C801A;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}
