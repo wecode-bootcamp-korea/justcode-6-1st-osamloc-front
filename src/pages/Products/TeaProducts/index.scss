@@ -1,4 +1,7 @@
-.tea-shop-wrap {
+.tea-products {
+  * {
+    box-sizing: border-box;
+  }
     
   .product-header {
     display: flex;
@@ -13,6 +16,150 @@
       font-size: 48px;
       text-align: center;
       font-weight: bolder;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px 0 40px;
+    width: 100%;
+
+    .tea-shop-wrap {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-width: 1000px;
+      padding-left: 160px;
+
+      .product-category-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 165px;
+        height: 200px;
+        margin: 0;
+        padding: 20px 0 0 0;
+
+        .title {
+          margin-bottom: 30px;
+          font-size: 18px;
+          color: #363535;
+          list-style: none;
+          text-decoration: none;
+        }
+
+        a {
+          display: block;
+          margin: 0 0 35px 30px;
+          font-size: 18px;
+          color: #363535;
+          text-decoration: none;
+        }
+      }
+
+      .inner-container {
+        width: 100%;
+        
+        .top-sort-bar {
+          display: flex;
+          align-items: center;
+          max-width: 1240px;
+          // width: 100%;
+          height: 49px;
+          padding-right: 30px;
+          font-size: 18px;
+          border-bottom: 2px solid #ECECEC;
+
+          .tea {
+            width: 54px;
+          }
+      
+          .opt {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 95%;
+            margin: 0;
+            padding: 0;
+      
+            li {
+              list-style: none;
+
+              .first-category-list {
+                color: #6c801a;
+                border-bottom: 3px solid #6c801a;
+                font-weight: 100;
+              }
+
+              .category-list {
+                font-weight: 100;
+              }
+              
+              a {
+                padding: 10px 0 11px 0;
+                margin-left: 42px;
+                font-size: 18px;
+                text-decoration: none;
+                color: black;
+      
+              }
+            }
+          }
+        }
+
+        .product-sort-filter {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1240px;
+          width: 100%;
+          height: 38px;
+          margin: 20px 0 50px 0;
+
+          p {
+            font-size: 16px;
+            font-weight: 900;
+            color: #727272;
+
+
+            strong {
+              color: #6c801a;
+            }
+          }
+
+          .filter-group {
+
+            .filter-all {
+              width: 84px;
+              height: 38px;
+              margin-left: 9px;
+              padding: 0 10px;
+              border: none;
+              border-radius: 38px;
+              background-color: #6c801a;
+              color: #fff;
+              font-size: 18px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+            
+            .filter {
+              width: 84px;
+              height: 38px;
+              margin-left: 9px;
+              padding: 0 10px;
+              border: none;
+              border-radius: 38px;
+              background-color: #f1f1f1;
+              color: #a5a5a5;
+              font-size: 18px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }

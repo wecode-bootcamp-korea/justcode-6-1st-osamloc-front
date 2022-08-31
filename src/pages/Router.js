@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Main from './Main/Main';
 import Login from './Login/Login';
-import WeeklyBest from './Products/WeeklyBest/index';
+import WeeklyBest from './Products/WeeklyBest';
 import Best from './Products/WeeklyBest/Best';
-import TeaProducts from './Products/TeaProducts';
+import Products from './Products/TeaProducts';
 
 function Router() {
   return (
@@ -15,7 +15,7 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/weeklybest" element={<WeeklyBest />} />
         <Route path="/weeklybest/best" element={<Best />} />
-        <Route path="/teaproducts" element={<TeaProducts />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
     </BrowserRouter>
   );

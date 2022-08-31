@@ -1,6 +1,6 @@
-import "./index.scss"
+import "./index.scss";
 
-import { ListContent, TabBtn } from "../components";
+import { ListContent, TabBtn } from "../../../../components/Products";
 
 function Best() {
   return (

@@ -1,0 +1,119 @@
+.goods-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  padding-bottom: 30px;
+  
+  .goods {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 510px;
+    padding: 0 22px 70px 22px;
+    margin: 0;
+    border-right: 2px solid #f6f6f6;
+
+    &:nth-child(4n) {
+      border-right: none;
+    }
+
+    .window {
+      img {
+        width: 100%;
+      }
+    }
+
+    .label-box {
+
+      display: inline;
+      width: 56px;
+      margin: 26px 0 8px 0;
+      padding: 3.5px 8.5px;
+      font-size: 14px;
+      font-weight: 900;
+      background-color: #A89079;
+      color: #fff;
+    }
+
+    .name {
+      display: flex;
+      margin: 0 0 5px 0;
+      
+      .goods-name {
+        height: 48px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #555555;
+      }
+    }
+
+    .price-box {
+      margin: 0;
+      font-size: 20px;
+      color: #555555;
+      
+      .price {
+        height: 50px;
+
+        strong {
+          display: inline-block;
+          color: #000000;
+        }
+  
+        del {
+          font-size: 16px;
+          color: #bcbcbc;
+          padding-right: 5px;
+        }
+  
+        em {
+          font-size: 16px;
+          color: #ff5c5c;
+          font-style: normal;
+        }
+      }
+    }
+
+    .fnc {
+      position: absolute;
+      left: 22px;
+      bottom: 60px;
+      height: 21px;
+      font-size: 18px;
+      color: #bcbcbc;
+
+      .like {
+        position: relative;
+        padding-left: 29px;
+
+        .is-like {
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 23px;
+          height: 21px;
+          cursor: pointer;
+          background: url('https://www.osulloc.com/kr/ko/static_renew/images/ico_like.gif') 0 0 no-repeat;
+        }
+      }
+      .comment {
+        position: absolute;
+        top: 0;
+        left: 110px;
+        padding-left: 29px;
+
+        .is-comment {
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 23px;
+          height: 21px;
+          cursor: pointer;
+          background: url('https://www.osulloc.com/kr/ko/static_renew/images/ico_comment.gif') 0 0 no-repeat;
+        }
+      }
+    }
+  }
+}

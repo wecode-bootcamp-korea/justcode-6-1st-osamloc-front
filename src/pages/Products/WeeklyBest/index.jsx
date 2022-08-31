@@ -1,7 +1,6 @@
 import "./index.scss"
 
-import { ListContent, TabBtn } from "./components";
-
+import { ListContent, TabBtn } from "../../../components/Products";
 
 function WeeklyBest() {
   return (
