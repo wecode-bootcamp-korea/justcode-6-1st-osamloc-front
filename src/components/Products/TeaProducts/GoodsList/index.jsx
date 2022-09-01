@@ -62,7 +62,7 @@ function GoodsList() {
                 }}
                 onClick={() => {
                   let arr = [...categoryValue];
-                  arr = [false, false, false, false];
+                  // arr = [false, false, false, false];
                   arr[i] = !arr[i];
                   setCategoryValue(arr);
                 }}
