@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import "./goods.scss";
+import "./index.scss";
 
 function Goods(props) {
 
