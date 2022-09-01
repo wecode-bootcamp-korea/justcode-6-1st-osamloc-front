@@ -7,7 +7,7 @@ function BestSection() {
     const [best, setBest] = useState([]);
 
     useEffect(() => {
-        fetch("/data/best.json")
+        fetch("/data/main/best.json")
             .then((res) => res.json())
             .then((data) => setBest(data.BestData))
     }, []); 
@@ -35,8 +35,7 @@ function BestSection() {
                 </div>
                 <div className="best_btn text-center">
                     <Link className="view_btn" to="/main">더 보기 </Link>
-                </div>
-                
+                </div> 
             </div>
         </div>
        

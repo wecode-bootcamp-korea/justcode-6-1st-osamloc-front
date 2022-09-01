@@ -5,7 +5,7 @@ import MainLayout from "../component/MainLayout/MainLayout";
 const Subscribe = [
     {
         id: 1,
-        imgUrl: "./../image/subscribe_01.jpeg",
+        imgUrl: "./../image/main/subscribe_01.jpeg",
         title: '새롭게 만나는 차, 다다일상 베이직',
         cycle: '매월',
         price: '16,000원',
@@ -18,7 +18,7 @@ const Subscribe = [
     },
     {
         id: 2,
-        imgUrl: "./../image/subscribe_02.jpeg",
+        imgUrl: "./../image/main/subscribe_02.jpeg",
         title: '다르게 만나는 차, 다다일상 홈카페',
         cycle: '매월',
         price: '25,000원',
@@ -31,7 +31,7 @@ const Subscribe = [
     },
     {
         id: 3,
-        imgUrl: "./../image/subscribe_03.jpeg",
+        imgUrl: "./../image/main/subscribe_03.jpeg",
         title: '매일 만나는 차, 정기배송',
         fee: '배송비 Free',
         info : {
