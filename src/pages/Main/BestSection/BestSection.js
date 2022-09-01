@@ -7,7 +7,7 @@ function BestSection() {
     const [best, setBest] = useState([]);
 
     useEffect(() => {
-        fetch("/data/best.json")
+        fetch("/data/main/best.json")
             .then((res) => res.json())
             .then((data) => setBest(data.BestData))
     }, []); 

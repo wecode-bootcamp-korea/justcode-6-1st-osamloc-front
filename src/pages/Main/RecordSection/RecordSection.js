@@ -12,17 +12,17 @@ function RecordSection() {
         >
             <div className="record_wrap">
                 <div className="record_slide_box">
-                    <img className="record_slide_img" src="./../image/record_01.jpeg" alt="다다일상 기록 1" />
+                    <img className="record_slide_img" src="./../image/main/record_01.jpeg" alt="다다일상 기록 1" />
                     <div className="title">차가운 것으로 따뜻한 것을 만들다</div>
                     <div className="people">철제 가구 디자이너 양윤선의 티라이프</div>
                 </div>
                 <div className="record_slide_box">
-                    <img className="record_slide_img" src="./../image/record_02.jpeg" alt="다다일상 기록 2" />
+                    <img className="record_slide_img" src="./../image/main/record_02.jpeg" alt="다다일상 기록 2" />
                     <div className="title">차가운 것으로 따뜻한 것을 만들다</div>
                     <div className="people">철제 가구 디자이너 양윤선의 티라이프</div>
                 </div>
                 <div className="record_slide_box">
-                    <img className="record_slide_img" src="./../image/record_03.jpeg" alt="다다일상 기록 3" />
+                    <img className="record_slide_img" src="./../image/main/record_03.jpeg" alt="다다일상 기록 3" />
                     <div className="title">차가운 것으로 따뜻한 것을 만들다</div>
                     <div className="people">철제 가구 디자이너 양윤선의 티라이프</div>
                 </div>

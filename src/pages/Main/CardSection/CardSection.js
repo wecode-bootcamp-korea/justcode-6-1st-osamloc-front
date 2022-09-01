@@ -1,6 +1,5 @@
 import React from "react";
-import MainLayout from "../component/MainLayout/MainLayout";
-// import "./main.scss"
+
 
 function CardSection() {
     return(
@@ -8,12 +7,12 @@ function CardSection() {
         <div className="main_layout card_wrap">   
             <div className="container card_inner" >
                 <div className="card_left"> 
-                    <img className="card_left_img" src="./../image/card_01.jpeg" alt="오늘만 이 가격" />
+                    <img className="card_left_img" src="./../image/main/card_01.jpeg" alt="오늘만 이 가격" />
                     <div className="card_left_txt_box">
                         <div className="card_col_box flex-column">
                             <div className="card_top_inner flex-row">
                                 <div className="card_top_txt">오늘만 이 가격</div>
-                                <div className="card_top_time"><img src="./../image/icon_timer.png"/>12:35:35</div>
+                                <div className="card_top_time"><img src="./../image/main/icon_timer.png"/>12:35:35</div>
                             </div>
                             <div className="card_bottom_inner flex-column">
                                 <div className="card_bottom_tit">제주 순수녹차</div>
@@ -29,7 +28,7 @@ function CardSection() {
 
                 <div className="card_right">
                     <div className="card_right_inner">
-                        <img className="card_right_img" src="./../image/card_02.png" alt="출석체크" />
+                        <img className="card_right_img" src="./../image/main/card_02.png" alt="출석체크" />
                         <div className="card_right_txt_box">
                             <div className="flex-column">
                                 <div className="card_right_txt">8월 출석체크</div>
@@ -42,7 +41,7 @@ function CardSection() {
 
 
                     <div className="card_right_inner">
-                        <img className="card_right_img" src="./../image/card_03.jpeg" alt="오설록 스토리" />
+                        <img className="card_right_img" src="./../image/main/card_03.jpeg" alt="오설록 스토리" />
                         <div className="card_right_txt_box">
                             <div className="flex-column">
                                 <div className="card_right_theme">TEA FROM JEJU</div>
