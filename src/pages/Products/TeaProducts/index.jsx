@@ -1,7 +1,7 @@
 import "./index.scss";
 
 import {
-  ProductCategoryBar,
+  ProductSideMenuBar,
   TopSortBar,
   ProductSortFilter,
   GoodsList
@@ -15,7 +15,7 @@ function TeaProducts() {
       </div>
       <div className="container">
         <div className="tea-shop-wrap">
-          <ProductCategoryBar />
+          <ProductSideMenuBar />
           <div className="inner-container">
             <TopSortBar />
             <ProductSortFilter />

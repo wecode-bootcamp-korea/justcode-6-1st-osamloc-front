@@ -41,16 +41,20 @@
         }
       }
     }
-
-    transition: 1s ease-in-out all;
+    // transition: 3s ease-in-out all;
+    .fnc-btn-wrap {
+      background-color: #281F1A;
+      border-radius: 50%;
+      opacity: 0.3;
+      background: url('https://www.osulloc.com/kr/ko/static_cdj/images/best/cart_icon_mo.png') no-repeat center center;
+    }
   
     &:hover{
       .fnc-btn-wrap {
-        transition: 1s ease-in-out all;
+        // transition: 3s ease-in-out all;
         position: absolute;
         bottom: 12px;
         right: 12px;
-        background: url('https://www.osulloc.com/kr/ko/static_cdj/images/best/cart_icon_mo.png') no-repeat center center;
         background-color: #281F1A;
         opacity: 0.3;
         border-radius: 50%;

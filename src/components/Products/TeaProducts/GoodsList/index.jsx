@@ -1,6 +1,5 @@
 import Goods from "./Goods";
 
-
 import "./index.scss";
 
 function GoodsList() {

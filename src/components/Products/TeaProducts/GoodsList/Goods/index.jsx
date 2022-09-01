@@ -16,13 +16,13 @@ function Goods() {
         </Link>
       </p>
       <p className="price-box">
-        <div className="price">
+        <span className="price">
           <strong>15,000</strong> 원
-          <div>
+          <span>
             <del>20,000원</del>
             <em>(25%↓)</em>
-          </div>
-        </div>
+          </span>
+        </span>
       </p>
       <div className="fnc">
         <span className="like">

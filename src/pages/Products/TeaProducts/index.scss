@@ -32,7 +32,7 @@
       min-width: 1000px;
       padding-left: 160px;
 
-      .product-category-bar {
+      .product-side-menu-bar {
         position: absolute;
         top: 0;
         left: 0;
@@ -48,13 +48,17 @@
           list-style: none;
           text-decoration: none;
         }
-
-        a {
-          display: block;
-          margin: 0 0 35px 30px;
-          font-size: 18px;
-          color: #363535;
-          text-decoration: none;
+        
+        .handler {
+          list-style: none;
+          
+          a {
+            display: block;
+            margin: 0 0 35px 30px;
+            font-size: 18px;
+            color: #363535;
+            text-decoration: none;
+          }
         }
       }
 
