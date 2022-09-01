@@ -50,14 +50,53 @@
         }
         
         .handler {
+          position: relative;
           list-style: none;
           
-          a {
+          &:hover {
+            .sub-menu {
+              display: block;
+            }
+          }
+          
+          .side-menu-title {
             display: block;
             margin: 0 0 35px 30px;
             font-size: 18px;
             color: #363535;
             text-decoration: none;
+          }
+
+          .sub-menu {
+            z-index: 500;
+            display: none;
+            position: absolute;
+            top: -12px;
+            left: 140px;
+            width: 150px;
+            background-color: #fff;
+            padding: 15px 19px 8px 19px;
+            border: 1px #e1e1e1 solid;
+
+            ul {
+              li {
+                width: 110px;
+                height: 26px;
+                margin-bottom: 8px;
+
+                a{
+                  display: inline-block;
+                  padding-bottom: 4px;
+                  color: #363535;
+                  font-size: 14px;
+                  text-decoration: none;
+
+                  &:hover {
+                    border-bottom: 1px #363535 solid;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -67,25 +106,19 @@
         
         .top-sort-bar {
           display: flex;
+          justify-content: space-between;
           align-items: center;
           max-width: 1240px;
-          // width: 100%;
+          width: 100%;
           height: 49px;
           padding-right: 30px;
           font-size: 18px;
           border-bottom: 2px solid #ECECEC;
 
-          .tea {
-            width: 54px;
-          }
-      
           .opt {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            width: 95%;
-            margin: 0;
-            padding: 0;
       
             li {
               list-style: none;
@@ -155,8 +188,6 @@
               padding: 0 10px;
               border: none;
               border-radius: 38px;
-              background-color: #f1f1f1;
-              color: #a5a5a5;
               font-size: 18px;
               font-weight: 400;
               cursor: pointer;

@@ -1,37 +1,53 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Goods() {
+function Goods(props) {
+
+  const { name, category, price, sale_price, sale_persent, like, review, img } = props.goods;
+  const [boolean, setBoolean] = useState(true);
+  // console.log(name);
+
   return (
     <div className="goods">
       <Link to={""} className="window">
-        <img
-          src="https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80"
-          alt="러블리 티 박스"
-        />
+        <div
+          onMouseOver={() => {
+            setBoolean(false);
+          }}
+          onMouseLeave={() => {
+            setBoolean(true);
+          }}
+        >
+          {boolean ? (
+            <img src={img.main} alt={name} />
+          ) : (
+            <img src={img.hover} alt={name} />
+          )}
+        </div>
       </Link>
       <div className="label-box">신제품</div>
       <p className="name">
         <Link to={""} className="goods-name">
-          러블리 티 박스
+          {name}
         </Link>
       </p>
       <p className="price-box">
         <span className="price">
-          <strong>15,000</strong> 원
+          <strong>{sale_price}</strong> 원
           <span>
-            <del>20,000원</del>
-            <em>(25%↓)</em>
+            <del>{price}원</del>
+            <em>({sale_persent}%↓)</em>
           </span>
         </span>
       </p>
       <div className="fnc">
         <span className="like">
           <span className="is-like"></span>
-          32
+          {like}
         </span>
         <span className="comment">
           <span className="is-comment"></span>
-          699
+          {review}
         </span>
       </div>
     </div>

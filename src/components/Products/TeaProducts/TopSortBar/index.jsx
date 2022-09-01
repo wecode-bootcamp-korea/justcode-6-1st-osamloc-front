@@ -5,7 +5,7 @@ function TopSortBar() {
 
   return (
     <div className="top-sort-bar">
-      <span className="tea">티 제품</span>
+      <p className="tea">티 제품</p>
       <ul className="opt">
         <li>
           <Link to={""} className="first-category-list">
