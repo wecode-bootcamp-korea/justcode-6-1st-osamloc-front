@@ -13,7 +13,6 @@
     justify-content: center;    
 }
 
-
 .close-button-style{
     border: none;
     background-color: white;
@@ -48,7 +47,7 @@
     .login-flex{
         display: flex;
         align-items: center;
-        justify-content: center;    
+        justify-content: center;      
     }
     .login-input{
         width: 95%;
@@ -59,7 +58,6 @@
         &:focus{
             outline: none;
         }
-
     }
 }
 
@@ -98,14 +96,11 @@
     margin-top: 30px;
     font-size: 15px;
 
-
  .logo-size{
         width: 45px;
         height: 45px;
     }
-
 }
-
 
 //아이디&비밀번호 찾기 
 
@@ -145,7 +140,8 @@
     }
 
 }
-    
+
+
    
     
 

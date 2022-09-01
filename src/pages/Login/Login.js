@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import "./login.scss"
 import {useNavigate} from "react-router-dom"
 function Login() {
-
+  //로그인창 활성화 초기값 설정 
   const naviagte = useNavigate();
   const [id, setId] =  useState("");
   const [pw, setPw] =  useState("");
-  //로그인창 활성화 초기값 설정 
+
   const [isValid, setIsValid] = useState(false);
 
   //button을 눌렀을떄 Login페이지로 이동하기 
   const goMain = () => {
       naviagte("/")
-    }   
-
+    }  
+    //button을 눌럿을떄 signup페이지로 이동하기  
   const goSignUp = () => {
       naviagte("/signup")
     }
-  
+  // 조건에 맞게 되면 로그인 버튼 활성화 
   const handleIdInput = (e) =>{
     const idValue = e.target.value;
     setId(idValue);
@@ -84,9 +84,6 @@ function Login() {
             <div className='signup-wrapper'>
             <button onClick={goSignUp}className='signup-button-style'>아직 회원이 아니세요? 회원가입</button>
           </div>
-          
-
-    
       </div> 
     </div>
     </div>
