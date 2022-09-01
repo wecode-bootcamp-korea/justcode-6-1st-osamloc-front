@@ -1,22 +1,11 @@
-
-// 폰트 가져오기
-@font-face {
-  font-family: "Arita-dotum-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 // 전체 레이아웃
 .wrap {
   line-height: 1.5;
-  font-family: Arita-dotum-Medium;
 }
 
 // 페이지 타이틀
 .page-cart {
-  padding: 10vh 20vh 10vh 0;
+  padding: 10vh 25vh 10vh 0;
 
   .page-top-section {
     display: flex;
@@ -24,8 +13,6 @@
     padding: 48px 0 30px;
   }
 }
-
-
 
 // 전체 이미지 스타일
 .image-png {
@@ -36,31 +23,36 @@
 }
 
 // 전체 체크박스 스타일
-.checkbox{
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border: 1px solid #DDD;
-    border-radius: 4px;
-    background-color: #fff;
-    vertical-align: middle;
-    margin-right: 10px;
-    box-sizing: border-box;
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  vertical-align: middle;
+  margin-right: 10px;
+  box-sizing: border-box;
 }
 
 //아래 3개는 중복되는 부분 정의
-.flex-justify-center{
+.flex-justify-center {
   display: flex;
   justify-content: center;
 }
 
-.flex-align-center{
+.flex-align-center {
   display: flex;
   align-items: center;
 }
 
-.flex-bewteen{
+.flex-bewteen {
   display: flex;
   justify-content: space-between;
 }
 
+.info-button {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  margin-top: 20px;
+}

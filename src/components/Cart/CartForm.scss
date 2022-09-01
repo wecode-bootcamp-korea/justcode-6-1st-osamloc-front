@@ -1,8 +1,8 @@
 // 페이지 전체 폼
 .cart-form {
   .cart-form-section {
-    border-top: 1px solid #E6E6E6;
-    margin-right: 10vh;
+    border-top: 1px solid #e6e6e6;
+    margin-right: 6vh;
 
     .cart-form-section-inner {
       display: flex;
@@ -10,7 +10,6 @@
 
       // 카트 목록 관련
       .cart-items {
-        
         // 카트 목록 상단 전체선택/삭제
         .cart-check {
           border-bottom: 2px solid #333;
@@ -24,7 +23,7 @@
           }
 
           .cart-check-right {
-            .cart-check-right-button{
+            .cart-check-right-button {
               border: none;
               background: transparent;
               color: #666;
@@ -42,7 +41,8 @@
       .cart-order-button {
         flex-direction: column;
         padding: 30px 20px 20px;
-        .cart-order-button-select{
+
+        .cart-order-button-select {
           line-height: 48px;
           border: 1px solid #ddd;
           border-radius: 4px;
@@ -54,7 +54,7 @@
           width: 160px;
           margin: 0 4px;
         }
-        .cart-order-button-all{
+        .cart-order-button-all {
           line-height: 48px;
           border-radius: 4px;
           border: none;
@@ -62,16 +62,16 @@
           color: #333;
           box-sizing: border-box;
           text-align: center;
-          background-color: #6C801A;
+          background-color: #6c801a;
           width: 328px;
           color: #fff;
-          margin-top: 8px;  
+          margin-top: 8px;
         }
       }
     }
   }
 
-  .form-attention{
+  .form-attention {
     font-size: 13px;
     font-weight: 400;
     letter-spacing: -0.03em;
