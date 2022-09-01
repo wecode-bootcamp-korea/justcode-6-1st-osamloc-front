@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Main from './Main/Main';
 import Login from './Login/Login';
+import Main from './Main/\bindex';
 
 function Router() {
   return (
