@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Main from './Main/Main';
 import Login from './Login/Login';
+import Main from './Main/\bindex';
 import WeeklyBest from './Products/WeeklyBest';
 import Best from './Products/WeeklyBest/Best';
 import Products from './Products/TeaProducts';

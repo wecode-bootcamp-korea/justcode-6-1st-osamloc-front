@@ -1,0 +1,623 @@
+
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+//공통
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.margintop-30 {
+    margin-top: 30px;    
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// MainLayout
+.main_layout {
+    // margin-top: 80px;
+    // margin-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.maintitle {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 42px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #999;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.view_btn {
+    display: inline-block;
+    font-size: 15px;
+    color: #666;
+    padding: 15px 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+//mainSlide - background-image로 했을 때
+// .main_bg {
+//     background: center no-repeat url("../../../public/image/main_slide.png");
+//     background-size: cover;
+//     height: 430px;
+//     position: relative;
+
+//     .main_slide_alignbox {
+//         position: absolute;
+//         top: 50%;
+//         left: 0;
+//         transform: translateY(-50%);
+//         max-width: 1320px;
+
+//         .main_slide_textbox {
+//             max-width: 1320px;
+    
+//             .main_slide_tit {
+//                 font-size: 36px;
+//                 line-height: 1.33;
+//             }
+            
+//             .main_slide_info {
+//                 font-size: 16px;
+//                 margin-top: 10px;
+//             }
+    
+//             .main_slide_date {
+//                 font-size: 16px;
+//                 margin-top: 12px;
+//             }
+//         }
+//     }
+
+// }
+
+//mainSlide <img /> 로 다시 하는 중
+.main_bg {
+    position: relative;
+    overflow-x: hidden;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main_slide_wrapper {
+        height: 100%;
+    }
+    
+    .main_slide_textbox {
+        position: absolute;
+        top:43%;
+        left:50%;
+        transform: translateX(-50%);
+        // transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .main_slide_tit {
+            font-size: 36px;
+            line-height: 1.33;
+        }
+        
+        .main_slide_info {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    
+        .main_slide_date {
+            font-size: 16px;
+            margin-top: 12px;
+        }
+
+      
+    } 
+    .main_slide_eventbtn {
+        position: absolute;
+        bottom: 40px;
+        left:50%;
+        transform: translateX(-50%);
+        // transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .slide_eventbtn {
+        display: block;
+        font-size: 13px;
+        line-height: 32px;
+        width: 110px;
+        height: 32px;
+        text-align: center;
+        border: 1px solid #555;
+        border-radius: 4px;
+        color: #444;
+        text-decoration: none;
+    
+        // padding: 10px;
+        
+    }
+}
+
+
+//Notice
+.notice_layout {
+    margin: 48px 0;
+
+    .notice_box {
+        display: flex;
+        align-items: center;
+        padding: 14px 16px;
+        background-color: #F6F6F6;
+        border-radius: 4px;
+
+        .notice_tag {
+            font-size: 14px;
+            color: #999;
+            margin-right: 12px;
+        }
+        
+        .notice_title {
+            font-size: 14px;
+            color: #666;
+        }
+    }
+}
+
+//BestSection
+.best_layout {
+    padding-bottom: 80px;
+
+    .best_section_title {
+        display: flex;
+        margin-bottom: 30px;
+
+        .best_title {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .best_section_tab {
+            display: flex;
+            margin-left: 30px;
+
+            .best_tab_item {
+                font-size:15px;
+                border-radius: 150px;
+                height: 36px;
+                line-height:36px;
+                padding: 0 16px;
+                color: #999;
+                background-color: #f6f6f6;
+                cursor: pointer;
+            }
+
+            .best_tab_item:last-child {
+                margin-left: 8px;
+            }
+
+            .on {
+                background-color: #6C801A;
+                color: #fff;
+            }
+        }
+
+    }
+    .best_item_layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .best_btn {
+        margin-top: 48px;
+    }
+}
+// Bestitem
+.best_item {
+
+    // hover 효과
+    .best_img {
+        height: 250px;
+        width: 224px;
+        overflow: hidden;
+    }
+    
+    .best_item_img {
+        width: 224px;
+        transition: all 0.2s linear;
+        &:hover {
+            transform: scale(0.9);
+        }
+    }
+    
+
+    .best_text_item {
+        width: 224px;
+        margin-top: 15px;
+
+        .best_item_title {
+            font-size: 16px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            word-break: keep-all;
+        }
+
+        .best_item_cost {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .best_item_price {
+            font-size: 18px;
+            font-weight: 800;
+
+            .best_item_sale {
+                font-size: 18px;
+                color:#6C801A;
+            }
+        }
+    }
+
+    .best_item_tag {
+        font-size: 14px;
+        display: inline-block;
+        background-color: #A89079;
+        color: #fff;
+        height: 22px;
+        margin-top: 40px;
+        line-height: 22px;
+        padding: 0 8px;
+    }
+}
+
+
+// SubscribeSection
+.subscribe_wrap {
+    display : flex;
+    justify-content: space-between;
+
+    .subscribe_box {
+        position: relative;
+        overflow: hidden;
+        height: 480px;
+
+        .subscribe_img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to top, rgba(0,0,0,.35), transparent);
+        }
+   
+        .subscribe_txt_box {
+            position: absolute;
+            top: 79%;
+            left: 30px;
+            color: #fff;
+        }
+        .subscribe_title {
+            font-size: 22px; 
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .subscribe_txt_item {
+            display: flex;
+            align-items: center;
+
+            .subscribe_price_item {
+                display: flex;
+                align-items: center; 
+
+                .subscribe_box_cycle {
+                    font-size: 13px;
+                    font-weight: 800;
+                }
+    
+                .subscribe_box_price {
+                    font-size: 22px;
+                    margin-left: 5px;
+                    margin-right: 15px;
+                }
+            }
+
+            .subscribe_box_fee {
+                display: inline-block;
+                background-color: #A1AF1B;
+                font-size: 13px;
+                border-radius: 2px;
+                width: 80px;
+                height: 22px;
+                text-align: center;
+                line-height: 22px;
+            }
+        }
+
+        .subscribe_hover_box {
+            display: block;
+            position: absolute;
+            top:100%;
+            left: 0;
+            // width: 100%;
+            height: 100%;
+            transition: .4s ease-in-out;
+            background-color: rgba(0,0,0,.5);
+            color: #fff;
+            padding: 0 30px 40px;
+
+            .subscribe_hover_inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                height: 100%;
+
+                .subscribr_divider {
+                    background-color: #fff;
+                    width: 100%;
+                    height: 1px;
+                    margin-top: 25px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+// ?
+.subscribe_box:hover .subscribe_hover_box {
+    top:0;
+    display:block;
+}
+
+.subscribe_box:hover .subscribe_txt_box {
+    display: none;
+}
+
+// RecordSection
+.record_wrap {
+    display : flex;
+    justify-content: space-between;
+}
+
+.record_slide_box {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        margin-top:14px;
+        font-size: 20px;
+        font-weight: 800;
+    }
+    .people {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #666;
+    }
+}
+
+.record_slide_img {
+    width: 380px;
+}
+
+//CardSection
+.card_wrap {
+    background-color: #f6f6f6;
+
+    .card_inner {
+        display: flex;
+        justify-content: space-between;
+
+        .card_left {
+            position: relative;
+            
+            .card_left_img {
+                width: 600px;
+            }
+
+            .card_left_txt_box {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 570px;
+
+                .card_col_box {
+                    width: 100%;
+                    height:570px; 
+
+                    .card_top_inner {
+                        align-items: center;
+                        padding: 20px 30px;
+                        color: #fff;
+                        background: linear-gradient(to bottom, rgba(0,0,0,.25), transparent);
+                        
+                        .card_top_txt {
+                            font-size: 30px;
+                            font-weight: 800;
+                        }
+    
+                        .card_top_time {
+                            font-size: 28px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        }
+                    }
+                    
+                    .card_bottom_inner {
+                        padding: 20px;
+                        background: linear-gradient(to top, rgba(0,0,0,.35), transparent);
+
+                        .card_bottom_tit { 
+                            font-size: 26px;
+                            color: #fff;
+                            font-weight: 800;
+                        }
+
+                        .card_bottom_info {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-top: 10px;
+                    
+                            .card_bottom_sale {
+                                width: 64px;
+                                height: 64px;
+                                font-size: 24px;
+                                line-height: 64px;
+                                background-color: #FD5C5C;
+                                border-radius: 100%;
+                                color: #fff;
+                                font-weight: 800;
+                                text-align: center;
+                            }
+
+                            .card_bottom_discount {
+                                font-size: 18px;
+                                margin-left: 16px;
+                                text-decoration: line-through;
+                                color: rgba(255,255,255,.5);
+                            }
+
+                            .card_bottom_price {
+                                font-size: 30px;
+                                margin-left: 12px;
+                                color: #fff;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .card_right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .card_right_inner {
+                position: relative;
+            }
+        
+            .card_right_img {
+                width: 580px;
+            }
+
+            .card_right_txt_box {
+                position: absolute;
+                top: 50%;
+                left: 40px;
+                transform: translateY(-50%);
+
+                .card_right_txt {
+                    font-size: 26px;
+                }
+
+                .card_right_date {
+                    font-size: 14px;
+                    color: #666;
+                    margin-top: 5px;
+
+                    .card_right_dday {
+                        font-size: 14px;
+                        color: #fff;
+                        background-color: #6C801A;
+                        border-radius: 2px;
+                        padding: 1px 8px;
+                        margin-left: 5px;
+                    }
+                }
+
+                .card_right_theme {
+                    font-size: 18px;
+                    color: rgba(255,255,255,.7);
+                }
+
+                .card_right_sub {
+                    font-size: 26px;
+                    color: #fff;
+                    margin-top: 5px;
+                }
+
+            }
+        }
+    }
+    
+   
+}
+
+//BannerSection 
+.banner_wrap {
+    margin-bottom: 60px;
+    position: relative;
+
+    .banner_text_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        .banner_txt {
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .banner_btn {
+            display: inline-block;
+            margin: 0 auto;
+            text-decoration: none;
+            font-size: 14px;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: 4px;
+            padding: 7px 21px;
+        }
+    }
+}
