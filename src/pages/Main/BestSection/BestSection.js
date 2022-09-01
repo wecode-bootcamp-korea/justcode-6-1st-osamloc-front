@@ -35,8 +35,7 @@ function BestSection() {
                 </div>
                 <div className="best_btn text-center">
                     <Link className="view_btn" to="/main">더 보기 </Link>
-                </div>
-                
+                </div> 
             </div>
         </div>
        
