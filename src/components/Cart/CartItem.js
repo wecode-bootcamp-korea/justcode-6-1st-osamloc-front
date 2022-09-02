@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 
 import "./CartItem.scss";
 
@@ -97,7 +97,9 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
           </div>
         </div>
         <div className="list-item-button flex-align-center">
-          <button className="list-item-button-inner">바로구매</button>
+          <Link to={`../payment/${id}`}>
+            <button className="list-item-button-inner">바로구매</button>
+          </Link>
         </div>
       </li>
     </>

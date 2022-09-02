@@ -45,21 +45,14 @@ function PayFormDelivery() {
                       <span className="at">-</span>
                     </div>
                     <div className="customer-info-select">
-                      <input
-                        type="text"
-                        className="customer-info-input"
-                        placeholder=" ' - ' 없이 휴대폰번호 입력"
-                      ></input>
+                      <input type="text" className="customer-info-input" placeholder=" ' - ' 없이 휴대폰번호 입력"></input>
                     </div>
                   </td>
                 </tr>
                 <tr className="customer-info-tr">
                   <th className="customer-info-th">주소</th>
                   <td className="customer-info-td block">
-                    <input
-                      type="text"
-                      className="customer-info-input address"
-                    ></input>
+                    <input type="text" className="customer-info-input address"></input>
                     <button type="button" className="address_btn">
                       우편번호 찾기
                     </button>
@@ -74,22 +67,15 @@ function PayFormDelivery() {
                 <tr className="customer-info-tr">
                   <th className="customer-info-th"></th>
                   <td className="customer-info-td block">
-                    <input
-                      type="text"
-                      className="customer-info-input"
-                      placeholder="상세주소 입력"
-                    ></input>
+                    <input type="text" className="customer-info-input" placeholder="상세주소 입력"></input>
                   </td>
                 </tr>
                 <tr className="customer-info-tr">
                   <th className="customer-info-th"></th>
                   <td className="customer-info-td">
                     <label className="flex-align-center font14">
-                      <input
-                        type="checkbox"
-                        id="basicAddress"
-                        className="checkbox"
-                      />
+                      <input type="checkbox" id="deliveryCheck" className="checkbox" />
+                      <label for="deliveryCheck"></label>
                       기본 배송지로 저장
                     </label>
                   </td>
@@ -104,15 +90,9 @@ function PayFormDelivery() {
                         <li className="item">
                           <div className="customer-info-select">
                             <select className="customer-info-input select">
-                              <option value="naver.com">
-                                배송 요청사항 선택
-                              </option>
-                              <option value="hanmail.net">
-                                경비실에 맡겨주세요
-                              </option>
-                              <option value="gmail.com">
-                                배송전에 미리 연락주세요
-                              </option>
+                              <option value="naver.com">배송 요청사항 선택</option>
+                              <option value="hanmail.net">경비실에 맡겨주세요</option>
+                              <option value="gmail.com">배송전에 미리 연락주세요</option>
                               <option value="1">직접입력 </option>
                             </select>
                           </div>

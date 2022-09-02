@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 
 import { CartItemList, CartItem, CartPrice } from "./index";
 import "./CartForm.scss";
@@ -92,11 +92,15 @@ function CartForm() {
 
             <div className="cart-order-button flex-align-center">
               <div>
-                <button className="cart-order-button-select">선택상품 주문</button>
+                <Link to={`../payment/${checkedArray.join("-")}`}>
+                  <button className="cart-order-button-select">선택상품 주문</button>
+                </Link>
                 <button className="cart-order-button-select">선택상품 선물하기</button>
               </div>
               <div>
-                <button className="cart-order-button-all">전체상품 주문하기</button>
+                <Link to={`../payment`}>
+                  <button className="cart-order-button-all">전체상품 주문하기</button>
+                </Link>
               </div>
             </div>
             <p className="form-attention flex-align-center">

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 
 import "./CartPrice.scss";
 
 function CartPrice({ cartList, checkedArray }) {
-  console.log(checkedArray);
   const [price, setPrice] = useState(0);
   const [sale, setSale] = useState(0);
   const [wrap, setWrap] = useState(0);
@@ -75,7 +74,9 @@ function CartPrice({ cartList, checkedArray }) {
             <p>{totalPrice}원</p>
           </div>
           <div className="price-info-button">
-            <button className="price-info-button-inner">{totalPrice}원 주문하기</button>
+            <Link to={`../payment/${checkedArray.join("-")}`}>
+              <button className="price-info-button-inner">{totalPrice}원 주문하기</button>
+            </Link>
           </div>
         </div>
       </section>
