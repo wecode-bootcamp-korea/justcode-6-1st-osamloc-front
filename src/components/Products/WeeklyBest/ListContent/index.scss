@@ -1,0 +1,37 @@
+.list-content {
+  width: 880px;
+
+  .date-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    font-size: 17px;
+    font-weight: 900;
+
+    .filter {
+      position: relative;
+      height: 32px;
+      padding: 0 13px 0 0;
+      border: none;
+      font-size: 14px;
+      color: #999999;
+      background: transparent;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 9px;
+        height: 6px;
+        display: block;
+        background: url('https://www.osulloc.com/kr/ko/static_cdj/images/best/sort_box_arr.png') no-repeat right center/cover;
+      }
+    }
+  }
+
+  .goods-container {
+    width: 880px;
+  }
+}

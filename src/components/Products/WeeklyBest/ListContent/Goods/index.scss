@@ -1,0 +1,118 @@
+.goods {
+  *{
+    box-sizing: border-box;
+  }
+  
+  display: block;
+  float: left;
+  width: 24%;
+  height: 366px;
+  margin: 0 1.33% 60px 0;
+  
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  .img-wrap {
+    position: relative;
+    background-color: #F9F9F9;
+
+    a {
+      .img-box {
+        position: relative;
+          
+          img {
+            width: 211px;
+            height: 236px;
+          }
+
+        .rank-num {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 30px;
+          height: 31px;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 31px;
+          text-align: center;
+          color: white;
+          background: #666666;
+        }
+      }
+    }
+    // transition: 3s ease-in-out all;
+    .fnc-btn-wrap {
+      background-color: #281F1A;
+      border-radius: 50%;
+      opacity: 0.3;
+      background: url('https://www.osulloc.com/kr/ko/static_cdj/images/best/cart_icon_mo.png') no-repeat center center;
+    }
+  
+    &:hover{
+      .fnc-btn-wrap {
+        // transition: 3s ease-in-out all;
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        background-color: #281F1A;
+        opacity: 0.3;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        
+        &:hover{
+            // transition: 1s ease-in-out all;
+            opacity: 1;
+          }
+        }
+    }
+  }
+
+  .info-wrap {
+    position: relative;
+    margin-top: 15px;
+    height: 110px;
+
+    .goods-name {
+      font-size: 16px;
+      font-weight: 100px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .price-box {
+      margin-top: 5px;
+
+      .sales-price {
+        font-size: 14px;
+        color: #999999;
+      }
+
+      .last-price {
+        font-size: 18px;
+        font-weight: 900;
+
+        .rate {
+          margin-left: 5px;
+          color: #6C801A;
+        }
+      }
+    }
+
+    .label-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      // display: inline-block;
+      // width: 55px;
+      // height: 23px;
+      padding: 3.5px 8.5px;
+      font-size: 14px;
+      font-weight: 900;
+      background-color: #A89079;
+      color: #fff;
+    }
+  }
+}

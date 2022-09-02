@@ -1,0 +1,200 @@
+.tea-products {
+  * {
+    box-sizing: border-box;
+  }
+    
+  .product-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    margin: 0 0 40px 0;
+    background: url('https://www.osulloc.com/kr/ko/static_cdj/images/catBanner/banner_teaprod.jpg') 50% 50% no-repeat;
+  
+    .product-title {
+      display: block;
+      font-size: 48px;
+      text-align: center;
+      font-weight: bolder;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px 0 40px;
+    width: 100%;
+
+    .tea-shop-wrap {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-width: 1000px;
+      padding-left: 160px;
+
+      .product-side-menu-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 165px;
+        height: 200px;
+        margin: 0;
+        padding: 20px 0 0 0;
+
+        .title {
+          margin-bottom: 30px;
+          font-size: 18px;
+          color: #363535;
+          list-style: none;
+          text-decoration: none;
+        }
+        
+        .handler {
+          position: relative;
+          list-style: none;
+          
+          &:hover {
+            .sub-menu {
+              display: block;
+            }
+          }
+          
+          .side-menu-title {
+            display: block;
+            margin: 0 0 35px 30px;
+            font-size: 18px;
+            color: #363535;
+            text-decoration: none;
+          }
+
+          .sub-menu {
+            z-index: 500;
+            display: none;
+            position: absolute;
+            top: -12px;
+            left: 140px;
+            width: 150px;
+            background-color: #fff;
+            padding: 15px 19px 8px 19px;
+            border: 1px #e1e1e1 solid;
+
+            ul {
+              li {
+                width: 110px;
+                height: 26px;
+                margin-bottom: 8px;
+
+                a{
+                  display: inline-block;
+                  padding-bottom: 4px;
+                  color: #363535;
+                  font-size: 14px;
+                  text-decoration: none;
+
+                  &:hover {
+                    border-bottom: 1px #363535 solid;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .inner-container {
+        width: 100%;
+        
+        .top-sort-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1240px;
+          width: 100%;
+          height: 49px;
+          padding-right: 30px;
+          font-size: 18px;
+          border-bottom: 2px solid #ECECEC;
+
+          .opt {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+      
+            li {
+              list-style: none;
+
+              .first-category-list {
+                color: #6c801a;
+                border-bottom: 3px solid #6c801a;
+                font-weight: 100;
+              }
+
+              .category-list {
+                font-weight: 100;
+              }
+              
+              a {
+                padding: 10px 0 11px 0;
+                margin-left: 42px;
+                font-size: 18px;
+                text-decoration: none;
+                color: black;
+      
+              }
+            }
+          }
+        }
+
+        .product-sort-filter {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1240px;
+          width: 100%;
+          height: 38px;
+          margin: 20px 0 50px 0;
+
+          p {
+            font-size: 16px;
+            font-weight: 900;
+            color: #727272;
+
+
+            strong {
+              color: #6c801a;
+            }
+          }
+
+          .filter-group {
+
+            .filter-all {
+              width: 84px;
+              height: 38px;
+              margin-left: 9px;
+              padding: 0 10px;
+              border: none;
+              border-radius: 38px;
+              background-color: #6c801a;
+              color: #fff;
+              font-size: 18px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+            
+            .filter {
+              width: 84px;
+              height: 38px;
+              margin-left: 9px;
+              padding: 0 10px;
+              border: none;
+              border-radius: 38px;
+              font-size: 18px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
