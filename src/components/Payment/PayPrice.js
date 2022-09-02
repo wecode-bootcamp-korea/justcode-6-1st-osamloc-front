@@ -4,11 +4,10 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./PayPrice.scss";
 
 function PayPrice() {
-  const { IMP } = window;
-  IMP.init("imp10300638");
-
   function onClickPayment() {
     /* 1. 가맹점 식별하기 */
+    const { IMP } = window;
+    IMP.init("imp10300638");
 
     /* 2. 결제 데이터 정의하기 */
     const data = {
@@ -65,10 +64,7 @@ function PayPrice() {
             <p>15000원</p>
           </div>
           <div className="price-info-button">
-            <button
-              className="price-info-button-inner"
-              onClick={onClickPayment}
-            >
+            <button className="price-info-button-inner" onClick={onClickPayment}>
               결제하기
             </button>
           </div>

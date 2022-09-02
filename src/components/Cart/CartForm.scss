@@ -3,6 +3,7 @@
   .cart-form-section {
     border-top: 1px solid #e6e6e6;
     margin-right: 6vh;
+    min-width: 921px;
 
     .cart-form-section-inner {
       display: flex;
@@ -10,6 +11,38 @@
 
       // 카트 목록 관련
       .cart-items {
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        input[type="checkbox"] + label {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          background-color: #fff;
+          vertical-align: middle;
+          margin-right: 10px;
+          box-sizing: border-box;
+        }
+
+        input[type="checkbox"]:checked + label {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          background-color: #6c801a;
+          background-image: url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/chk_icon.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto;
+          vertical-align: middle;
+          margin-right: 10px;
+          box-sizing: border-box;
+        }
+
         // 카트 목록 상단 전체선택/삭제
         .cart-check {
           border-bottom: 2px solid #333;
@@ -18,7 +51,7 @@
 
           .cart-check-left {
             .cart-check-left-inner {
-              padding-left: 1vh;
+              padding-left: 1vw;
             }
           }
 
@@ -27,6 +60,7 @@
               border: none;
               background: transparent;
               color: #666;
+              cursor: pointer;
             }
           }
         }
@@ -53,6 +87,7 @@
           background-color: #fff;
           width: 160px;
           margin: 0 4px;
+          cursor: pointer;
         }
         .cart-order-button-all {
           line-height: 48px;
@@ -66,6 +101,7 @@
           width: 328px;
           color: #fff;
           margin-top: 8px;
+          cursor: pointer;
         }
       }
     }
