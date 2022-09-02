@@ -15,12 +15,10 @@ function PayFormProduct() {
   };
 
   const slideUp = {
-    background:
-      "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn.png) no-repeat center / cover",
+    background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn.png) no-repeat center / cover",
   };
   const slideDown = {
-    background:
-      "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png) no-repeat center / cover",
+    background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png) no-repeat center / cover",
   };
 
   return (
@@ -36,11 +34,7 @@ function PayFormProduct() {
               <p>
                 <span className="customer-name">총 1건</span>
               </p>
-              <div
-                className="pay-info-title-right-drop"
-                onClick={customerToggle}
-                style={toggle ? slideUp : slideDown}
-              ></div>
+              <div className="pay-info-title-right-drop" onClick={customerToggle} style={toggle ? slideUp : slideDown}></div>
             </div>
           </div>
         </div>
@@ -50,11 +44,7 @@ function PayFormProduct() {
               <li className="list-item flex-bewteen padding-zero">
                 <div className="list-item-image flex-align-center">
                   <div className="list-item-image-box">
-                    <img
-                      alt=""
-                      src="./image/bottle.png"
-                      className="image-png"
-                    />
+                    <img alt="" src="./image/cart/bottle.png" className="image-png" />
                   </div>
                   <div className="list-item-image-text">
                     <p className="list-item-image-text-p1">

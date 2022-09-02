@@ -1,12 +1,12 @@
 // 카트 목록 출력
 .list-item {
   padding: 20px 8px;
-  border-bottom: 1px solid #E6E6E6;
+  border-bottom: 1px solid #e6e6e6;
 
   .list-item-image {
-
     .list-item-image-text {
-      padding: 0 6vw 0 1.5vw;
+      padding: 0 0 0 1.5vw;
+      width: 13vw;
 
       .list-item-image-text-p1 {
         font-size: 15px;
@@ -33,19 +33,19 @@
     width: 15vw;
 
     .list-item-count {
-      border: 1px solid #DDD;
+      border: 1px solid #ddd;
 
       .list-item-count-inner {
-        
-        .list-item-count-inner-button{
+        .list-item-count-inner-button {
           width: 40px;
           height: 40px;
           border: none;
           background-color: #fff;
           font-size: 20px;
+          cursor: pointer;
         }
 
-        .list-item-count-inner-input{
+        .list-item-count-inner-input {
           border: none;
           width: 60px;
           text-align: center;
@@ -56,20 +56,25 @@
     .list-item-price {
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
+      .list-item-price-origin {
+        font-size: 12px;
+        text-decoration: line-through;
+        color: rgb(170, 156, 156);
+      }
     }
   }
 
   .list-item-button {
     margin-left: 40px;
 
-    .list-item-button-inner{
+    .list-item-button-inner {
       padding: 0 30px 0 30px;
       line-height: 32px;
-      border: 1px solid #DDD;
+      border: 1px solid #ddd;
       border-radius: 4px;
       background-color: #fff;
+      cursor: pointer;
     }
   }
 }
-        
- 
