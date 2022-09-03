@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 function Goods(props) {
 
-  const { name, category, price, sale_price, sale_persent, like, review, img } = props.goods;
+  const { name, price, sale_price, sale_persent, like, review, img } = props.goods;
   const [boolean, setBoolean] = useState(true);
-  // console.log(name);
 
   return (
     <div className="goods">
@@ -33,7 +32,7 @@ function Goods(props) {
       </p>
       <p className="price-box">
         <span className="price">
-          <strong>{sale_price}</strong> 원
+          <strong>{price}</strong> 원
           <span>
             <del>{price}원</del>
             <em>({sale_persent}%↓)</em>
