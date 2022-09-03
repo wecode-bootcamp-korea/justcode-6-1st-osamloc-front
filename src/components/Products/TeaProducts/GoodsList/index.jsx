@@ -81,21 +81,13 @@ function GoodsList() {
             </>
           );
         })}
-        {goodsList.map((goods) => {
+        {goodsList.map((goods, index) => {
           return (
             <>
-              {/* {boolean && <Goods key={goods.id} goods={goods} />} */}
-              {goods.category === "잎차" && categoryValue[0] && (
-                <Goods key={goods.id} goods={goods} />
-              )}
-              {goods.category === "피라미드" && categoryValue[1] && (
-                <Goods key={goods.id} goods={goods} />
-              )}
-              {goods.category === "티백" && categoryValue[2] && (
-                <Goods key={goods.id} goods={goods} />
-              )}
-              {goods.category === "파우더" && categoryValue[3] && (
-                <Goods key={goods.id} goods={goods} />
+              {categoryValue.map((boolean, i)=>
+                goods.category === category[i] && categoryValue[i] && (
+                  <Goods key={goods.id} goods={goods} />
+                )
               )}
             </>
           );
