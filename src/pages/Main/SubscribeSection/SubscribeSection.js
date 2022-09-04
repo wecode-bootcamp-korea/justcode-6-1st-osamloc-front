@@ -38,6 +38,7 @@ const Subscribe = [
             content: "원하는 차를 집에서 매월 편하게 받아보세요.오설록과 함께 편안한 티 라이프를 즐겨보세요.",
         }
     }
+
 ]
 
 function SubscribeSection() {
@@ -74,12 +75,14 @@ function SubscribeSection() {
                                         </div>
                                         <span className="subscribe_box_fee">{item.fee}</span>
                                     </div>
-                                    <div className="subscribr_divider"></div>
-                                    <div >{item.info.content}</div>
-                                    <ul>
-                                        <li>{item.info.sub1}</li>
-                                        <li>{item.info.sub2}</li>
-                                    </ul>
+                                    <div className="subscribe_divider"></div>
+                                    <div className="subscribe_con">{item.info.content}</div>
+                                    { item.info.sub1 &&
+                                        <ul className="subscribe_list">
+                                            <li>{item.info.sub1}</li>
+                                            <li>{item.info.sub2}</li>
+                                        </ul>
+                                    }
                                 </div>
                             </div>
 

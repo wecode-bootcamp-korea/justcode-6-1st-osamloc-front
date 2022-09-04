@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom"
+import { Goods, GoodsList, ListContent } from "../../../components/Products";
 import BestItem from "../component/BestItem/BestItem";
 
 function BestSection() {
@@ -33,12 +34,18 @@ function BestSection() {
                         )})
                     }
                 </div>
+
+                <div className="best_slide_btn">
+                    <button type="button" className="best_left_btn"></button>
+                    <button type="button" className="best_right_btn"></button>
+                </div>
+
+
                 <div className="best_btn text-center">
                     <Link className="view_btn" to="/main">더 보기 </Link>
                 </div> 
             </div>
         </div>
-       
     )
 }
 export default BestSection;
