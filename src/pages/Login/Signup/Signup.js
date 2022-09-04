@@ -5,62 +5,146 @@ import CheckBox from '../../../components/Signup/CheckBox/CheckBox';
 
 function Signup(){ 
     const naviagte = useNavigate();
+    
+    //초기값세팅-이름, 생년월일, 핸드폰전화, 아이디, 비밀번호, 비밀번호확인 
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [birth, setBirth] = useState("");
+    const [id, setId] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordConfirm, setPasswordConfirm] = useState("");
 
-    const [nameValid,setNameValid] = useState(true);
-    const [phoneNumValid, setPhoneNumValid] = useState(true);
-    const [birthValid,setBirthValid] = useState(true);
-    const [idValid, setIdValid] = useState(true);
-    const [passwordValid, setPasswordValid] = useState(true);
-    const [rePasswordValid, setRePasswordValid] = useState(true);
+    // 오류메세지 상태 저장
+    const [nameMessage, setNameMessage] =useState("");
+    const [idMessage, setIdMessage] =useState("");
+    const [phoneMessage, setPhoneMessage] =useState("");
+    const [birthMessage, setBirthMessage] =useState("");
+    const [passwordMessage, setPasswordMessage] =useState("");
+    const [passwordConfirmMessage, setPasswordConfirmMessage] =useState("");
 
-   // 정규표현식을 사용해서 개별 숫자 지정해주기 
-    const regularExpression = {
-        spcialChar : /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\']/g,
-        number : /[0-9]/g,
-        string : /[a-zA-Z]/g,
-        phoneNum :/^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/,
-    };
+     // 유효성 검사
+    const [isName, setIsName] =useState(false);
+    const [isId, setIsId] =useState(false);
+    const [isPhone, setIsPhone] =useState(false);
+    const [isBirth, setIsBirth] =useState(false);
+    const [isPassword, setIsPassword] =useState(false);
+    const [isPasswordConfirm, setIsPasswordConfirm] =useState(false);
 
-    const desc ={
-        name : "1자이상 10자이하로 입력해주세요.",
-        birth : "'.'빼고 생년월일 8자를 입력해주세요",
-        phoneNum : " '-'을 포함해서 입력해주세요.",
-        id : "4-12자 영문 또는 숫자를 사용하여 입력해주세요",
-        //문자 조합수식 생각해보기 
-        password : "영문(소문자),숫자, 특수문자 최소 2가지 이상의 문자 조합 8-16자로 입력해주세요",
-        rePassword : "비밀번호를 한번 더 입력해 주세요 "
-    };
-    //초기값 설정해주기
-    const [inputValue,setInputValue]= useState({
-        name : "",
-        birth : "",
-        phoneNum:"",
-        id : "",
-        password :"",
-        rePassword:"",
-    });
- 
+    //이름 
+    const onChangeName = (e) => {
+        const currentName = e.target.value;
+        setName(currentName);
+     
+        if (currentName.length < 1 || currentName.length >= 10) {
+          setNameMessage("이름을 1글자 이상 10글자 이하로 입력해주세요!");
+          setIsName(false);
+        } else {
+          setNameMessage("사용가능한 이름입니다.");
+          setIsName(true);
+        }
+      };
+      //phoneNum
+      const onChangePhone = (getNumber) => {
+        const currentPhone = getNumber;
+        setPhone(currentPhone);
+        const phoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+     
+        if (!phoneRegExp.test(currentPhone)) {
+          setPhoneMessage("올바른 형식이 아닙니다!");
+          setIsPhone(false);
+        } else {
+          setPhoneMessage("사용 가능한 번호입니다:)");
+          setIsPhone(true);
+        }
+      };
+      const addHyphen = (e) => {
+        const currentNumber = e.target.value;
+        setPhone(currentNumber);
+        if (currentNumber.length == 3 || currentNumber.length == 8) {
+          setPhone(currentNumber + "-");
+          onChangePhone(currentNumber + "-");
+        } else {
+          onChangePhone(currentNumber);
+        }
+      };
+      //id
+      const onChangeId = (e) => {
+        const currentId = e.target.value;
+        setId(currentId);
+        const idRegExp = /^[a-zA-z0-9]{4,12}$/;
+     
+        if (!idRegExp.test(currentId)) {
+          setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요!");
+          setIsId(false);
+        } else {
+          setIdMessage("사용가능한 아이디 입니다:)");
+          setIsId(true);
+        }
+      };
+      //생년월일 
+      const onChangeBirth = (e) => {
+        const currentBirth = e.target.value;
+        setBirth(currentBirth);
+        const birthRegExp = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+        if(!birthRegExp.test(currentBirth)){
+            setBirthMessage("생년월일 8자리를 입력해주세요!");
+            setIsBirth(false);
+        } else{
+            setBirthMessage("올바는 형식입니다:)");
+            setIsBirth(true);
+        }
+      };
+      //비밀번호 
+      const onChangePassword = (e) => {
+        const currentPassword = e.target.value;
+        setPassword(currentPassword);
+        const passwordRegExp =
+        /^(?!((?:[A-Za-z]+)|(?:[~!@#$%^&*()_+=]+)|(?=[0-9]+))$)[A-Za-z\d~!@#$%^&*()_+=]{8,16}$/;
+        if (!passwordRegExp.test(currentPassword)) {
+          setPasswordMessage("숫자+영문자+특수문자 조합으로 8자리 이상 16자리 이하 입력해주세요!");
+          setIsPassword(false);
+        } else {
+          setPasswordMessage("안전한 비밀번호 입니다:)");
+          setIsPassword(true);
+        }
+      };
+      //비밀번호확인 
+      const onChangePasswordConfirm = (e) => {
+        const currentPasswordConfirm = e.target.value;
+        setPasswordConfirm(currentPasswordConfirm);
+        if (password !== currentPasswordConfirm) {
+          setPasswordConfirmMessage("비밀번호를 동일하게 입력해주세요:(");
+          setIsPasswordConfirm(false);
+        } else {
+          setPasswordConfirmMessage("동일한 비밀번호를 입력했습니다:)");
+          setIsPasswordConfirm(true);
+        }
+      };
+
     //button을 눌렀을떄 Login페이지로 이동하기 
     const goLogin = () => {
         naviagte("/login")
     }
-    const handleIdInput = (e) =>{
-        const idValue = e.target.value;
-        setId(idValue);
-        (idValue.length<13 && idValue.length>=4)&&(pw.length<17&&pw.length>=8)
-        ? setIsValid(true)
-        :setIsValid(false) 
-      };  
-      
-      const handlePwInput = (e) =>{
-        const pwValue = e.target.value;
-        setPw(pwValue);
-        (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=8)
-        ? setIsValid(true)
-        :setIsValid(false)
-      };
 
+    //약관동의 유효성검사 
+    //1. 전체동의로 동의창 활성화
+    //2. 필수란만 동의후 동의창 활성화 되기
+    //3. 선택창만 선택시에는 동의창 비활성화 시키기 
+    //4. 컴포넌트화 시키기 
+
+    const [allCheck,setAllCheck] = useState(false);
+    const [serviceCheck, setServiceCheck]=useState(false);
+    const []=useState(false);
+    const []=useState(false);
+    const []=useState(false);
+    const []=useState(false);
     
+    // <할일>
+    // 1. 조건식에 따른 input창 색변화 
+    // 2. 약관동의 유효성 검사 - 구체적인것은 명시함 
+    // 3. input 창과 약관동의로 활성화 시키기 
+    // 4. fetch함수를 통한 api 연결식 세워보기 
+
 
     return (
         <div className='signup-flex-wrpper signup'>
@@ -73,47 +157,77 @@ function Signup(){
                     <div>
                         <input
                             type="text"
-                            name = "name" 
-                            className='input-style' 
+                            name = "userName" 
+                            className={isName?'input-style success':'input-style'} 
                             placeholder='이름'
+                            value={name}
+                            onChange={onChangeName}
                             />
-                        <div className='description'>{desc.name}</div>   
+                        <div className={isName?'input-message success':'input-message'}>{nameMessage}</div>   
                     </div>
                     <div>
-                        <input className='input-style' placeholder='휴대폰 번호'/>
-                        <div className='description'>{desc.phoneNum}</div> 
+                        <input 
+                            className={isPhone?'input-style success':'input-style'}
+                            name='phoneNum' 
+                            placeholder='휴대폰 번호'
+                            value={phone} 
+                            onChange={addHyphen}
+                            
+                            />
+                        <div className={isPhone?'input-message success' : 'input-message'}>{phoneMessage}</div> 
                     </div>
                     <div>
-                        <input className='input-style'placeholder='생년월일 예)YYYYMMDD'/>
-                        <div className='description'>{desc.birth}</div> 
+                        <input 
+                            className={isBirth?'input-style success':'input-style'}
+                            id='birth'
+                            name='birth'
+                            placeholder='생년월일 예)YYYYMMDD'
+                            value={birth}
+                            onChange={onChangeBirth}
+                            />
+                        <div className={isBirth?'input-message success' : 'input-message'}>{birthMessage}</div> 
                     </div>
                     <div>
                         <input 
                             id='id-input'
-                            className='input-style'
+                            className={isId?'input-style success':'input-style'}
+                            name='id'
                             placeholder='아이디(영문 또는 숫자 4-12자)'
-                            onChange={handleIdInput}
+                            value={id} 
+                            onChange={onChangeId}
                         />
-                        <div className='description'>{desc.id}</div> 
+                        <div className={isId?'input-message success' : 'input-message'}>{idMessage}</div> 
                     </div>
                     <div>
-                        <input className='input-style' type="password" placeholder='비밀번호 (영문 소문자, 숫자, 특수문자 조합 8-16자)'onChange={handlePwInput}/>
-                        <div className='description'>{desc.password}</div> 
+                        <input 
+                            className={isPassword?'input-style success':'input-style'}
+                            type="password"
+                            id='password' 
+                            name='password'
+                            placeholder='비밀번호 (영문 소문자, 숫자, 특수문자 조합 8-16자)'
+                            value={password}
+                            onChange={onChangePassword}
+                            
+                        />
+                        <div className={isPassword?'input-message success' : 'input-message'}>{passwordMessage}</div> 
                     </div>
                     <div>
-                        <input className='input-style'placeholder='비밀번호 확인'/>
-                        <div className='description'>{desc.name}</div> 
+                        <input 
+                            className={isPasswordConfirm?'input-style success':'input-style'}
+                            id='passwordConfirm'
+                            name='passwordConfirm'
+                            type="password"
+                            placeholder='비밀번호 확인'
+                            value={passwordConfirm}
+                            onChange={onChangePasswordConfirm}
+                        />
+                        <div className={isPasswordConfirm?'input-message success' : 'input-message'}>{passwordConfirmMessage}</div> 
                     </div>
                     
                 </div>
-                <div className='check-box-stlye'>
+                <div className='check-box-style'>
                     <h3>오삼록 회원 약관</h3>
-                    <CheckBox title={"전체 약관에 모두 동의합니다."}/>
-                    <CheckBox title={"[필수] 오삼록 서비스 이용약관"}/>
-                    <CheckBox title={"[필수] 개인정보 수집 동의(오삼록)"}/>
-                    <CheckBox title={"[필수] 개인정보 수집/이용 동의(오삼록)"}/>
-                    <CheckBox title={"[선택] 개인정보 제공동의(오삼록)"}/>
-                    <CheckBox title={"[선택] 개인정보 국외이전 동의(오삼록)"}/>
+                    <CheckBox/>
                 </div>
                 <div>
                     <button className='signup-button'>동의하고 가입</button>

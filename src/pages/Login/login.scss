@@ -10,7 +10,8 @@
 .headerbar-flex{
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center; 
+    padding: 20px ;   
 }
 
 .close-button-style{
@@ -27,6 +28,7 @@
 }
 
 .noice{
+    margin: 30px;
     text-align: center;
     font-weight: bold;
     font-size: 25px;
