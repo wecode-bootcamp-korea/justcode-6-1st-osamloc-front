@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import axios from 'axios';
 import Goods from "./Goods";
 
+import Pagination from "./Pagination";
 import "./index.scss";
 
 function GoodsList(props) {
@@ -29,12 +31,12 @@ function GoodsList(props) {
   const [total, setTotal] = useState(true);
   // fetch로 받아온 목록 데이터
   const [goodsList, setGoodsList] = useState([]);
-
   
   useEffect(() => {
-    fetch("/data/product/product.json")
-      .then((res) => res.json())
-      .then((data) => {
+    axios.get("/data/product/product.json")
+      // .then((res) => res.json())
+      .then((res) => {
+        let data = res.data
         for (let i in sortCategory) {
           if (sortCategory[i].view && sortCategory[i].name === "리뷰많은순") {
             let goods = data.goods.sort((a, b) => {
@@ -129,6 +131,17 @@ function GoodsList(props) {
     }
   }, [category]);
 
+  // pagination에필요한 state
+  const [limit, setLimit] = useState(9);
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
+
+  useEffect(()=>{
+    setPage(1);
+  }, [sortCategory], [category])
+
+  // console.log(boolean(category));
+
   return (
     <>
       <div className="product-sort-filter">
@@ -181,12 +194,12 @@ function GoodsList(props) {
       </div>
       <div className="goods-list">
         {/* "전체" 카테고리 */}
-        {goodsList.map((goods) => {
+        {goodsList.slice(offset, offset + limit).map((goods) => {
           return <>{total && <Goods key={goods.id} goods={goods} />}</>;
         })}
 
         {/* "전체"를 제외한 카테고리 */}
-        {goodsList.map((goods, index) => {
+        {goodsList.slice(offset, offset + limit).map((goods) => {
           return (
             <>
               {category.map(
@@ -198,6 +211,13 @@ function GoodsList(props) {
           );
         })}
       </div>
+
+      <Pagination
+        total={goodsList.length}
+        limit={limit}
+        page={page}
+        setPage={setPage}
+      />
     </>
   );
 }

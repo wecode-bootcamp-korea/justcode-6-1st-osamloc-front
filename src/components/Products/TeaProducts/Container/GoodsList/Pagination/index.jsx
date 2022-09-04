@@ -1,26 +1,103 @@
-function Pagination() {
+function Pagination({ total, limit, page, setPage }) {
+  const numPages = Math.ceil(total / limit);
+  let pageLength = Array(numPages)
+    .fill()
+    .map((_, i) => {
+      return i;
+    });
+
   return (
-    <div id="pagination" className="newPagination for-mobile ">
-      <span className="btn btn-home is-disabled">페이지 처음으로</span>
-      <span className="btn btn-prev is-disabled">이전 페이지</span>
-
-      <Link to={""} className="num on">
-        1
-      </Link>
-      <Link to={""} className="num ">
-        2
-      </Link>
-      <Link to={""} className="num ">
-        3
-      </Link>
-      <Link to={""} className="num ">
-        4
-      </Link>
-
-      <span className="btn btn-next is-disabled">다음 페이지</span>
-      <span className="btn btn-end is-disabled">페이지 끝으로</span>
-    </div>
+    <nav className="pagination">
+      <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+        &lt;
+      </button>
+      {pageLength.map((_, i) => (
+        <button
+          key={i + 1}
+          onClick={() => setPage(i + 1)}
+          aria-current={page === i + 1 ? "page" : null}
+        >
+          {i + 1}
+        </button>
+      ))}
+      <button onClick={() => setPage(page + 1)} disabled={page === numPages}>
+        &gt;
+      </button>
+    </nav>
   );
 }
 
 export default Pagination;
+
+
+// import styled from "styled-components";
+
+// function Pagination({ total, limit, page, setPage }) {
+//   const numPages = Math.ceil(total / limit);
+//   let pageLength = Array(numPages)
+//   .fill()
+//   .map((el, i) => {
+//     return i;
+//   });
+
+//   return (
+//     <>
+//       <Nav>
+//         <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
+//           &lt;
+//         </Button>
+//         {pageLength.map((_, i) => (
+//           <Button
+//             // key={i + 1}
+//             onClick={() => setPage(i + 1)}
+//             aria-current={page === i + 1 ? "page" : null}
+//           >
+//             {i + 1}
+//           </Button>
+//         ))}
+//         <Button onClick={() => setPage(page + 1)} disabled={page === numPages}>
+//           {/* &gt; */}
+//         </Button>
+//       </Nav>
+//     </>
+//   );
+// }
+
+// const Nav = styled.nav`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 4px;
+//   margin: 16px;
+// `;
+
+// const Button = styled.button`
+//   border: none;
+//   border-radius: 8px;
+//   padding: 8px;
+//   margin: 0;
+//   background: black;
+//   color: white;
+//   font-size: 1rem;
+
+//   &:hover {
+//     background: tomato;
+//     cursor: pointer;
+//     transform: translateY(-2px);
+//   }
+
+//   &[disabled] {
+//     background: grey;
+//     cursor: revert;
+//     transform: revert;
+//   }
+
+//   &[aria-current] {
+//     background: deeppink;
+//     font-weight: bold;
+//     cursor: revert;
+//     transform: revert;
+//   }
+// `;
+
+// export default Pagination;
