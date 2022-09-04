@@ -1,0 +1,14 @@
+{
+  "users": {
+    "id": 1,
+    "account": "warrent",
+    "name": "이동호",
+    "phone": "016-2222-3333",
+    "email": "odhe@gmail.com",
+    "address": {
+      "address_post": "05698",
+      "address_main": "서울 송파구 송파대로 19길",
+      "address_detail": "104동"
+    }
+  }
+}

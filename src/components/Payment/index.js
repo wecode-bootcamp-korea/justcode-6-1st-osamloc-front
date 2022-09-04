@@ -8,10 +8,4 @@ import PayPrice from "./PayPrice";
 
 function index() {}
 
-export {
-  PayFormCredit,
-  PayFormCustomer,
-  PayFormDelivery,
-  PayFormProduct,
-  PayPrice,
-};
+export { PayFormCredit, PayFormCustomer, PayFormDelivery, PayFormProduct, PayPrice };

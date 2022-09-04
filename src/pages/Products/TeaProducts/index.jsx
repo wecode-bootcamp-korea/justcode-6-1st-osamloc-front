@@ -2,9 +2,7 @@ import "./index.scss";
 
 import {
   ProductSideMenuBar,
-  TopSortBar,
-  ProductSortFilter,
-  GoodsList
+  Container
 } from "../../../components/Products";
 
 function TeaProducts() {
@@ -17,9 +15,7 @@ function TeaProducts() {
         <div className="tea-shop-wrap">
           <ProductSideMenuBar />
           <div className="inner-container">
-            <TopSortBar />
-            <ProductSortFilter />
-            <GoodsList />
+            <Container />
           </div>
         </div>
       </div>

@@ -1,0 +1,149 @@
+.login-container{
+    width: 520px;
+}
+
+.container-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.headerbar-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.close-button-style{
+    border: none;
+    background-color: white;
+    position: absolute;
+    margin-left : 27%;
+    cursor: pointer;
+
+    .close-button-size{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.noice{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+//input을 둘러쌓은 div
+.login-wrapper{
+    border: 1px solid lightgray;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+
+    &:hover{
+        border: 1px solid gray; 
+    }
+
+    .login-flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;      
+    }
+    .login-input{
+        width: 95%;
+        border: none;
+        margin: 10px;
+        font-size: 16px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+ //아이디저장체크박스 
+.check-box-stlye{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+//로그인
+.button-wrapper{
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+
+    .button-style{
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        color: #c6c6c6;
+        font-size: 16px;
+    }
+}
+
+//이미지& 다양한 소셜커머스 로그인 
+.img-flex{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    font-size: 15px;
+
+ .logo-size{
+        width: 45px;
+        height: 45px;
+    }
+}
+
+//아이디&비밀번호 찾기 
+
+.find-tag-align{
+    text-align: center;
+    margin-top: 20px;
+ 
+    .find-tag{
+        text-decoration: none;
+        text-align: center;
+        color: #898989;
+        margin-top: 20px;
+    }
+}
+
+.signup-wrapper{
+    border: 1px solid lightgray;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+      
+    .signup-button-style{
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: white;
+        font-size: 16px;
+        border-radius: 6px;
+        font-weight: bold;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+   
+    
+
+
+

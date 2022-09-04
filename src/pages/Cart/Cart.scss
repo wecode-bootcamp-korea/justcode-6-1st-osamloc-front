@@ -1,6 +1,7 @@
 // 전체 레이아웃
 .wrap {
   line-height: 1.5;
+  max-width: 1903px;
 }
 
 // 페이지 타이틀
@@ -11,48 +12,45 @@
     display: flex;
     justify-content: left;
     padding: 48px 0 30px;
+
+    .page-title {
+      font-size: 30px;
+    }
+  }
+
+  // 전체 이미지 스타일
+  .image-png {
+    max-width: 100%;
+    width: 5vw;
+    height: auto;
+    vertical-align: top;
+  }
+
+  //아래 3개는 중복되는 부분 정의
+
+  .flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-bewteen {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-left {
+    display: flex;
+    justify-content: left;
+  }
+
+  .info-button {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin-top: 20px;
   }
 }
 
-// 전체 이미지 스타일
-.image-png {
-  max-width: 100%;
-  width: 7vw;
-  height: auto;
-  vertical-align: top;
-}
-
-// 전체 체크박스 스타일
-.checkbox {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
-  vertical-align: middle;
-  margin-right: 10px;
-  box-sizing: border-box;
-}
-
-//아래 3개는 중복되는 부분 정의
 .flex-justify-center {
   display: flex;
   justify-content: center;
-}
-
-.flex-align-center {
-  display: flex;
-  align-items: center;
-}
-
-.flex-bewteen {
-  display: flex;
-  justify-content: space-between;
-}
-
-.info-button {
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  margin-top: 20px;
 }

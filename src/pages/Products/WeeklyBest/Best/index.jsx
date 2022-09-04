@@ -15,7 +15,7 @@ function Best() {
           <div className="date-filter">
             오설록에서 많이 선물된 선물세트를 모았어요.
           </div>
-        </ListContent>{" "}
+        </ListContent>
       </div>
     </div>
   );

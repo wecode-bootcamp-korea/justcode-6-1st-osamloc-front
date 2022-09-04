@@ -1,4 +1,4 @@
-.price-info {
+.pay-price-info {
   .price-info-inner {
     border: 1px solid #333;
     border-radius: 8px;
@@ -8,19 +8,18 @@
 
     .price-info-ul {
       margin-bottom: 15px;
-      padding-bottom: 15px;
       border-bottom: 1px solid #333;
     }
 
     .price-info-li {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
       font-size: 13px;
-      color: #666;
+      border-bottom: 1px solid #f6f6f6;
     }
 
     .price-info-li-total {
       margin-bottom: 20px;
-      color: #666;
       font-weight: 600;
     }
 
