@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 
 const slideimg = [
     {
         id: 1,
         imgUrl: "./../image/main/main_slide01.png",
-        title: "공식 홈페이지 단독\n추석 하루 특가",
+        title: <>공식 홈페이지 단독<br />추석 하루 특가</>,
         info : <>최대 50% 할인 + 10% 뷰티포인트 페이백 + 사은품 증정<br /> 역대급 추석 혜택을 지금 바로 만나보세요!</>,
         data : "08.22 - 09.05"
     },
@@ -39,23 +39,39 @@ const slideimg = [
     },
 ]
 
-console.log(slideimg);
-console.log(slideimg[0].title);
+
 function MainSlide() {
-    return(<>
+
+    const [ slideIdx, setSlideIdx ] = useState(0);
+
+    const nextSlide =() => {
+        slideIdx+1 < slideimg.length  ? setSlideIdx(slideIdx + 1) : setSlideIdx(0);
+    }
+    const prevSlide =() => {
+        slideIdx === slideimg.length - 5 ? setSlideIdx(4) : setSlideIdx(slideIdx - 1);
+    }
     
+    // useEffect(() => {
+    //     console.log('fade 효과');
+    // }, [slideIdx])
+
+    return(<>
         <div className="main_bg">
             <div>
-                <img src="./../image/main/main_slide02.png" />
+                <img src={slideimg[slideIdx].imgUrl} alt="메인 슬라이드"/>
                 <div className="main_slide_wrapper">
+                    <div className="main_slide_btn">
+                        <button type="button" className="main_slide_leftbtn" onClick={prevSlide} ></button>
+                        <button type="button" className="main_slide_rightbtn" onClick={nextSlide}></button>
+                    </div>
                     <div className="main_slide_textbox">
-                        <div className="main_slide_tit">추석 리미티드<br /> 보자기 포장 선물세트</div>
-                        <div className="main_slide_info">오설록의 시그니처 색으로 물들인 보자기로 포장된<br /> 프리미엄 선물 세트를 추석 한정으로 만나보세요.</div>
-                        <div className="main_slide_date">08.22 - 09.05</div>
+                        <div className="main_slide_tit">{slideimg[slideIdx].title}</div>
+                        <div className="main_slide_info">{slideimg[slideIdx].info}</div>
+                        <div className="main_slide_date">{slideimg[slideIdx].data}</div>
                     </div>
                     <div className="main_slide_eventbtn">
-                            <Link to="/main" className="slide_eventbtn">이벤트 전체보기</Link>
-                        </div>
+                        <Link to="/main" className="slide_eventbtn">이벤트 전체보기</Link>
+                    </div>
                 </div>
             </div>
         </div>

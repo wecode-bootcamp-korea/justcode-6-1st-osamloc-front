@@ -2,13 +2,13 @@ import React from 'react';
 
 import './index.scss';
 
-import BannerSection from './BannerSection/BannerSection';
 import BestSection from './BestSection/BestSection';
 import CardSection from './CardSection/CardSection';
 import MainSlide from './MainSlide/MainSlide';
 import Notice from './Notice/Notice';
 import RecordSection from './RecordSection/RecordSection';
 import SubscribeSection from './SubscribeSection/SubscribeSection';
+import BannerSection from './BannerSection/\bindex';
 
 function Main() {
   return (

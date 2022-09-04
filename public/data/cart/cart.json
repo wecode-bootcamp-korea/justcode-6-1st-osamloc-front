@@ -1,0 +1,56 @@
+{
+  "cart_list": [
+    {
+      "id": 1,
+      "quantity": 4,
+      "status": true,
+      "detail": {
+        "name": "시크릿 티 스토리",
+        "img_url": "https://www.osulloc.com/upload/kr/ko/adminImage/JY/QU/304_20210825170710069ZN.png?quality=80",
+        "price_origin": 26000,
+        "sale": 0.3,
+        "wrap": false,
+        "present": true
+      }
+    },
+    {
+      "id": 2,
+      "quantity": 2,
+      "status": true,
+      "detail": {
+        "name": "콤부차 피치동백&제주영귤 4입",
+        "img_url": "https://www.osulloc.com/upload/kr/ko/adminImage/BS/XP/304_20220705092306045SP.png?quality=80",
+        "price_origin": 16000,
+        "sale": 0.4,
+        "wrap": true,
+        "present": true
+      }
+    },
+    {
+      "id": 3,
+      "quantity": 3,
+      "status": true,
+      "detail": {
+        "name": "프리미엄 티 컬렉션",
+        "img_url": "https://www.osulloc.com/upload/kr/ko/adminImage/HC/LW/304_20201027143838409ZN.png?quality=80",
+        "price_origin": 36000,
+        "sale": 0.2,
+        "wrap": true,
+        "present": false
+      }
+    },
+    {
+      "id": 4,
+      "quantity": 1,
+      "status": false,
+      "detail": {
+        "name": "제주화산암차 30g",
+        "img_url": "https://www.osulloc.com/upload/kr/ko/adminImage/LU/OP/304_20191007151511229GH.png?quality=80",
+        "price_origin": 10000,
+        "sale": 0.1,
+        "wrap": false,
+        "present": false
+      }
+    }
+  ]
+}

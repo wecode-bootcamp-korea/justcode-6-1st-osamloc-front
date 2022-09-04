@@ -15,13 +15,11 @@ function PayFormCredit() {
   };
 
   const slideUp = {
-    background:
-      "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn.png) no-repeat center / cover",
+    background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn.png) no-repeat center / cover",
     margin: "0",
   };
   const slideDown = {
-    background:
-      "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png) no-repeat center / cover",
+    background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png) no-repeat center / cover",
     margin: "0",
   };
 
@@ -35,11 +33,7 @@ function PayFormCredit() {
               <p>결제 수단 선택</p>
             </div>
             <div className="pay-info-title-right">
-              <div
-                className="pay-info-title-right-drop"
-                onClick={customerToggle}
-                style={toggle ? slideUp : slideDown}
-              ></div>
+              <div className="pay-info-title-right-drop" onClick={customerToggle} style={toggle ? slideUp : slideDown}></div>
             </div>
           </div>
         </div>
@@ -62,11 +56,8 @@ function PayFormCredit() {
               </ul>
               <div className="payment-tool-check">
                 <label className="flex-align-center font14">
-                  <input
-                    type="checkbox"
-                    id="basicAddress"
-                    className="checkbox"
-                  />
+                  <input type="checkbox" id="creditCheck" className="checkbox" />
+                  <label for="creditCheck"></label>
                   선택한 결제수단을 다음에도 사용
                 </label>
               </div>

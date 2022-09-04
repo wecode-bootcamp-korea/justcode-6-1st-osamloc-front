@@ -1,5 +1,5 @@
 // 오른쪽 상품 금액 계산 정보 레이아웃
-.price-info {
+.cart-price-info {
   .price-info-inner {
     border: 1px solid #333;
     border-radius: 8px;
@@ -16,12 +16,10 @@
     .price-info-li {
       margin-bottom: 5px;
       font-size: 13px;
-      color: #666;
     }
 
     .price-info-li-total {
       margin-bottom: 20px;
-      color: #666;
       font-weight: 600;
     }
 
