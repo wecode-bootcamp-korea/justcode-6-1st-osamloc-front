@@ -126,24 +126,13 @@ function Signup(){
         naviagte("/login")
     }
 
-    //약관동의 유효성검사 
-    //1. 전체동의로 동의창 활성화
-    //2. 필수란만 동의후 동의창 활성화 되기
-    //3. 선택창만 선택시에는 동의창 비활성화 시키기 
-    //4. 컴포넌트화 시키기 
-
     const [allCheck,setAllCheck] = useState(false);
     const [serviceCheck, setServiceCheck]=useState(false);
     const []=useState(false);
     const []=useState(false);
     const []=useState(false);
     const []=useState(false);
-    
-    // <할일>
-    // 1. 조건식에 따른 input창 색변화 
-    // 2. 약관동의 유효성 검사 - 구체적인것은 명시함 
-    // 3. input 창과 약관동의로 활성화 시키기 
-    // 4. fetch함수를 통한 api 연결식 세워보기 
+
 
 
     return (
@@ -230,6 +219,7 @@ function Signup(){
                     <CheckBox/>
                 </div>
                 <div>
+                  {/* 스타일 적용해주기 꼭 !!! */}
                     <button className='signup-button'>동의하고 가입</button>
                     <p className='notice-style'>가입 필수 정보 및 약관을 모두 확인해주세요</p>
                 </div>
