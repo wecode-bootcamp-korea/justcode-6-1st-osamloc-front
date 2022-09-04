@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 
 import { PayFormCredit, PayFormCustomer, PayFormDelivery, PayFormProduct, PayPrice } from "./index";
 
 import "./PayForm.scss";
 
 function PayForm() {
-  const [deliveryList, setDeliveryList] = useState("");
+  const params = useParams();
+  const [cartList, setCartList] = useState("");
+
   const [userData, setUserData] = useState("");
 
   useEffect(() => {
@@ -14,9 +16,29 @@ function PayForm() {
       .then((res) => res.json())
       .then((data) => {
         setUserData(data.users);
-        setDeliveryList(data.users.address);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("/data/cart/cart.json", { method: "GET" })
+      .then((res) => res.json())
+      .then((data) => {
+        if (String(params.cartlist) !== "all") {
+          const arr = params.cartlist.split("-");
+          setCartList(
+            data.cart_list.filter((el) => {
+              return arr.includes(String(el.id));
+            })
+          );
+        } else if (String(params.cartlist) === "all") {
+          setCartList(
+            data.cart_list.filter((el) => {
+              return el.status === true;
+            })
+          );
+        }
+      });
+  }, [params]);
 
   return (
     <>
@@ -25,13 +47,13 @@ function PayForm() {
         <section className="pay-form-section">
           <div className="pay-form-section-inner">
             {/* 주문고객정보 */}
-            <PayFormCustomer userData={userData} />
+            {userData && <PayFormCustomer userData={userData} />}
 
             {/* 배송지정보 */}
-            <PayFormDelivery deliveryList={deliveryList} />
+            {userData && <PayFormDelivery userData={userData} />}
 
             {/* 주문상품정보 */}
-            <PayFormProduct />
+            <PayFormProduct cartList={cartList} />
 
             {/* 결제수단정보 */}
             <PayFormCredit />
@@ -54,7 +76,7 @@ function PayForm() {
         </section>
 
         {/* 결제 금액 정보 */}
-        <PayPrice />
+        <PayPrice cartList={cartList} />
       </form>
     </>
   );

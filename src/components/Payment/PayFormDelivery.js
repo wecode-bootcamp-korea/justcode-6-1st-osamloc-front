@@ -3,7 +3,52 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./PayForm.scss";
 
-function PayFormDelivery() {
+function PayFormDelivery({ userData }) {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [addressPost, setAddressPost] = useState("");
+  const [addressMain, setAddressMain] = useState("");
+  const [addressDetail, setAddressDetail] = useState("");
+
+  const fillInput = () => {
+    setName(userData.name);
+    setPhone(userData.phone);
+    setAddressPost(userData.address.address_post);
+    setAddressMain(userData.address.address_main);
+    setAddressDetail(userData.address.address_detail);
+  };
+
+  const tracePhone = (state) => {
+    if (phone) {
+      const index = phone.indexOf("-");
+
+      const phoneBefore = phone.slice(0, index);
+      const phoneAfter = phone.slice(index + 1).replace("-", "");
+
+      if (state === 0) {
+        return phoneBefore;
+      } else if (state === 1) {
+        return phoneAfter;
+      }
+    } else {
+      return "";
+    }
+  };
+
+  const addressSearch = () => {
+    new daum.Postcode({
+      width: 500,
+      height: 500,
+      oncomplete: function (data) {
+        setAddressPost(data.zonecode);
+        setAddressMain(data.address);
+      },
+    }).open({
+      left: 2600,
+      top: 200,
+    });
+  };
+
   return (
     <>
       {/* 배송지정보 */}
@@ -14,7 +59,7 @@ function PayFormDelivery() {
               <p>배송지정보</p>
             </div>
             <div className="pay-info-title-right">
-              <button type="button" className="skip_btn">
+              <button type="button" className="skip_btn" onClick={fillInput}>
                 주문 고객과 동일
               </button>
             </div>
@@ -27,33 +72,62 @@ function PayFormDelivery() {
                 <tr className="customer-info-tr">
                   <th className="customer-info-th">받는 분</th>
                   <td className="customer-info-td">
-                    <input type="text" className="customer-info-input"></input>
+                    <input
+                      type="text"
+                      className="customer-info-input"
+                      value={name}
+                      onChange={(e) => {
+                        setName(e.target.value);
+                      }}
+                    ></input>
                   </td>
                 </tr>
                 <tr className="customer-info-tr">
                   <th className="customer-info-th">휴대전화</th>
                   <td className="customer-info-td">
                     <div className="customer-info-phone">
-                      <select className="customer-info-input phone">
-                        <option value="naver.com">010</option>
-                        <option value="hanmail.net">011</option>
-                        <option value="gmail.com">016</option>
-                        <option value="nate.com">017</option>
-                        <option value="1">018 </option>
-                        <option value="1">019 </option>
+                      <select
+                        className="customer-info-input phone"
+                        value={tracePhone(0)}
+                        onChange={(e) => {
+                          setPhone(e.target.value);
+                        }}
+                      >
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018 </option>
+                        <option value="019">019 </option>
                       </select>
                       <span className="at">-</span>
                     </div>
                     <div className="customer-info-select">
-                      <input type="text" className="customer-info-input" placeholder=" ' - ' 없이 휴대폰번호 입력"></input>
+                      <input
+                        type="text"
+                        className="customer-info-input"
+                        placeholder=" ' - ' 없이 휴대폰번호 입력"
+                        value={tracePhone(1)}
+                        onChange={(e) => {
+                          setPhone(e.target.value);
+                        }}
+                      ></input>
                     </div>
                   </td>
                 </tr>
                 <tr className="customer-info-tr">
                   <th className="customer-info-th">주소</th>
                   <td className="customer-info-td block">
-                    <input type="text" className="customer-info-input address"></input>
-                    <button type="button" className="address_btn">
+                    <input
+                      type="text"
+                      className="customer-info-input address"
+                      value={addressPost}
+                      onChange={(e) => {
+                        setAddressPost(e.target.value);
+                      }}
+                      readOnly
+                    ></input>
+                    <button type="button" className="address_btn" onClick={addressSearch}>
                       우편번호 찾기
                     </button>
                   </td>
@@ -61,13 +135,28 @@ function PayFormDelivery() {
                 <tr className="customer-info-tr">
                   <th className="customer-info-th"></th>
                   <td className="customer-info-td block">
-                    <input type="text" className="customer-info-input"></input>
+                    <input
+                      type="text"
+                      className="customer-info-input"
+                      value={addressMain}
+                      onChange={(e) => {
+                        setAddressMain(e.target.value);
+                      }}
+                    ></input>
                   </td>
                 </tr>
                 <tr className="customer-info-tr">
                   <th className="customer-info-th"></th>
                   <td className="customer-info-td block">
-                    <input type="text" className="customer-info-input" placeholder="상세주소 입력"></input>
+                    <input
+                      type="text"
+                      className="customer-info-input"
+                      placeholder="상세주소 입력"
+                      value={addressDetail}
+                      onChange={(e) => {
+                        setAddressDetail(e.target.value);
+                      }}
+                    ></input>
                   </td>
                 </tr>
                 <tr className="customer-info-tr">

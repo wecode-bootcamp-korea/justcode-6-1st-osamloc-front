@@ -5,7 +5,6 @@ import PayFormProductItem from "./PayFormProductItem";
 import "./PayForm.scss";
 
 function PayFormProductItemList({ cartList }) {
-  console.log(cartList);
   return (
     <>
       <ul>

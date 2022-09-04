@@ -4,6 +4,18 @@ import { BrowserRouter, Routes, Route, Link, useLocation, useParams } from "reac
 import "./PayForm.scss";
 
 function PayFormProductItem({ id, quantity, name, img_url, price_origin, sale, wrap, present }) {
+  const reNumber = (total) => {
+    total = String(Math.ceil(total));
+
+    if (7 > total.length && total.length > 3) {
+      total = total.slice(0, -3) + "," + total.slice(-3);
+    } else if (10 > total.length && total.length > 6) {
+      total = total.slice(0, -6) + "," + total.slice(-6, -3) + "," + total.slice(-3);
+    }
+
+    return total;
+  };
+
   return (
     <>
       <li className="list-item flex-bewteen padding-zero">
@@ -20,7 +32,7 @@ function PayFormProductItem({ id, quantity, name, img_url, price_origin, sale, w
         </div>
         <div className="list-item-button flex-align-center">
           <div className="list-item-price flex-bewteen flex-align-center">
-            <p>{price_origin * quantity}원 /</p>
+            <p>{reNumber(price_origin * quantity)}원 /</p>
             <p className="list-item-image-text-p2">{quantity}개</p>
           </div>
         </div>

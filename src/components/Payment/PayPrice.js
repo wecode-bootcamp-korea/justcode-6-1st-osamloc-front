@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./PayPrice.scss";
 
-function PayPrice() {
+function PayPrice({ cartList }) {
   function onClickPayment() {
     /* 1. 가맹점 식별하기 */
     const { IMP } = window;
@@ -38,30 +38,66 @@ function PayPrice() {
     }
   }
 
+  const [price, setPrice] = useState(0);
+  const [sale, setSale] = useState(0);
+  const [wrap, setWrap] = useState(0);
+  const [delivery, setDelivery] = useState(price > 30000 ? 2500 : 0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  let usePrice = 0;
+  let useSale = 0;
+  let useWrap = 0;
+
+  const reNumber = (total) => {
+    total = String(total);
+
+    if (7 > total.length && total.length > 3) {
+      total = total.slice(0, -3) + "," + total.slice(-3);
+    } else if (10 > total.length && total.length > 6) {
+      total = total.slice(0, -6) + "," + total.slice(-6, -3) + "," + total.slice(-3);
+    }
+
+    return total;
+  };
+
+  useEffect(() => {
+    if (cartList.length > 0) {
+      cartList.forEach((element) => {
+        usePrice += element.detail.price_origin * element.quantity;
+        useSale += element.detail.price_origin * element.quantity * element.detail.sale;
+        useWrap += element.detail.wrap && 2000;
+      });
+      setPrice(reNumber(usePrice + useWrap));
+      setSale(reNumber(useSale));
+      setWrap(reNumber(useWrap));
+      setTotalPrice(reNumber(usePrice - useSale + useWrap + delivery));
+    }
+  }, [cartList]);
+
   return (
     <>
       {/* 결제 금액 정보 */}
-      <section className="price-info">
+      <section className="pay-price-info">
         <div className="price-info-inner">
           <ul className="price-info-ul">
             <li className="price-info-li flex-bewteen">
               <p>총 상품 금액</p>
-              <p>+16000원</p>
+              <p>+ {price}원</p>
             </li>
             <li className="price-info-li flex-bewteen">
               <p>총 할인 혜택</p>
-              <p>-0원</p>
+              <p style={{ color: "red" }}>- {sale}원</p>
             </li>
 
             <li className="price-info-li flex-bewteen">
               <p>배송비</p>
-              <p>+2500원</p>
+              <p>+ {delivery}원</p>
             </li>
           </ul>
 
           <div className="price-info-li-total flex-bewteen">
-            <p>결제 예상 금액</p>
-            <p>15000원</p>
+            <p>최종 결제 금액</p>
+            <p>{totalPrice}원</p>
           </div>
           <div className="price-info-button">
             <button className="price-info-button-inner" onClick={onClickPayment}>

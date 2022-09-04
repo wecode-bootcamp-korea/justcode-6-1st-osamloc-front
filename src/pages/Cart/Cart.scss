@@ -38,6 +38,11 @@
     justify-content: space-between;
   }
 
+  .flex-left {
+    display: flex;
+    justify-content: left;
+  }
+
   .info-button {
     border: 1px solid #e6e6e6;
     border-radius: 4px;

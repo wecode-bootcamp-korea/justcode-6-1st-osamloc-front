@@ -11,6 +11,10 @@
     display: flex;
     justify-content: left;
     padding: 48px 0 30px;
+
+    .page-title {
+      font-size: 30px;
+    }
   }
 
   // 전체 이미지 스타일
@@ -30,19 +34,6 @@
   .flex-bewteen {
     display: flex;
     justify-content: space-between;
-  }
-
-  .customer-info-input {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    background-color: #fff;
-    letter-spacing: -0.03em;
-    padding: 0 10px;
   }
 
   .item {

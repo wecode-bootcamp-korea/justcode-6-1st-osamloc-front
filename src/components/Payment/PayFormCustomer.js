@@ -42,7 +42,7 @@ function PayFormCustomer({ userData }) {
   const tracePhone = (state) => {
     const index = phone.indexOf("-");
 
-    const phoneBefore = phone.slice(0, index - 1);
+    const phoneBefore = phone.slice(0, index);
     const phoneAfter = phone.slice(index + 1).replace("-", "");
 
     if (state === 0) {
@@ -84,11 +84,11 @@ function PayFormCustomer({ userData }) {
                     <th className="customer-info-th">이메일</th>
                     <td className="customer-info-td">
                       <div className="customer-info-email">
-                        <input type="text" className="customer-info-input email" defaultValue={traceEmail(1)}></input>
+                        <input type="text" className="customer-info-input email" defaultValue={traceEmail(0)}></input>
                         <span className="at">@</span>
                       </div>
                       <div className="customer-info-select">
-                        <select className="customer-info-input select" defaultValue={traceEmail(2)}>
+                        <select className="customer-info-input select" defaultValue={traceEmail(1)}>
                           <option value="naver.com">naver.com</option>
                           <option value="hanmail.net">hanmail.net</option>
                           <option value="gmail.com">gmail.com</option>
@@ -113,7 +113,7 @@ function PayFormCustomer({ userData }) {
                         <span className="at">-</span>
                       </div>
                       <div className="customer-info-select">
-                        <input type="text" className="customer-info-input" defaultValue={tracePhone(1)}></input>
+                        <input type="text" className="customer-info-input" placeholder=" ' - ' 없이 휴대폰번호 입력" defaultValue={tracePhone(1)}></input>
                       </div>
                     </td>
                   </tr>

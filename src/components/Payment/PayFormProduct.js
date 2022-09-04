@@ -4,10 +4,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation, useParams } from "reac
 import PayFormProductItemList from "./PayFormProductItemList";
 import "./PayForm.scss";
 
-function PayFormProduct() {
-  const params = useParams();
-
-  const [cartList, setCartList] = useState("");
+function PayFormProduct({ cartList }) {
   const [toggle, setToggle] = useState(true);
 
   const customerToggle = () => {
@@ -24,20 +21,6 @@ function PayFormProduct() {
   const slideDown = {
     background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png) no-repeat center / cover",
   };
-
-  useEffect(() => {
-    fetch("/data/cart/cart.json", { method: "GET" })
-      .then((res) => res.json())
-      .then((data) => {
-        const arr = params.cartlist.split("-");
-        console.log(arr);
-        setCartList(
-          data.cart_list.filter((el) => {
-            return arr.includes(String(el.id));
-          })
-        );
-      });
-  }, [params]);
 
   return (
     <>

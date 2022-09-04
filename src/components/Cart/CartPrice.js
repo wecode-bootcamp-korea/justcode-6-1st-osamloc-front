@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 
+import { Modal } from "./index";
 import "./CartPrice.scss";
 
 function CartPrice({ cartList, checkedArray }) {
@@ -9,6 +10,8 @@ function CartPrice({ cartList, checkedArray }) {
   const [wrap, setWrap] = useState(0);
   const [delivery, setDelivery] = useState(price > 30000 ? 2500 : 0);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const [modalup, setModalup] = useState(false);
 
   let usePrice = 0;
   let useSale = 0;
@@ -26,6 +29,10 @@ function CartPrice({ cartList, checkedArray }) {
     return total;
   };
 
+  const modalUpBtn = () => {
+    setModalup(!modalup);
+  };
+
   useEffect(() => {
     if (cartList.length > 0) {
       cartList.forEach((element) => {
@@ -40,11 +47,12 @@ function CartPrice({ cartList, checkedArray }) {
       setWrap(reNumber(useWrap));
       setTotalPrice(reNumber(usePrice - useSale + useWrap + delivery));
     }
+    console.log(checkedArray);
   }, [cartList, checkedArray]);
 
   return (
     <>
-      <section className="price-info">
+      <section className="cart-price-info">
         <div className="price-info-inner">
           <ul className="price-info-ul">
             <li className="price-info-li flex-bewteen">
@@ -74,9 +82,17 @@ function CartPrice({ cartList, checkedArray }) {
             <p>{totalPrice}원</p>
           </div>
           <div className="price-info-button">
-            <Link to={`../payment/${checkedArray.join("-")}`}>
-              <button className="price-info-button-inner">{totalPrice}원 주문하기</button>
-            </Link>
+            {checkedArray.length !== 0 && (
+              <Link to={`../payment/${checkedArray.join("-")}`}>
+                <button className="price-info-button-inner">{totalPrice}원 주문하기</button>
+              </Link>
+            )}
+            {checkedArray.length === 0 && (
+              <button className="price-info-button-inner" onClick={modalUpBtn}>
+                {totalPrice}원 주문하기
+              </button>
+            )}
+            {modalup && <Modal modalUpBtn={modalUpBtn} />}
           </div>
         </div>
       </section>
