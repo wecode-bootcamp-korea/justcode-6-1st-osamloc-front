@@ -16,6 +16,8 @@
     }
     .fix-bar{ 
         position: sticky;
+        padding-top: 20px;
+        padding-bottom: 20px;
         top: 0;
         background-color: white;
     }
@@ -30,8 +32,23 @@
         border-radius: 6px; 
         
         &:focus {
-            outline: 1px solid red;    
+            border: 1px solid red;
+            outline : none  
         } 
+    }
+    .input-style.success{
+        &:focus {
+            border: 1px solid #14b76c;
+            outline : none;
+        } 
+    }
+
+    .input-message{
+        margin-left: 20px;
+        color: #f23636;
+    }
+    .input-message.success{
+        color: #14b76c;
     }
     .input-wrapper{
         border: 1px solid lightgray;
@@ -54,9 +71,9 @@
             cursor: pointer;
         }
     }
-    .check-box-stlye{
+    .check-box-style{
+        margin: 20px;
         padding-bottom: 10px;
-
         
     }
 
@@ -76,9 +93,3 @@
     }
 
 }
-.description{
-    margin-left: 20px;
-    margin-right: 20px;
-    color: red;
-}
-    

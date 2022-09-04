@@ -17,15 +17,16 @@ function Login() {
   const goSignUp = () => {
       naviagte("/signup")
     }
+    
   // 조건에 맞게 되면 로그인 버튼 활성화 
   const handleIdInput = (e) =>{
     const idValue = e.target.value;
     setId(idValue);
     (idValue.length<13 && idValue.length>=4)&&(pw.length<17&&pw.length>=8)
-    ? setIsValid(true)
+    ?setIsValid(true)
     :setIsValid(false)
     
-  };  
+  }; 
   
   const handlePwInput = (e) =>{
     const pwValue = e.target.value;
@@ -45,14 +46,16 @@ function Login() {
         <p className='noice'>아모레퍼시픽 뷰티포인트 통합회원<br/>아이디로 로그인해주세요.</p>
       <div>
         <div className='login-flex login-wrapper'>
-          <input className='login-input'  placeholder='아이디 입력'onChange={handleIdInput}/>
+          <input className='login-input'  
+                placeholder='아이디 입력'
+                onChange={handleIdInput}/>
         </div>
         <div className='login-flex login-wrapper'>
           <input className='login-input'type="password" placeholder='비밀번호 입력 (영문 숫자,특수문자 조합)'onChange={handlePwInput}/>
         </div>
          <div className='check-box-stlye'>
           <input type="checkbox"/>
-          <label htmlFor="scales">아이디저장</label>
+          <label htmlFor="scales"> 아이디저장</label>
         </div> 
      
         <div className='login-flex button-wrapper'>      
