@@ -126,15 +126,6 @@ function Signup(){
         naviagte("/login")
     }
 
-    const [allCheck,setAllCheck] = useState(false);
-    const [serviceCheck, setServiceCheck]=useState(false);
-    const []=useState(false);
-    const []=useState(false);
-    const []=useState(false);
-    const []=useState(false);
-
-
-
     return (
         <div className='signup-flex-wrpper signup'>
             <div className='signup-container '>
@@ -218,11 +209,10 @@ function Signup(){
                     <h3>오삼록 회원 약관</h3>
                     <CheckBox/>
                 </div>
-                <div>
-                  {/* 스타일 적용해주기 꼭 !!! */}
-                    <button className='signup-button'>동의하고 가입</button>
+                {/* <div>
+                    <button className>동의하고 가입 </button>
                     <p className='notice-style'>가입 필수 정보 및 약관을 모두 확인해주세요</p>
-                </div>
+                </div> */}
 
             </div>
         </div>    

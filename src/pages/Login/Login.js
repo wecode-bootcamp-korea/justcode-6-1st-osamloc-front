@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./login.scss"
 import {useNavigate} from "react-router-dom"
 function Login() {
@@ -34,7 +34,20 @@ function Login() {
     (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=8)
     ? setIsValid(true)
     :setIsValid(false)
-  };  
+  }; 
+  
+  // useEffect(()=>{
+  //   fetch("http://localhost:10010/users/signup",{
+  //     method:"POST",
+  //     headers:{
+  //       Authorizaion:
+  //       "sdfsdf"
+  //     },
+      
+  //   })
+  //   .then((res)=>res.json())
+  //   .then((data)=> console.log(data))
+  // })
   
   return (
     <div className='container-wrapper'>

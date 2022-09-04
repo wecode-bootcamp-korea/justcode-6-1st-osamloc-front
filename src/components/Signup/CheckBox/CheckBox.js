@@ -99,8 +99,11 @@ function CheckBox(){
                         <input type="checkbox" checked = {privacyTransfer} onChange = {transferBtnEvent}/>
                         <label htmlFor="scales"> [선택] 개인정보 국외이전 동의(오삼록)</label>
              </div>
-            
 
+             <div>
+                    <button className= {(serviceCheck&&privacyCollection)?'signup-button success':'signup-button'}>동의하고 가입 </button>
+                    <p className='notice-style'>가입 필수 정보 및 약관을 모두 확인해주세요</p>
+             </div>
         </div>
     )
 }
