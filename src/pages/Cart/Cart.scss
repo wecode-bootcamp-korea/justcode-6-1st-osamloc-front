@@ -17,34 +17,40 @@
       font-size: 30px;
     }
   }
+
+  // 전체 이미지 스타일
+  .image-png {
+    max-width: 100%;
+    width: 5vw;
+    height: auto;
+    vertical-align: top;
+  }
+
+  //아래 3개는 중복되는 부분 정의
+
+  .flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-bewteen {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-left {
+    display: flex;
+    justify-content: left;
+  }
+
+  .info-button {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
 }
 
-// 전체 이미지 스타일
-.image-png {
-  max-width: 100%;
-  width: 7vw;
-  height: auto;
-  vertical-align: top;
-}
-
-//아래 3개는 중복되는 부분 정의
 .flex-justify-center {
   display: flex;
   justify-content: center;
-}
-
-.flex-align-center {
-  display: flex;
-  align-items: center;
-}
-
-.flex-bewteen {
-  display: flex;
-  justify-content: space-between;
-}
-
-.info-button {
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  margin-top: 20px;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import { CartItem, CartPrice } from "./index";
+import { CartItem } from "./index";
 
 function CartItemList({ cartList, checkedItems, checkedItemArrayPush, setQuantity }) {
   return (
@@ -22,6 +22,7 @@ function CartItemList({ cartList, checkedItems, checkedItemArrayPush, setQuantit
               sale={el.detail.sale}
               wrap={el.detail.wrap}
               present={el.detail.present}
+              status={el.status}
             />
           );
         })}

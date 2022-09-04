@@ -11,83 +11,61 @@
     display: flex;
     justify-content: left;
     padding: 48px 0 30px;
+
+    .page-title {
+      font-size: 30px;
+    }
+  }
+
+  // 전체 이미지 스타일
+  .image-png {
+    max-width: 100%;
+    width: 5vw;
+    height: auto;
+    vertical-align: top;
+  }
+
+  //아래는 중복되는 부분 정의
+  .flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-bewteen {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.53;
+    text-indent: -10px;
+    padding-left: 10px;
+  }
+
+  .padding-zero {
+    padding: 0;
+  }
+
+  .payment-tool-check {
+    margin-top: 40px;
+  }
+
+  .font14 {
+    font-size: 13px;
+    font-weight: lighter;
+  }
+
+  .down-detail {
+    width: 94%;
+    padding: 24px 24px 24px 24px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
   }
 }
 
-// 전체 이미지 스타일
-.image-png {
-  max-width: 100%;
-  width: 7vw;
-  height: auto;
-  vertical-align: top;
-}
-
-// 전체 체크박스 스타일
-.checkbox {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
-  vertical-align: middle;
-  margin-right: 10px;
-  box-sizing: border-box;
-}
-
-//아래는 중복되는 부분 정의
 .flex-justify-center {
   display: flex;
   justify-content: center;
-}
-
-.flex-align-center {
-  display: flex;
-  align-items: center;
-}
-
-.flex-bewteen {
-  display: flex;
-  justify-content: space-between;
-}
-
-.customer-info-input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  background-color: #fff;
-  letter-spacing: -0.03em;
-  padding: 0 10px;
-}
-
-.item {
-  font-size: 13px;
-  color: #999;
-  line-height: 1.53;
-  text-indent: -10px;
-  padding-left: 10px;
-}
-
-.padding-zero {
-  padding: 0;
-}
-
-.payment-tool-check {
-  margin-top: 40px;
-}
-
-.font14 {
-  font-size: 13px;
-  font-weight: lighter;
-}
-
-.down-detail {
-  width: 94%;
-  padding: 24px 24px 24px 24px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
 }
