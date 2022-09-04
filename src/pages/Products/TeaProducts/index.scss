@@ -123,23 +123,20 @@
             li {
               list-style: none;
 
-              .first-category-list {
-                color: #6c801a;
-                border-bottom: 3px solid #6c801a;
-                font-weight: 100;
-              }
-
               .category-list {
-                font-weight: 100;
-              }
-              
-              a {
-                padding: 10px 0 11px 0;
+                font-weight: 400 ;
+                padding: 13px 0 9px 0;
                 margin-left: 42px;
-                font-size: 18px;
+                font-size: 19px;
                 text-decoration: none;
-                color: black;
-      
+                color: #313131;
+                background-color: #fff;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                  color: #6c801a;
+                }
               }
             }
           }
