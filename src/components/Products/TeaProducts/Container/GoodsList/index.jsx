@@ -1,146 +1,70 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+
 import Goods from "./Goods";
 
 import Pagination from "./Pagination";
 import "./index.scss";
 
 function GoodsList(props) {
-  const { sortCategory } = props;
-
+  
+  const { goodsList, setSecondCategory, pageNum, setPageNum } = props;
+  
+  // 전체 버튼 상태
+  const [total, setTotal] = useState(true);
   // 카테고리 이름과 버튼 상태
   const [category, setCategory] = useState([
     {
       name: "잎차",
+      query: 'tealeaf',
       view: false,
     },
     {
       name: "피라미드",
+      query: 'pyramid',
       view: false,
     },
     {
       name: "티백",
+      query: 'teabag',
       view: false,
     },
     {
       name: "파우더",
+      query: 'powder',
       view: false,
     },
   ]);
-  // 전체 버튼 상태
-  const [total, setTotal] = useState(true);
-  // fetch로 받아온 목록 데이터
-  const [goodsList, setGoodsList] = useState([]);
-  
+
   useEffect(() => {
-    axios.get("/data/product/product.json")
-      // .then((res) => res.json())
-      .then((res) => {
-        let data = res.data
-        for (let i in sortCategory) {
-          if (sortCategory[i].view && sortCategory[i].name === "리뷰많은순") {
-            let goods = data.goods.sort((a, b) => {
-              return b.review - a.review;
-            });
-            setGoodsList(goods);
-          } else if (sortCategory[i].view && sortCategory[i].name === "판매순") {
-            let goods = data.goods.sort((a, b) => {
-              return b.like - a.like;
-            });
-            setGoodsList(goods);
-          } else if (sortCategory[i].view && sortCategory[i].name === "신상품순") {
-            let goods = data.goods.sort((a, b) => {
-              return b.date - a.date;
-            });
-            setGoodsList(goods);
-          } else if (sortCategory[i].view && sortCategory[i].name === "높은 가격순") {
-            let goods = data.goods.sort((a, b) => {
-              return b.price - a.price;
-            });
-            setGoodsList(goods);
-          } else if (sortCategory[i].view && sortCategory[i].name === "낮은 가격순") {
-            let goods = data.goods.sort((a, b) => {
-              return a.price - b.price;
-            });
-            setGoodsList(goods);
-          }
-        }
-      });
-  }, [sortCategory]);
-
-  // for (let i in sortCategory) {
-  //   if (sortCategory[i].view) {
-  //     useEffect(() => {
-  //       fetch("/data/product/product.json")
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //           let sortName = sortCategory[i].sortName;
-  //           let goods = data.goods.sort((a, b) => {
-  //             return b.like - a.like;
-  //           });
-  //           setGoodsList(goods);
-  //         });
-  //     }, []);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetch("/data/product/product.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       for(let i in sortCategory){
-  //         if(sortCategory[i].view && (sortCategory[i].name === '리뷰많은순' || '판매순' || '신상품순' || '높은 가격순')){
-  //           let goods = data.goods.sort(function (a, b) {
-  //             return b. - a.sortCategory.sortName;
-  //           });
-  //           setGoodsList(goods);
-  //         } else{
-  //           let goods = data.goods.sort(function (a, b) {
-  //             return b.sortCategory.sortName - a.sortCategory.sortName;
-  //           });
-  //           setGoodsList(goods);
-  //         }
-  //       }
-  //     });
-  // }, []);
-
-  // useEffect(() => {
-  //   fetch("/data/product/product.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       for (let i in sortCategory) {
-  //         if (sortCategory[i].view) {
-  //           let goods = data.goods.sort((a, b) => {
-  //             return b.sortCategory[i].sortName - a.sortCategory[i].sortName;
-  //           });
-  //           setGoodsList(goods);
-  //         }
-  //       }
-  //     });
-  // }, []);
-
-  // '전체'버튼을 제외한 카테고리 버튼 상태가 한개라도 true라면 '전체'버튼을 비활성화
-  useEffect(() => {
+    let secondCategory = [];
+    
+    // '전체'버튼을 제외한 카테고리 버튼 상태가 한개라도 true라면 '전체'버튼을 비활성화
     for (let i in category) {
       if (category[i].view) {
         setTotal(false);
         break;
       } else {
         setTotal(true);
+        secondCategory = [];
       }
     }
+
+    // 누른 버튼 이름을 배열에 넣기
+    let arr = [];
+    for(let i in category){
+      if (category[i].view) {
+        arr.push(category[i].query);
+        secondCategory = arr;
+      }
+    }
+
+    setSecondCategory(secondCategory.join());
+    setPageNum(1);
   }, [category]);
 
   // pagination에필요한 state
   const [limit, setLimit] = useState(9);
-  const [page, setPage] = useState(1);
-  const offset = (page - 1) * limit;
-
-  useEffect(()=>{
-    setPage(1);
-  }, [sortCategory], [category])
-
-  // console.log(boolean(category));
+  const offset = (pageNum - 1) * limit;
 
   return (
     <>
@@ -168,11 +92,10 @@ function GoodsList(props) {
           >
             전체
           </button>
-
           {category.map((el, i) => {
             return (
               <button
-                key={i}
+                key={el.name}
                 className="filter"
                 style={{
                   // 버튼 상태에 따라 색 변경
@@ -193,30 +116,16 @@ function GoodsList(props) {
         </div>
       </div>
       <div className="goods-list">
-        {/* "전체" 카테고리 */}
-        {goodsList.slice(offset, offset + limit).map((goods) => {
-          return <>{total && <Goods key={goods.id} goods={goods} />}</>;
-        })}
-
-        {/* "전체"를 제외한 카테고리 */}
-        {goodsList.slice(offset, offset + limit).map((goods) => {
-          return (
-            <>
-              {category.map(
-                (category, i) =>
-                  goods.category === category.name &&
-                  category.view && <Goods key={goods.id} goods={goods} />
-              )}
-            </>
-          );
-        })}
+        {goodsList.map(goods => 
+          <Goods key={goods.name} goods={goods} />
+        )}
       </div>
 
       <Pagination
         total={goodsList.length}
         limit={limit}
-        page={page}
-        setPage={setPage}
+        pageNum={pageNum}
+        setPageNum={setPageNum}
       />
     </>
   );

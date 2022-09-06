@@ -7,7 +7,7 @@ function ProductSideMenuBar() {
     <ul className="product-side-menu-bar">
       <li className="title">제품</li>
       <li className="handler">
-        <Link to={""} className="side-menu-title">티 제품</Link>
+        <Link to={"/products"} className="side-menu-title">티 제품</Link>
         <TeaProductsInnerMenu />
       </li>
       <li className="handler">
