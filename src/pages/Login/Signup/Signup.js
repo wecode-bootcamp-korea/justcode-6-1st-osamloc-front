@@ -209,13 +209,12 @@ function Signup(){
         },
         body : JSON.stringify(body)
       }).then(res => res.json())
-        .then(result => {
-          if(result.message == "USER_CREATED"){
+        .then(json => {
+          if(json.message == "USER_CREATED"){
             alert('회원가입에 성공했습니다'),
             naviagte('/login');
           }else{
             alert('회원가입에 실패하였습니다');
-            console.log(result)
         }
           }
           
