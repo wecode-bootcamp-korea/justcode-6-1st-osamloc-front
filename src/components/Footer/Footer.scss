@@ -1,0 +1,33 @@
+.footer-container{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+
+
+.footer-bar{
+    background-color:  #727272;
+    border: 1px solid black;
+    height: 63px;
+}
+.footer-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-login-btn{
+    background-color: #3f3e3c;
+    border: 1px solid black;
+    color: white;
+    width: 94px;
+    height: 40px;
+
+}
+}
+.img-size{
+    width: 41px;
+    height: 42px;
+}
+.logo-img{
+    width: 83px;
+    height: 109px;
+}
