@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import CartForm from "../../components/Cart/CartForm";
 import "./Cart.scss";
-import Footer from '../../components/Footer/Footer';
 
 function Cart() {
   return (
@@ -19,7 +18,6 @@ function Cart() {
           <CartForm />
         </main>
       </div>
-      <Footer />
     </>
   );
 }
