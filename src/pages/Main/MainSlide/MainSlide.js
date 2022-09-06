@@ -58,13 +58,13 @@ function MainSlide() {
     return(<>
         <div className="main_bg">
             <div>
-                <img src={slideimg[slideIdx].imgUrl} alt="메인 슬라이드"/>
-                <div className="main_slide_wrapper">
+                <img src={slideimg[slideIdx].imgUrl} alt="메인 슬라이드" style={{transition: 'all .5s ease-in-out'}} />
+                <div className="main_slide_wrapper" style={{transition: '.8s ease-in-out'}}>
                     <div className="main_slide_btn">
                         <button type="button" className="main_slide_leftbtn" onClick={prevSlide} ></button>
                         <button type="button" className="main_slide_rightbtn" onClick={nextSlide}></button>
                     </div>
-                    <div className="main_slide_textbox">
+                    <div className="main_slide_textbox" style={{transition: '.8s ease-in-out'}} >
                         <div className="main_slide_tit">{slideimg[slideIdx].title}</div>
                         <div className="main_slide_info">{slideimg[slideIdx].info}</div>
                         <div className="main_slide_date">{slideimg[slideIdx].data}</div>
