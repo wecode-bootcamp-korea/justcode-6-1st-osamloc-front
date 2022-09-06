@@ -17,6 +17,18 @@
             "imgUrl" : "./image/main/record_03.jpeg",
             "title": "잘 달리는 것보다 즐겁게 달리는 방법",
             "subTitle" :"러닝 트레이너 임소영의 티라이프"
+        },
+        {
+            "id": 4,
+            "imgUrl" : "./image/main/record_04.jpeg",
+            "title": "일과 삶 사이, 자연이라는 쉼표",
+            "subTitle" :"오지 캠퍼 강서구의 티라이프"
+        },
+        {
+            "id": 5,
+            "imgUrl" : "./image/main/record_05.jpeg",
+            "title": "온전하게 나만을 위한 채식이야기",
+            "subTitle" :"채식 요리 연구가 신주하의 티라이프"
         }
     ]
 }
