@@ -35,19 +35,33 @@ function Login() {
     ? setIsValid(true)
     :setIsValid(false)
   }; 
+      //signup api
+      const loginBtnClick = ()=>{
+        const body = {
+          account : id,
+          password: pw,
+        }
+        fetch('http://localhost:10010/users/login',{
+          method:"POST",
+          headers : {
+            "Content-Type" : "application/json"
+          },
+          body : JSON.stringify(body)
+        }).then(res => res.json())
+          .then(result => {
+            if(result.message == "LOGIN_SUCCESS"){
+              alert('로그인에 성공하였습니다.'),
+              naviagte('/');
+            }else{
+              alert('아이디와 비밀번호를 다시 확인해주세요 ');
+              console.log(result)
+          }
+            }
+            
+    
+        )
   
-  // useEffect(()=>{
-  //   fetch("http://localhost:10010/users/signup",{
-  //     method:"POST",
-  //     headers:{
-  //       Authorizaion:
-  //       "sdfsdf"
-  //     },
-      
-  //   })
-  //   .then((res)=>res.json())
-  //   .then((data)=> console.log(data))
-  // })
+    };
   
   return (
     <div className='container-wrapper'>
@@ -72,7 +86,7 @@ function Login() {
         </div> 
      
         <div className='login-flex button-wrapper'>      
-        <button style={{backgroundColor : isValid?"#5c95f0":"#f0f0f0"}}className='button-style'>로그인</button>
+        <button onClick={loginBtnClick} style={{backgroundColor : isValid?"#5c95f0":"#f0f0f0"}}className='button-style'>로그인</button>
       </div>
         <div className='img-flex'>
             <div>
@@ -99,9 +113,9 @@ function Login() {
             </div>
             <div className='signup-wrapper'>
             <button onClick={goSignUp}className='signup-button-style'>아직 회원이 아니세요? 회원가입</button>
+            </div>
           </div>
-      </div> 
-    </div>
+      </div>
     </div>
     
   )
