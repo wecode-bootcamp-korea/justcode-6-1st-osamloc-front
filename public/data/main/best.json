@@ -2,7 +2,7 @@
     "BestData" : [
         {
             "id": 1,
-            "best_img" : "./image/main/bestitem_img.png",
+            "best_img" : "./image/main/bestitem_img_start.png",
             "detail": {
                 "title": "[보자기 포장] 애프터눈 티 박스",
                 "cost": "32,500원",
@@ -30,7 +30,6 @@
                 "cost": "32,500원",
                 "price": "26,000원",
                 "sale": "20%"
-              
             }
         },
         {
@@ -47,6 +46,50 @@
         {
             "id": 5,
             "best_img" : "./image/main/bestitem_img.png",
+            "detail": {
+                "title": "[보자기 포장] 애프터눈 티 박스",
+                "cost": "32,500원",
+                "price": "26,000원",
+                "sale": "20%",
+                "tag": "신제품"
+            }
+        },
+        {
+            "id": 6,
+            "best_img" : "./image/main/bestitem_img.png",
+            "detail": {
+                "title": "[보자기 포장] 애프터눈 티 박스",
+                "cost": "32,500원",
+                "price": "26,000원",
+                "sale": "20%",
+                "tag": "신제품"
+            }
+        },
+        {
+            "id": 7,
+            "best_img" : "./image/main/bestitem_img.png",
+            "detail": {
+                "title": "[보자기 포장] 애프터눈 티 박스",
+                "cost": "32,500원",
+                "price": "26,000원",
+                "sale": "20%",
+                "tag": "신제품"
+            }
+        },
+        {
+            "id": 8,
+            "best_img" : "./image/main/bestitem_img.png",
+            "detail": {
+                "title": "[보자기 포장] 애프터눈 티 박스",
+                "cost": "32,500원",
+                "price": "26,000원",
+                "sale": "20%",
+                "tag": "신제품"
+            }
+        },
+        {
+            "id": 9,
+            "best_img" : "./image/main/bestitem_img_end.png",
             "detail": {
                 "title": "[보자기 포장] 애프터눈 티 박스",
                 "cost": "32,500원",
