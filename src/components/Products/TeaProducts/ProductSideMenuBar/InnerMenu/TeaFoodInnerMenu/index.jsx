@@ -2,19 +2,31 @@ import { Link } from "react-router-dom";
 
 function TeaFoodInnerMenu() {
   const productCategory = [
-    "전체상품",
-    "과자/초콜릿",
-    "베이커리",
-    "아이스크림"
+    {
+      name: "전체상품",
+      link: ""
+    },
+    {
+      name: "과자/초콜릿",
+      link: ""
+    },
+    {
+      name: "베이커리",
+      link: ""
+    },
+    {
+      name: "아이스크림",
+      link: ""
+    }
   ];
 
   return (
     <div className="sub-menu">
       <ul>
-        {productCategory.map((name, i) => {
+        {productCategory.map((productCategory, i) => {
           return (
-            <li>
-              <Link to={""}>{name}</Link>
+            <li key={productCategory.name}>
+              <Link to={productCategory.link}>{productCategory.name}</Link>
             </li>
           );
         })}
