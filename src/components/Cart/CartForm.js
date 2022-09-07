@@ -129,10 +129,10 @@ function CartForm() {
             <div className="cart-order-button flex-align-center">
               {checkedArray.length !== 0 && (
                 <div>
-                  <Link to={`../payment/${checkedArray.join("-")}`}>
+                  <Link to={`../payment/${checkedArray.join("-")}?present=false`}>
                     <button className="cart-order-button-select">선택상품 주문</button>
                   </Link>
-                  <Link to={`../payment/${checkedArray.join("-")}`}>
+                  <Link to={`../payment/${checkedArray.join("-")}?present=true`}>
                     <button className="cart-order-button-select">선택상품 선물하기</button>
                   </Link>
                 </div>
@@ -149,13 +149,13 @@ function CartForm() {
                 </div>
               )}
               <div>
-                <Link to={`../payment/all`}>
+                <Link to={`../payment/all?present=false`}>
                   <button className="cart-order-button-all">전체상품 주문하기</button>
                 </Link>
               </div>
             </div>
 
-            {modalup && <Modal modalUpBtn={modalUpBtn} />}
+            {modalup && <Modal modalUpBtn={modalUpBtn} state={"선택한 상품이 없습니다."} />}
             <p className="form-attention flex-align-center">
               <img src="https://www.osulloc.com/kr/ko/static_cdj/images/presentPage/IconPresentNote.png" alt="" style={{ marginRight: "5px" }} />
               장바구니에 보관된 상품은 3개월 후에 삭제 됩니다.

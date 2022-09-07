@@ -2,18 +2,27 @@ import { Link } from "react-router-dom";
 
 function LifeStyleInnerMenu() {
   const productCategory = [
-    "전체상품",
-    "건강기능식품",
-    "스킨케어"
+    {
+      name: "전체상품",
+      link: ""
+    },
+    {
+      name: "건강기능식품",
+      link: ""
+    },
+    {
+      name: "스킨케어",
+      link: ""
+    }
   ];
 
   return (
     <div className="sub-menu">
       <ul>
-        {productCategory.map((name, i) => {
+        {productCategory.map((productCategory, i) => {
           return (
-            <li>
-              <Link to={""}>{name}</Link>
+            <li key={productCategory.name}>
+              <Link to={productCategory.link}>{productCategory.name}</Link>
             </li>
           );
         })}

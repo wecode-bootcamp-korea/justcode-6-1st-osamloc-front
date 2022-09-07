@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-do
 
 import "./Modal.scss";
 
-function Modal({ modalUpBtn }) {
+function Modal({ modalUpBtn, state }) {
   return (
     <div className="Modal" onClick={modalUpBtn}>
       <div className="modalBody" onClick={(e) => e.stopPropagation()}>
-        <p>선택한 상품이 없습니다.</p>
+        <p>{state}</p>
+
         <button id="modalCloseBtn" onClick={modalUpBtn}>
           확인
         </button>

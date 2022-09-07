@@ -3,8 +3,8 @@ import TabBtn from "./WeeklyBest/TabBtn";
 import ListContent from "./WeeklyBest/ListContent";
 import Goods from "./TeaProducts/Container/GoodsList/Goods";
 // TeaProducts
-import ProductSideMenuBar from "./TeaProducts/ProductSideMenuBar";
-import Container from "./TeaProducts/Container";
+import TeaProducts from "./TeaProducts";
+
 
 export {
   // WeeklyBest
@@ -12,6 +12,5 @@ export {
   TabBtn,
   Goods,
   // TeaProducts
-  ProductSideMenuBar,
-  Container,
+  TeaProducts
 };
