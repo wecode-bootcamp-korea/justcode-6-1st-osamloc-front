@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation, useParams } from "reac
 import PayFormProductItemList from "./PayFormProductItemList";
 import "./PayForm.scss";
 
-function PayFormProduct({ cartList }) {
+function PayFormProduct({ cartList, present }) {
   const [toggle, setToggle] = useState(true);
 
   const customerToggle = () => {
@@ -15,10 +15,10 @@ function PayFormProduct({ cartList }) {
     }
   };
 
-  const slideUp = {
+  const slideDown = {
     background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn.png) no-repeat center / cover",
   };
-  const slideDown = {
+  const slideUp = {
     background: "url(https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png) no-repeat center / cover",
   };
 
