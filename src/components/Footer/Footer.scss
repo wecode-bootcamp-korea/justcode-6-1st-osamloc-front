@@ -40,8 +40,9 @@
 
 .footer-mid-flex{
     height: 140px;
+    width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     background-color:#fafafa;
 
@@ -79,6 +80,7 @@
     }
     .footer-image-flex{
         display: flex;
+        justify-content: right;
         text-align: center;
     }
     .img-container{
