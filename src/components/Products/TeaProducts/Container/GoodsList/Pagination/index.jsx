@@ -5,7 +5,7 @@ function Pagination(props) {
   const { total, limit, pageNum, setPageNum } = props;
 
   const numPages = Math.ceil(total / limit);
-  const pageLength = [0, 1];
+  const pageLength = [0, 1, 2, 3];
     // Array(numPages)
     // .fill()
     // .map((_, i) => {
