@@ -1,26 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 
+import { Modal } from "../Cart/index";
 import "./PayPrice.scss";
 
-function PayPrice({ cartList }) {
+function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addressDetail, sendName, sendPhone, sendEmail, present, way }) {
+  const navigate = useNavigate();
+
   function onClickPayment() {
     /* 1. 가맹점 식별하기 */
     const { IMP } = window;
     IMP.init("imp10300638");
 
+    let pg = "";
+
+    if (way === "신용카드") {
+      pg = "html5_inicis";
+    } else if (way === "휴대폰결제") {
+      pg = "danal";
+    } else if (way === "카카오페이") {
+      pg = "kakaopay";
+    } else if (way === "PAYCO") {
+      pg = "payco";
+    }
+
     /* 2. 결제 데이터 정의하기 */
     const data = {
-      pg: "html5_inicis", // PG사
+      pg: pg, // PG사
       pay_method: "card", // 결제수단
       merchant_uid: `mid_${new Date().getTime()}`, // 주문번호
-      name: "아임포트 결제 데이터 분석", // 주문명
-      amount: 1000, // 결제금액
-      buyer_name: "홍길동", // 구매자 이름
-      buyer_tel: "01012341234", // 구매자 전화번호
-      buyer_email: "example@example", // 구매자 이메일
-      buyer_addr: "신사동 661-16", // 구매자 주소
-      buyer_postcode: "06018", // 구매자 우편번호
+      amount: 100, // 결제금액
+      name: cartList[0].detail.name, // 주문명
+      buyer_name: sendName, // 구매자 이름
+      buyer_tel: sendPhone, // 구매자 전화번호
+      buyer_email: sendEmail, // 구매자 이메일
+      buyer_addr: addressMain, // 구매자 주소
+      buyer_postcode: addressPost, // 구매자 우편번호
     };
 
     /* 4. 결제 창 호출하기 */
@@ -29,24 +44,31 @@ function PayPrice({ cartList }) {
 
   /* 3. 콜백 함수 정의하기 */
   function callback(response) {
-    const { success, merchant_uid, error_msg } = response;
+    const { success, error_msg, merchant_uid, paid_amount, status, name } = response;
 
     if (success) {
-      alert("결제 성공");
+      navigate("../../");
     } else {
-      alert(`결제 실패: ${error_msg}`);
+      alert(`결제 실패하였습니다.`);
     }
   }
 
   const [price, setPrice] = useState(0);
   const [sale, setSale] = useState(0);
   const [wrap, setWrap] = useState(0);
-  const [delivery, setDelivery] = useState(price > 30000 ? 2500 : 0);
+  const [delivery, setDelivery] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const [modalup, setModalup] = useState(false);
+
+  const [sendApprove, setSendApprove] = useState(false);
+
+  const [errorMessage, setErrorMessage] = useState("배송지 정보를 확인해주세요");
 
   let usePrice = 0;
   let useSale = 0;
   let useWrap = 0;
+  let useDelivery = 0;
 
   const reNumber = (total) => {
     total = String(total);
@@ -60,19 +82,68 @@ function PayPrice({ cartList }) {
     return total;
   };
 
+  const modalUpBtn = () => {
+    setModalup(!modalup);
+  };
+
   useEffect(() => {
     if (cartList.length > 0) {
       cartList.forEach((element) => {
         usePrice += element.detail.price_origin * element.quantity;
         useSale += element.detail.price_origin * element.quantity * element.detail.sale;
         useWrap += element.detail.wrap && 2000;
+        if (usePrice >= 30000) {
+          useDelivery = 0;
+        } else if (usePrice < 30000 && usePrice > 0) {
+          useDelivery = 3000;
+        }
       });
       setPrice(reNumber(usePrice + useWrap));
       setSale(reNumber(useSale));
       setWrap(reNumber(useWrap));
-      setTotalPrice(reNumber(usePrice - useSale + useWrap + delivery));
+      setTotalPrice(reNumber(usePrice - useSale + useWrap + useDelivery));
+      setDelivery(reNumber(useDelivery));
     }
   }, [cartList]);
+
+  useEffect(() => {
+    setSendApprove(true);
+    const indexPhone = phone.indexOf("-");
+    const indexSendPhone = sendPhone.indexOf("-");
+
+    const phoneAfter = phone.slice(indexPhone + 1).replace("-", "");
+    const sendPhoneAfter = sendPhone.slice(indexSendPhone + 1).replace("-", "");
+
+    const indexEmail = sendEmail.indexOf("@");
+
+    const emailBefore = sendEmail.slice(0, indexEmail);
+
+    if (present === "false") {
+      if (!sendName || sendPhoneAfter.length !== 8 || !emailBefore) {
+        setSendApprove(false);
+        setErrorMessage("고객 정보를 확인해주세요");
+      } else if (!name || phoneAfter.length !== 8 || !addressPost || !addressMain || !addressDetail) {
+        setSendApprove(false);
+        setErrorMessage("배송지 정보를 확인해주세요");
+      } else if (!agree) {
+        setSendApprove(false);
+        setErrorMessage("아래 구매 진행에 동의해주세요.");
+      }
+    } else {
+      if (!sendName || sendPhoneAfter.length !== 8 || !emailBefore) {
+        setSendApprove(false);
+        setErrorMessage("고객 정보를 확인해주세요");
+      } else if (!name || phoneAfter.length !== 8) {
+        setSendApprove(false);
+        setErrorMessage("배송지 정보를 확인해주세요");
+      } else if (!agree) {
+        setSendApprove(false);
+        setErrorMessage("아래 구매 진행에 동의해주세요.");
+      }
+    }
+  }, [name, phone, addressPost, addressMain, addressDetail, sendName, sendPhone, sendEmail, agree]);
+
+  useEffect(() => {});
 
   return (
     <>
@@ -100,9 +171,17 @@ function PayPrice({ cartList }) {
             <p>{totalPrice}원</p>
           </div>
           <div className="price-info-button">
-            <button className="price-info-button-inner" onClick={onClickPayment}>
-              결제하기
-            </button>
+            {sendApprove && (
+              <button className="price-info-button-inner" onClick={onClickPayment}>
+                결제하기
+              </button>
+            )}
+            {!sendApprove && (
+              <button className="price-info-button-inner" onClick={modalUpBtn}>
+                결제하기
+              </button>
+            )}
+            {modalup && <Modal modalUpBtn={modalUpBtn} state={errorMessage} />}
           </div>
         </div>
       </section>
