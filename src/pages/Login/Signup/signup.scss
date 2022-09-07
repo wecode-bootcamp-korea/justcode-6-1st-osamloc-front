@@ -87,9 +87,18 @@
         border-radius: 6px;
         margin: 15px;
     }
+    .signup-button.success{
+        background-color: #5c95f0;
+        color: white;
+        font-weight: bold;
+    }
+    .signup-style{
+        color: white;
+    }
 
     .notice-style{
         text-align: center;
     }
 
 }
+

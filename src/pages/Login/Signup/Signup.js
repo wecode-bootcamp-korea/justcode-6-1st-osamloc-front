@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { useNavigate} from 'react-router-dom';
 import "./signup.scss"
-import CheckBox from '../../../components/Signup/CheckBox/CheckBox';
+// import CheckBox from '../../../components/Signup/CheckBox/CheckBox';
 
 function Signup(){ 
     const naviagte = useNavigate();
@@ -34,7 +34,6 @@ function Signup(){
     const onChangeName = (e) => {
         const currentName = e.target.value;
         setName(currentName);
-     
         if (currentName.length < 1 || currentName.length >= 10) {
           setNameMessage("이름을 1글자 이상 10글자 이하로 입력해주세요!");
           setIsName(false);
@@ -48,7 +47,6 @@ function Signup(){
         const currentPhone = getNumber;
         setPhone(currentPhone);
         const phoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-     
         if (!phoneRegExp.test(currentPhone)) {
           setPhoneMessage("올바른 형식이 아닙니다!");
           setIsPhone(false);
@@ -72,7 +70,6 @@ function Signup(){
         const currentId = e.target.value;
         setId(currentId);
         const idRegExp = /^[a-zA-z0-9]{4,12}$/;
-     
         if (!idRegExp.test(currentId)) {
           setIdMessage("4-12사이 대소문자 또는 숫자만 입력해 주세요!");
           setIsId(false);
@@ -125,15 +122,106 @@ function Signup(){
     const goLogin = () => {
         naviagte("/login")
     }
+   
+    //전체동의
+    const[allCheck, setAllCheck] = useState(false)
+    const[serviceCheck, setServiceCheck]=useState(false)
+    const[privacyCollection, setPrivacyCollection]=useState(false)
+    const[privacyUse,setPrivacyUse]=useState(false)
+    const[privacyOffer,setPrivacyOffer]=useState(false)
+    const[privacyTransfer,setPrivacyTransfer]=useState(false)
 
-    const [allCheck,setAllCheck] = useState(false);
-    const [serviceCheck, setServiceCheck]=useState(false);
-    const []=useState(false);
-    const []=useState(false);
-    const []=useState(false);
-    const []=useState(false);
+    const allBtnEvent = ()=>{
+        if(allCheck === false){
+            setAllCheck(true);
+            setServiceCheck(true);
+            setPrivacyCollection(true);
+            setPrivacyUse(true);
+            setPrivacyOffer(true);
+            setPrivacyTransfer(true);
+        }else{
+            setAllCheck(false);
+            setServiceCheck(false);
+            setPrivacyCollection(false);
+            setPrivacyUse(false);
+            setPrivacyOffer(false);
+            setPrivacyTransfer(false);
+        }
+    };
+    const serviceBtnEvent=()=>{
+        if(serviceCheck === false){
+            setServiceCheck(true)
+        }else{
+            setServiceCheck(false)
+        }
+    }
+    const collectionBtnEvent=()=>{
+        if(privacyCollection === false){
+            setPrivacyCollection(true)
+        }else{
+            setPrivacyCollection(false)
+        }
+    }
+    const useBtnEvent=()=>{
+        if(privacyUse === false){
+            setPrivacyUse(true)
+        }else{
+            setPrivacyUse(false)
+        }
+    }
+    const offerBtnEvent=()=>{
+        if(privacyOffer === false){
+            setPrivacyOffer(true)
+        }else{
+            setPrivacyOffer(false)
+        }
+    };
+    const transferBtnEvent=()=>{
+        if(privacyTransfer === false){
+            setPrivacyTransfer(true)
+        }else{
+            setPrivacyTransfer(false)
+        }
 
+    };
 
+    useEffect(()=>{
+        if(serviceCheck === true && privacyCollection ===true && privacyUse === true && privacyOffer === true && privacyTransfer === true){
+            setAllCheck(true)
+        }else{
+            setAllCheck(false)
+        }
+    },[serviceCheck,privacyCollection,privacyUse,privacyOffer,privacyTransfer])
+
+    //signup api
+      const signupBtnClick = ()=>{
+      const body = {
+        name:name,
+        phone:phone,
+        birth:birth,
+        account : id,
+        password: password
+      }
+      fetch('http://localhost:10010/users/signup',{
+        method:"POST",
+        headers : {
+          "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(body)
+      }).then(res => res.json())
+        .then(json => {
+          if(json.message == "USER_CREATED"){
+            alert('회원가입에 성공했습니다'),
+            naviagte('/login');
+          }else{
+            alert('회원가입에 실패하였습니다');
+        }
+          }
+          
+  
+      )
+
+  };
 
     return (
         <div className='signup-flex-wrpper signup'>
@@ -195,35 +283,55 @@ function Signup(){
                             name='password'
                             placeholder='비밀번호 (영문 소문자, 숫자, 특수문자 조합 8-16자)'
                             value={password}
-                            onChange={onChangePassword}
-                            
+                            onChange={onChangePassword} 
                         />
                         <div className={isPassword?'input-message success' : 'input-message'}>{passwordMessage}</div> 
                     </div>
                     <div>
                         <input 
-                            className={isPasswordConfirm?'input-style success':'input-style'}
-                            id='passwordConfirm'
-                            name='passwordConfirm'
-                            type="password"
-                            placeholder='비밀번호 확인'
-                            value={passwordConfirm}
-                            onChange={onChangePasswordConfirm}
+                          className={isPasswordConfirm?'input-style success':'input-style'}
+                          id='passwordConfirm'
+                          name='passwordConfirm'
+                          type="password"
+                          placeholder='비밀번호 확인'
+                          value={passwordConfirm}
+                          onChange={onChangePasswordConfirm}
                         />
                         <div className={isPasswordConfirm?'input-message success' : 'input-message'}>{passwordConfirmMessage}</div> 
                     </div>
                     
                 </div>
                 <div className='check-box-style'>
-                    <h3>오삼록 회원 약관</h3>
-                    <CheckBox/>
+                      <h3>오삼록 회원 약관</h3>
+                      <div className='check-box-style'>
+                        <input type="checkbox" checked={allCheck} onChange={allBtnEvent}/>
+                        <label htmlFor="all-check"> 전체 약관에 모두 동의합니다.</label>
+                      </div>
+                      <div className='check-box-style'>
+                        <input type="checkbox" checked = {serviceCheck} onChange={serviceBtnEvent}/>
+                        <label htmlFor="service-check"> [필수] 오삼록 서비스 이용약관</label>
+                      </div>
+                      <div className='check-box-style'>
+                        <input type="checkbox" checked = {privacyCollection} onChange={collectionBtnEvent}/>
+                        <label htmlFor="scales"> [필수] 개인정보 수집 동의(오삼록)</label>
+                      </div>
+                      <div className='check-box-style'>
+                        <input type="checkbox" checked = {privacyUse} onChange ={useBtnEvent}/>
+                        <label htmlFor="scales"> [선택] 개인정보 수집/이용 동의(오삼록)</label>
+                      </div>
+                      <div className='check-box-style'>
+                        <input type="checkbox" checked = {privacyOffer} onChange = {offerBtnEvent}/>
+                        <label htmlFor="scales"> [선택] 개인정보 제공동의(오삼록)</label>
+                      </div>
+                      <div className='check-box-style'>
+                        <input type="checkbox" checked = {privacyTransfer} onChange = {transferBtnEvent}/>
+                        <label htmlFor="scales"> [선택] 개인정보 국외이전 동의(오삼록)</label>
+                      </div>
+                      <div>
+                        <button onClick={signupBtnClick} className= {(serviceCheck&&privacyCollection)?'signup-button success':'signup-button'}>동의하고 가입 </button>
+                        <p className='notice-style'>가입 필수 정보 및 약관을 모두 확인해주세요</p>
+                      </div>
                 </div>
-                <div>
-                  {/* 스타일 적용해주기 꼭 !!! */}
-                    <button className='signup-button'>동의하고 가입</button>
-                    <p className='notice-style'>가입 필수 정보 및 약관을 모두 확인해주세요</p>
-                </div>
-
             </div>
         </div>    
     )
