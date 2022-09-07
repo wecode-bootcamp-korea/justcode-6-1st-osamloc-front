@@ -98,7 +98,7 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
             </div>
           </div>
           <div className="list-item-button flex-align-center">
-            <Link to={`../payment/${id}`}>
+            <Link to={`../payment/${id}?present=false`}>
               <button className="list-item-button-inner">바로구매</button>
             </Link>
           </div>
