@@ -9,7 +9,7 @@ function PayFormProductItemList({ cartList }) {
     <>
       <ul>
         {cartList.map((el) => {
-          return <PayFormProductItem key={el.id} id={el.id} quantity={el.quantity} name={el.detail.name} img_url={el.detail.img_url} price_origin={el.detail.price_origin} sale={el.detail.sale} wrap={el.detail.wrap} present={el.detail.present} />;
+          return <PayFormProductItem key={el.cartId} id={el.cartId} quantity={el.quantity} name={el.name} img_url={el.product_thumbnail} price_origin={el.priceOrigin} sale={el.salePrice} price={el.price} />;
         })}
       </ul>
     </>
