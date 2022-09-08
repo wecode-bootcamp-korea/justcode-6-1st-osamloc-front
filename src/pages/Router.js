@@ -8,6 +8,7 @@ import Best from "./Products/WeeklyBest/Best";
 import Products from "./Products/TeaProducts";
 import Cart from "./Cart/Cart";
 import Payment from "./Cart/Payment";
+import Header from "../components/Header";
 
 function Router() {
   return (
