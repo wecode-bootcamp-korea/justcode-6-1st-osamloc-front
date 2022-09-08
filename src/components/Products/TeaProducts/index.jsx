@@ -13,7 +13,7 @@ function TeaProducts(props) {
   const [goodsList, setGoodsList] = useState([]);
   
   const [firstCategory, setFirstCategory] = useState('review');
-  const [secondCategory, setSecondCategory] = useState([]);
+  const [secondCategory, setSecondCategory] = useState('');
   const [pageNum, setPageNum] = useState(1);
 
   const [typeURL, setTypeURL] = useState(["", ""]);

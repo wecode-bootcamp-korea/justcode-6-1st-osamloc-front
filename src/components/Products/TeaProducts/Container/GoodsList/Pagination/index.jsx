@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 function Pagination(props) {
 
-  const { total, limit, pageNum, setPageNum } = props;
+  const { goodsLength, limit, pageNum, setPageNum } = props;
 
-  const numPages = Math.ceil(total / limit);
-  const pageLength = [0, 1, 2, 3];
-    // Array(numPages)
-    // .fill()
-    // .map((_, i) => {
-    //   return i;
-    // });
+  const numPages = Math.ceil(goodsLength / limit);
+  const pageLength = 
+    Array(numPages)
+    .fill()
+    .map((_, i) => {
+      return i;
+    });
 
   return (
     <Nav className="pagination">
@@ -37,18 +37,22 @@ const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 120px;
   gap: 4px;
   margin: 16px;
 `;
 
 const Button = styled.button`
+  font-family: "Arita-dotum-Medium";
   width: 50px;
-  heigth: 50px;
+  height: 50px;
   border: 1px solid #e1e1e1;
   padding: 0;
-  margin: 0;
+  margin: 0 24px;
   color: #999;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: 100;
+  background-color: #fff;
 
   &:hover {
     cursor: pointer;
@@ -59,7 +63,6 @@ const Button = styled.button`
   }
 
   &[aria-current] {
-    // background: deeppink;
     font-weight: bold;
     cursor: revert;
     transform: revert;
@@ -67,29 +70,31 @@ const Button = styled.button`
 `;
 
 const InnerButton = styled.button`
-width: 50px;
-heigth: 50px;
-border: 1px solid #e1e1e1;
-padding: 0;
-margin: 0;
-color: #999;
-font-size: 14px;
+  font-family: "Arita-dotum-Medium";
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 8px;
+  color: #999;
+  font-size: 20px;
+  font-weight: 100;
+  background-color: #fff;
 
-&:hover {
-  cursor: pointer;
-}
+  &:hover {
+    cursor: pointer;
+  }
 
-&[disabled] {
+  &[disabled] {
+    cursor: revert;
+  }
+  
+  &[aria-current] {
+    background-color: #f5f5f5;
     color: black;
     cursor: revert;
-}
-
-&[aria-current] {
-  // background: deeppink;
-  font-weight: bold;
-  cursor: revert;
-  transform: revert;
-}
+  }
 `;
 
 export default Pagination;

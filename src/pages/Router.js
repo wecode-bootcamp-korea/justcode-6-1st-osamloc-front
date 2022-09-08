@@ -22,6 +22,8 @@ import HerbTea from "./Products/TeaProduct/HerbTea";
 import MilkTea from "./Products/TeaProduct/MilkTea";
 // 제품 카테고리 - 티 푸드
 
+// 제품 상세 페이지
+import ProductDetail from "../components/ProductDetail";
 
 // 장바구니, 결제 페이지
 import Cart from "./Cart/Cart";
@@ -50,6 +52,9 @@ function Router() {
         <Route path="/products/greentea" element={<GreenTea />} />
         <Route path="/products/herbtea" element={<HerbTea />} />
         <Route path="/products/milktea" element={<MilkTea />} />
+
+        {/* 제품 상세 페이지 */}
+        <Route path="/products/asd" element={<ProductDetail />} />
 
         {/* 장바구니, 결제 페이지 */}
         <Route path="/cart" element={<Cart />} />
