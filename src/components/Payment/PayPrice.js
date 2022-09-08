@@ -30,7 +30,7 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
       pay_method: "card", // 결제수단
       merchant_uid: `mid_${new Date().getTime()}`, // 주문번호
       amount: 100, // 결제금액
-      name: cartList[0].detail.name, // 주문명
+      name: cartList[0].name, // 주문명
       buyer_name: sendName, // 구매자 이름
       buyer_tel: sendPhone, // 구매자 전화번호
       buyer_email: sendEmail, // 구매자 이메일
@@ -47,6 +47,7 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
     const { success, error_msg, merchant_uid, paid_amount, status, name } = response;
 
     if (success) {
+      setSendData(true);
       navigate("../../");
     } else {
       alert(`결제 실패하였습니다.`);
@@ -64,6 +65,8 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
   const [sendApprove, setSendApprove] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState("배송지 정보를 확인해주세요");
+
+  const [sendData, setSendData] = useState(false);
 
   let usePrice = 0;
   let useSale = 0;
@@ -89,19 +92,27 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
   useEffect(() => {
     if (cartList.length > 0) {
       cartList.forEach((element) => {
-        usePrice += element.detail.price_origin * element.quantity;
-        useSale += element.detail.price_origin * element.quantity * element.detail.sale;
-        useWrap += element.detail.wrap && 2000;
+        usePrice += Number(element.priceOrigin) * 1000 * element.quantity;
+        if (element.salePrice) {
+          useSale += usePrice - Number(element.salePrice) * 1000 * element.quantity;
+        } else {
+          useSale = 0;
+        }
+        // useWrap += element.detail.wrap && 2000;
         if (usePrice >= 30000) {
           useDelivery = 0;
         } else if (usePrice < 30000 && usePrice > 0) {
           useDelivery = 3000;
         }
       });
-      setPrice(reNumber(usePrice + useWrap));
+      setPrice(reNumber(usePrice));
       setSale(reNumber(useSale));
-      setWrap(reNumber(useWrap));
-      setTotalPrice(reNumber(usePrice - useSale + useWrap + useDelivery));
+      // setWrap(reNumber(useWrap));
+      if (useSale === 0) {
+        setTotalPrice(reNumber(usePrice + useDelivery));
+      } else {
+        setTotalPrice(reNumber(useSale + useDelivery));
+      }
       setDelivery(reNumber(useDelivery));
     }
   }, [cartList]);
@@ -143,7 +154,31 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
     }
   }, [name, phone, addressPost, addressMain, addressDetail, sendName, sendPhone, sendEmail, agree]);
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (sendData === true) {
+      cartList.forEach((el, index) => {
+        const body = {
+          userId: el.userId,
+          status: 2,
+          cartId: el.cartId,
+        };
+
+        fetch("http://localhost:10010/cart/order", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+          body: JSON.stringify(body),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setSendData(false);
+          });
+      });
+    }
+  }, [sendData]);
 
   return (
     <>

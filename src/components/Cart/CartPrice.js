@@ -5,6 +5,8 @@ import { Modal } from "./index";
 import "./CartPrice.scss";
 
 function CartPrice({ cartList, checkedArray }) {
+  const navigate = useNavigate();
+
   const [price, setPrice] = useState(0);
   const [sale, setSale] = useState(0);
   const [wrap, setWrap] = useState(0);
@@ -13,9 +15,11 @@ function CartPrice({ cartList, checkedArray }) {
 
   const [modalup, setModalup] = useState(false);
 
+  const [effectStatus, setEffectStatus] = useState(false);
+
   let usePrice = 0;
   let useSale = 0;
-  let useWrap = 0;
+  // let useWrap = 0;
   let useDelivery = 0;
 
   const reNumber = (total) => {
@@ -34,13 +38,22 @@ function CartPrice({ cartList, checkedArray }) {
     setModalup(!modalup);
   };
 
+  const setStatus = () => {
+    setEffectStatus(true);
+  };
+
   useEffect(() => {
     if (cartList.length > 0) {
       cartList.forEach((element) => {
-        if (checkedArray.includes(element.id)) {
-          usePrice += element.detail.price_origin * element.quantity;
-          useSale += element.detail.price_origin * element.quantity * element.detail.sale;
-          useWrap += element.detail.wrap && 2000;
+        if (checkedArray.includes(element.cartId)) {
+          usePrice += Number(element.priceOrigin) * 1000 * element.quantity;
+          if (element.salePrice) {
+            useSale += usePrice - Number(element.salePrice) * 1000 * element.quantity;
+          } else {
+            useSale = 0;
+          }
+
+          // useWrap += element.detail.wrap && 2000;
           if (usePrice >= 30000) {
             useDelivery = 0;
           } else if (usePrice < 30000 && usePrice > 0) {
@@ -50,11 +63,43 @@ function CartPrice({ cartList, checkedArray }) {
       });
       setPrice(reNumber(usePrice));
       setSale(reNumber(useSale));
-      setWrap(reNumber(useWrap));
-      setTotalPrice(reNumber(usePrice - useSale + useWrap + useDelivery));
+      // setWrap(reNumber(useWrap));
+      if (useSale === 0) {
+        setTotalPrice(reNumber(usePrice + useDelivery));
+      } else {
+        setTotalPrice(reNumber(useSale + useDelivery));
+      }
       setDelivery(reNumber(useDelivery));
     }
   }, [cartList, checkedArray]);
+
+  useEffect(() => {
+    if (effectStatus === true) {
+      cartList.forEach((el, index) => {
+        const body = {
+          cartId: el.cartId,
+          newQuantity: el.quantity,
+        };
+
+        console.log(body);
+
+        fetch("http://localhost:10010/cart", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+          body: JSON.stringify(body),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setEffectStatus(false);
+            navigate(`../payment/${checkedArray.join("-")}?present=false`);
+          });
+      });
+    }
+  }, [effectStatus]);
 
   return (
     <>
@@ -71,7 +116,7 @@ function CartPrice({ cartList, checkedArray }) {
             </li>
             <li className="price-info-li flex-bewteen">
               <p>포장비</p>
-              <p>+ {wrap}원</p>
+              <p>+ 0원</p>
             </li>
             <li className="price-info-li flex-bewteen">
               <p>부가 쇼핑백</p>
@@ -89,9 +134,9 @@ function CartPrice({ cartList, checkedArray }) {
           </div>
           <div className="price-info-button">
             {checkedArray.length !== 0 && (
-              <Link to={`../payment/${checkedArray.join("-")}?present=false`}>
-                <button className="price-info-button-inner">{totalPrice}원 주문하기</button>
-              </Link>
+              <button className="price-info-button-inner" onClick={setStatus}>
+                {totalPrice}원 주문하기
+              </button>
             )}
             {checkedArray.length === 0 && (
               <button className="price-info-button-inner" onClick={modalUpBtn}>

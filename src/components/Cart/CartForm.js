@@ -18,13 +18,9 @@ function CartForm() {
     setCheckedAllItems(!checkedAllItems);
     if (!checkedAllItems === true && cartList) {
       setCheckedArray(
-        cartList
-          .filter((el) => {
-            return el.status === true;
-          })
-          .map((eli) => {
-            return eli.id;
-          })
+        cartList.map((el) => {
+          return el.cartId;
+        })
       );
     } else if (!checkedAllItems === false && cartList) {
       setCheckedArray([]);
@@ -47,7 +43,7 @@ function CartForm() {
     if (cartList) {
       setCartList(
         cartList.map((element) => {
-          element.id === id && (element.quantity = quantity);
+          element.cartId === id && (element.quantity = quantity);
           return element;
         })
       );
@@ -57,7 +53,7 @@ function CartForm() {
   const deleteCheck = () => {
     setCartList(
       cartList.filter((element) => {
-        if (checkedArray.includes(element.id) || element.status === false) {
+        if (checkedArray.includes(element.cartId)) {
           return false;
         }
         return true;
@@ -65,7 +61,7 @@ function CartForm() {
     );
     setStockCartList(
       stockCartList.filter((element) => {
-        return !checkedArray.includes(element.id);
+        return !checkedArray.includes(element.cartId);
       })
     );
     setCheckedArray([]);
@@ -76,25 +72,20 @@ function CartForm() {
   };
 
   useEffect(() => {
-    fetch("/data/cart/cart.json", { method: "GET" })
+    fetch("http://localhost:10010/cart", {
+      method: "get",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-        setCartList(data.cart_list);
-        setStockCartList(
-          data.cart_list.filter((el) => {
-            return el.status === true;
-          })
-        );
+        setCartList(data.data);
+        setStockCartList(data.data);
         setCheckedArray(
-          data.cart_list
-            .filter((el) => {
-              return el.status === true;
-            })
-            .map((eli) => {
-              if (eli.status === true) {
-                return eli.id;
-              }
-            })
+          data.data.map((el) => {
+            return el.cartId;
+          })
         );
       });
   }, []);

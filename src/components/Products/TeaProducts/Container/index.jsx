@@ -87,6 +87,7 @@ function Container(props) {
         setSecondCategory={setSecondCategory}
         pageNum={pageNum}
         setPageNum={setPageNum}
+        pageInfo={pageInfo}
       />
     </>
   );
