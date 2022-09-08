@@ -51,30 +51,37 @@ function PayForm() {
   };
 
   useEffect(() => {
-    fetch("/data/cart/user.json", { method: "GET" })
+    fetch("http://localhost:10010/cart/address", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
-        setUserData(data.users);
+        console.log(data);
+        setUserData(data.data[0]);
       });
   }, []);
 
   useEffect(() => {
-    fetch("/data/cart/cart.json", { method: "GET" })
+    fetch("http://localhost:10010/cart", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         if (String(params.cartlist) !== "all") {
           const arr = params.cartlist.split("-");
           setCartList(
-            data.cart_list.filter((el) => {
-              return arr.includes(String(el.id));
+            data.data.filter((el) => {
+              return arr.includes(String(el.cartId));
             })
           );
         } else if (String(params.cartlist) === "all") {
-          setCartList(
-            data.cart_list.filter((el) => {
-              return el.status === true;
-            })
-          );
+          setCartList(data.data);
         }
       });
   }, [params]);

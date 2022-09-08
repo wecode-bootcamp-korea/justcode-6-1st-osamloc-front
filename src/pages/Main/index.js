@@ -9,10 +9,12 @@ import Notice from './Notice/Notice';
 import RecordSection from './RecordSection/RecordSection';
 import SubscribeSection from './SubscribeSection/SubscribeSection';
 import BannerSection from './BannerSection/\bindex';
+import Header from '../../components/Header';
 
 function Main() {
   return (
       <div className="main">
+        <Header />
         <MainSlide />
         <Notice />
         <BestSection />

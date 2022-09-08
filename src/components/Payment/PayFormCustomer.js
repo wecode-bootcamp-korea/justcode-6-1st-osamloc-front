@@ -11,7 +11,7 @@ function PayFormCustomer({ userData, present, setCustomerInfo }) {
 
   const [name, setName] = useState(userData.name);
   const [phone, setPhone] = useState(userData.phone);
-  const [email, setEmail] = useState(userData.email);
+  const [email, setEmail] = useState("warrently@naver.com");
   const [sendName, setSendName] = useState("");
 
   const [toggle, setToggle] = useState(false);

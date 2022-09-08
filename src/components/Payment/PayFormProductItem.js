@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation, useParams } from "reac
 
 import "./PayForm.scss";
 
-function PayFormProductItem({ id, quantity, name, img_url, price_origin, sale, wrap, present }) {
+function PayFormProductItem({ id, quantity, name, img_url, price_origin, sale, price }) {
   const reNumber = (total) => {
     total = String(Math.ceil(total));
 
@@ -27,12 +27,12 @@ function PayFormProductItem({ id, quantity, name, img_url, price_origin, sale, w
             <p className="list-item-image-text-p1">
               <a>{name}</a>
             </p>
-            <p className="list-item-image-text-p2">{wrap ? "유료포장 선택안함" : "포장불가"}</p>
+            <p className="list-item-image-text-p2">유료포장 선택안함</p>
           </div>
         </div>
         <div className="list-item-button flex-align-center">
           <div className="list-item-price flex-bewteen flex-align-center">
-            <p>{reNumber(price_origin * quantity)}원 /</p>
+            <p>{reNumber(Number(price) * 1000)}원 /</p>
             <p className="list-item-image-text-p2">{quantity}개</p>
           </div>
         </div>
