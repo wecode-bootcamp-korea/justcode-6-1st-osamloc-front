@@ -93,9 +93,6 @@ function MainSlide() {
                     </div>
                 </div>
                 </div>
-              
-               
-             
             </div>
         </div> */}
 

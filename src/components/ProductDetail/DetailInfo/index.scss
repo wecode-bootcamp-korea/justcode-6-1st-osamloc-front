@@ -1,0 +1,323 @@
+.detail-info{
+  box-sizing: border-box;
+  width: 47.3%;
+  margin: 100px;
+
+  .location {
+    margin-bottom: 10px;
+
+    a {
+      color: #9d9d9d;
+      font-size: 16px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline #9d9d9d;
+      }
+    }
+
+    span {
+      width: 6px;
+      height: 10px;
+      margin: 0 8px;
+      color: #9d9d9d;
+      font-size: 13px;
+    }
+  }
+
+  .item-name {
+    font-size: 36px;
+    margin-bottom: 6px;
+  }
+  
+  .item-amount {
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #656565;
+  }
+
+  .func {
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+    margin-bottom: 17px;
+    padding-bottom: 14px;
+    border-bottom: 1px #ececec solid;
+
+    .func-span {
+        
+        .func-img {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      
+    }
+
+    .func-price{
+      margin-top: 7px;
+      font-size: 28px;
+      color: #7b7b7b;
+
+      strong {
+        color: black;
+      }
+    }
+  }
+  
+  .buying-container {
+    position: relative;
+    min-height: 273px;
+    padding-bottom: 27px;
+    color: #727272;
+
+    .option-bar {
+      position: relative;
+
+      .value-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 0 25px 0 22px;
+        border: 1px #e0e0e0 solid;
+        font-size: 16px;
+        cursor: pointer;
+
+        img {
+          width: 15px;
+          height: 9px;
+        }
+      }
+
+      .options {
+        z-index: 100;
+        overflow: hidden;
+        overflow-y: auto;
+        position: absolute;
+        top: 51px;
+        left: 0;
+        width: 99.7%;
+        max-height: 440px;
+        padding: 0;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+
+        .option-list {
+          position: relative;
+          height: 53px;
+          margin: 0;
+          padding: 18px 27px 12px 27px;
+          border-top: 1px solid #e0e0e0;
+          background-color: #fff;
+
+          &:nth-child(1) {
+            border: none;
+          }
+
+          .item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 18px;
+            color: #727272;
+            line-height: 1.5;
+          }
+
+          .price {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 22px;
+            color: #727272;
+            line-height: 1.5;
+            
+            strong {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .selected-item {
+      min-height: 61px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #efefef;
+      background-color: #f8f9fb;
+      font-size: 18px;
+      color: #505051;
+
+      // 구매수량
+      .item-name {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 61px;
+        padding: 0 70px 0 14px;
+        font-size: 18px;
+        color: #505051;
+
+        .modify-num {
+          position: absolute;
+          top: 30%;
+          right: 10px;
+          display: flex;
+          align-items: center;
+
+          .minus {
+            width: 16px;
+            height: 16px;
+            border: none;
+            background-color: #f8f9fb;
+
+            img {
+              width: 16px;
+            height: 16px;
+            }
+          }
+          
+          .num {
+            margin: 0 2px 0 14px;
+            font-size: 24px;
+            line-height: 1;
+          }
+
+          .plus {
+            width: 14px;
+            height: 14px;
+            border: none;
+            background-color: #f8f9fb;
+
+            img {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+      }
+
+      // 상품 포장
+      .tit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: 50px;
+        padding: 0 20px 0 20px;
+        border: 1px solid #e0e0e0;
+        font-size: 16px;
+        color: #505051;
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      .position {
+        position: relative;
+      }
+
+      .active {
+        z-index: 10;
+        position: absolute;
+        top: 49px;
+        left: 0;
+        width: 99.6%;
+        border: 1px solid #e0e0e0;
+        background: #ffffff;
+        
+        li {
+          display: flex;
+          align-items: center;
+          height: 50px;
+          padding-left: 19px;
+          font-size: 20px;
+          color: #505051;
+          cursor: pointer;
+
+          &:hover {
+            background: #f9f9f9;
+          }
+        }
+      }
+    }
+
+    // 추가상품 선택시 아래에 보여주기
+    .select-item-list {
+      position: relative;
+      border: 1px solid #efefef;
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f8f9fb;
+
+      .item-name {
+        margin: 0 56px 3px 10px;
+        text-align: right;
+        font-size: 18px;
+        color: #505051;
+      }
+      
+      .sum-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 56px 0 10px;
+        font-size: 24px;
+        color: black;
+
+        .modify-num {
+          display: flex;
+          align-items: center;
+
+          .minus {
+            width: 16px;
+            height: 16px;
+            border: none;
+            background-color: #f8f9fb;
+
+            img {
+              width: 16px;
+            height: 16px;
+            }
+          }
+          
+          .num {
+            margin: 0 2px 0 14px;
+            font-size: 24px;
+            line-height: 1;
+          }
+
+          .plus {
+            width: 14px;
+            height: 14px;
+            border: none;
+            background-color: #f8f9fb;
+
+            img {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+
+  .label-zone{
+
+  }
+
+  .value-amount {
+
+  }
+
+  .item-detail-payment {
+
+  }
+}

@@ -50,13 +50,14 @@ function Login() {
         }).then(res => res.json())
           .then(json => {
             if(json.message == "LOGIN_SUCCESS"){
-              alert('로그인에 성공하였습니다.')
+              alert('로그인에 성공하였습니다.'),
               localStorage.setItem("token", json.token)
               naviagte('/');
             }else{
               alert('아이디와 비밀번호를 다시 확인해주세요 ');
               
-          }
+
+            }
             }
             
     
