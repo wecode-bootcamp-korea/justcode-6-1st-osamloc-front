@@ -30,6 +30,7 @@ import Detail from "../components/ProductDetail/Left/index";
 // 장바구니, 결제 페이지
 import Cart from "./Cart/Cart";
 import Payment from "./Cart/Payment";
+import Header from "../components/Header";
 
 function Router() {
   return (
