@@ -10,18 +10,18 @@ function CartItemList({ cartList, checkedItems, checkedItemArrayPush, setQuantit
         {cartList.map((el) => {
           return (
             <CartItem
-              key={el.id}
+              key={el.cartId}
               checkedItemArrayPush={checkedItemArrayPush}
               setQuantity={setQuantity}
-              id={el.id}
+              id={el.cartId}
               check={checkedItems}
               quantity={el.quantity}
-              name={el.detail.name}
-              img_url={el.detail.img_url}
-              price_origin={el.detail.price_origin}
-              sale={el.detail.sale}
-              wrap={el.detail.wrap}
-              present={el.detail.present}
+              name={el.name}
+              img_url={el.product_thumbnail}
+              price_origin={el.priceOrigin}
+              sale={el.salePrice}
+              price={el.price}
+              // wrap={el.detail.wrap}
               status={el.status}
             />
           );
