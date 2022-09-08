@@ -16,9 +16,9 @@ function PayFormDelivery({ userData, present, setDeliveryInfo }) {
   const fillInput = () => {
     setName(userData.name);
     setPhone(userData.phone);
-    setAddressPost(userData.address.address_post);
-    setAddressMain(userData.address.address_main);
-    setAddressDetail(userData.address.address_detail);
+    setAddressPost(userData.zip_code);
+    setAddressMain(userData.address);
+    setAddressDetail(userData.detailed_address);
   };
 
   const tracePhone = (state) => {

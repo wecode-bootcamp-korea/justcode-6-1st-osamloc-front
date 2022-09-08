@@ -76,43 +76,6 @@ p {
     text-decoration: none;
 }
 
-//mainSlide - background-image로 했을 때
-// .main_bg {
-//     background: center no-repeat url("../../../public/image/main_slide.png");
-//     background-size: cover;
-//     height: 430px;
-//     position: relative;
-
-//     .main_slide_alignbox {
-//         position: absolute;
-//         top: 50%;
-//         left: 0;
-//         transform: translateY(-50%);
-//         max-width: 1320px;
-
-//         .main_slide_textbox {
-//             max-width: 1320px;
-    
-//             .main_slide_tit {
-//                 font-size: 36px;
-//                 line-height: 1.33;
-//             }
-            
-//             .main_slide_info {
-//                 font-size: 16px;
-//                 margin-top: 10px;
-//             }
-    
-//             .main_slide_date {
-//                 font-size: 16px;
-//                 margin-top: 12px;
-//             }
-//         }
-//     }
-
-// }
-
-//mainSlide <img /> 로 다시 하는 중
 .main_bg {
     position: relative;
     overflow-x: hidden;

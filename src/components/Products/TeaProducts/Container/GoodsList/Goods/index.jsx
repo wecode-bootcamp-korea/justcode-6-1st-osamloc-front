@@ -34,10 +34,12 @@ function Goods(props) {
       <p className="price-box">
         <span className="price">
           {sale ? <strong>{sale_price}</strong> : <strong>{price_origin}</strong>} 원
+          {sale && 
           <span>
             <del>{price_origin}원</del>
             <em>({sale}%↓)</em>
           </span>
+          }
         </span>
       </p>
       <div className="fnc">

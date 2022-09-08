@@ -4,10 +4,11 @@ import Goods from "./Goods";
 
 import Pagination from "./Pagination";
 import "./index.scss";
+import axios from "axios";
 
 function GoodsList(props) {
   
-  const { goodsList, setSecondCategory, pageNum, setPageNum } = props;
+  const { goodsList, secondCategory, setSecondCategory, pageNum, setPageNum, pageInfo } = props;
   
   // 전체 버튼 상태
   const [total, setTotal] = useState(true);
@@ -35,9 +36,10 @@ function GoodsList(props) {
     },
   ]);
 
+  const [goodsLength, setGoodsLength] = useState(1);
+
   useEffect(() => {
     let secondCategory = [];
-    
     // '전체'버튼을 제외한 카테고리 버튼 상태가 한개라도 true라면 '전체'버튼을 비활성화
     for (let i in category) {
       if (category[i].view) {
@@ -57,10 +59,27 @@ function GoodsList(props) {
         secondCategory = arr;
       }
     }
-
     setSecondCategory(secondCategory.join());
     setPageNum(1);
   }, [category]);
+
+  useEffect(() => {
+    if (total) {
+      axios
+        .get(`http://localhost:10010/products/category?name=${pageInfo.query}`)
+        .then((res) => {
+          setGoodsLength(res.data.data.length);
+          console.log('1',res.data.data.length);
+        });
+    } else {
+      axios
+        .get(`http://localhost:10010/products/category/type?name=${pageInfo.query}&type=${secondCategory}`)
+        .then((res) => {
+          setGoodsLength(res.data.data.length);
+          console.log('2',res.data.data.length);
+        });
+    }
+  }, [secondCategory]);
 
   // pagination에필요한 state
   const [limit, setLimit] = useState(9);
@@ -70,7 +89,7 @@ function GoodsList(props) {
     <>
       <div className="product-sort-filter">
         <p>
-          총 <strong>{goodsList.length}</strong>개의 상품이 있습니다.
+          총 <strong>{goodsLength}</strong>개의 상품이 있습니다.
         </p>
         <div className="filter-group">
           <button
@@ -122,7 +141,7 @@ function GoodsList(props) {
       </div>
 
       <Pagination
-        total={goodsList.length}
+        goodsLength={goodsLength}
         limit={limit}
         pageNum={pageNum}
         setPageNum={setPageNum}
