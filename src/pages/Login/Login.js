@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./login.scss"
 import {useNavigate} from "react-router-dom"
 function Login() {
@@ -34,7 +34,35 @@ function Login() {
     (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=8)
     ? setIsValid(true)
     :setIsValid(false)
-  };  
+  }; 
+      //signup api
+      const loginBtnClick = ()=>{
+        const body = {
+          account : id,
+          password: pw,
+        }
+        fetch('http://localhost:10010/users/login',{
+          method:"POST",
+          headers : {
+            "Content-Type" : "application/json"
+          },
+          body : JSON.stringify(body)
+        }).then(res => res.json())
+          .then(json => {
+            if(json.message == "LOGIN_SUCCESS"){
+              alert('로그인에 성공하였습니다.')
+              localStorage.setItem("token", json.token)
+              naviagte('/');
+            }else{
+              alert('아이디와 비밀번호를 다시 확인해주세요 ');
+              
+          }
+            }
+            
+    
+        )
+  
+    };
   
   return (
     <div className='container-wrapper'>
@@ -53,13 +81,13 @@ function Login() {
         <div className='login-flex login-wrapper'>
           <input className='login-input'type="password" placeholder='비밀번호 입력 (영문 숫자,특수문자 조합)'onChange={handlePwInput}/>
         </div>
-         <div className='check-box-stlye'>
+        <div className='check-box-stlye'>
           <input type="checkbox"/>
           <label htmlFor="scales"> 아이디저장</label>
         </div> 
-     
+
         <div className='login-flex button-wrapper'>      
-        <button style={{backgroundColor : isValid?"#5c95f0":"#f0f0f0"}}className='button-style'>로그인</button>
+        <button onClick={loginBtnClick} style={{backgroundColor : isValid?"#5c95f0":"#f0f0f0"}}className='button-style'>로그인</button>
       </div>
         <div className='img-flex'>
             <div>
@@ -86,9 +114,9 @@ function Login() {
             </div>
             <div className='signup-wrapper'>
             <button onClick={goSignUp}className='signup-button-style'>아직 회원이 아니세요? 회원가입</button>
+            </div>
           </div>
-      </div> 
-    </div>
+      </div>
     </div>
     
   )

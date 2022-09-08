@@ -88,6 +88,10 @@
         background-color: #f0f0f0;
         color: #c6c6c6;
         font-size: 16px;
+        
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 
@@ -98,7 +102,7 @@
     margin-top: 30px;
     font-size: 15px;
 
- .logo-size{
+    .logo-size{
         width: 45px;
         height: 45px;
     }
@@ -109,7 +113,7 @@
 .find-tag-align{
     text-align: center;
     margin-top: 20px;
- 
+
     .find-tag{
         text-decoration: none;
         text-align: center;
@@ -126,7 +130,7 @@
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 6px;
-      
+    
     .signup-button-style{
         border: none;
         outline: none;
@@ -142,10 +146,3 @@
     }
 
 }
-
-
-   
-    
-
-
-

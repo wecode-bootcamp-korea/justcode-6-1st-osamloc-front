@@ -1,212 +1,121 @@
 {
-  "goods": [
+  "data": [
     {
-      "id": 1,
-      "name": "1번상품",
-      "category": "잎차",
-      "price": 10000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 1432,
-      "review": 1,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "꽃향 가득한 제주",
+      "description": "꽃향 가득한 제주의 향기를 담은 블렌디드 티 세트입니다. 다양한 블렌디드 티를 좋아하시는 분께 선물하기 좋은 제품입니다.",
+      "likeCount": "8",
+      "reviewCount": "8",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/NE/DK/304_20200915185810391RR.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/KH/FU/20200915185806352BZ.png?quality=80&shrink=304:340",
+      "price_origin": "65,000",
+      "sale": null,
+      "sale_price": null
     },
     {
-      "id": 2,
-      "name": "2번상품",
-      "category": "피라미드",
-      "price": 20000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 3546,
-      "review": 2,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "제주의 햇살과 달빛",
+      "description": "제주의 햇살과 달빛을 머금은 삼다연제주영귤과 달빛걷기 세트입니다.",
+      "likeCount": "5",
+      "reviewCount": "4",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/MO/CR/304_20201117100222639ZH.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/XG/ZK/20201117100231815NH.png?quality=80&shrink=304:340",
+      "price_origin": "33,000",
+      "sale": null,
+      "sale_price": null
     },
     {
-      "id": 3,
-      "name": "3번상품",
-      "category": "티백",
-      "price": 30000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 1234,
-      "review": 3,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "시크릿 티 스토리",
+      "description": "신비로운 섬 제주의 다채로운 향기와 이야기를 품은, 취향 걱정없이 선물하기 좋은 고급스러운 구성의 선물 세트",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340",
+      "price_origin": "45,000",
+      "sale": 20,
+      "sale_price": "36,000"
     },
     {
-      "id": 4,
-      "name": "4번상품",
-      "category": "파우더",
-      "price": 40000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 456,
-      "review": 4,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "메모리 인 제주 20입",
+      "description": "제주 꽃길에서 느꼈던 설렘의 향기와 달콤했던 사랑의 추억을 떠 올려줄 제주 꽃을 모티브로 한 BEST TEA SET 입니다.",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/JY/QU/304_20210825170710069ZN.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/SK/YT/20210825143014310SG.png?quality=80&shrink=304:340",
+      "price_origin": "38,000",
+      "sale": 20,
+      "sale_price": "30,400"
     },
     {
-      "id": 5,
-      "name": "5번상품",
-      "category": "잎차",
-      "price": 50000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 5346,
-      "review": 5,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "마스터 블렌드",
+      "description": "마스터의 블렌딩으로 탄생한 오설록만의 제주의 향기를 담은 대표 블렌디드 티 모음 세트 입니다.",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/NP/YV/304_20200513135231693GB.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/TQ/GD/20200513135237903WI.png?quality=80&shrink=304:340",
+      "price_origin": "50,000",
+      "sale": 20,
+      "sale_price": "40,000"
     },
     {
-      "id": 6,
-      "name": "6번상품",
-      "category": "피라미드",
-      "price": 60000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 7896,
-      "review": 6,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "신 오브 제주",
+      "description": "제주의 아름다운 숨은 비경을 담은 블렌디드 티 모음 세트 입니다.",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/RB/SP/200_20170418183503104KB.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/item_overImg/14123.png?quality=80&shrink=304:340",
+      "price_origin": "27,000",
+      "sale": null,
+      "sale_price": null
     },
     {
-      "id": 7,
-      "name": "7번상품",
-      "category": "티백",
-      "price": 70000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 456,
-      "review": 7,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "메모리 인 제주 40입",
+      "description": "제주 꽃길에서 느꼈던 설렘의 향기와 달콤했던 사랑의 추억을 떠 올려줄 제주 꽃을 모티브로 한 티 4종 세트입니다.",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/TT/YD/304_20200624152924492EQ.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/GN/ZQ/20200624152929334GA.png?quality=80&shrink=304:340",
+      "price_origin": "68,000",
+      "sale": null,
+      "sale_price": null
     },
     {
-      "id": 8,
-      "name": "8번상품",
-      "category": "파우더",
-      "price": 80000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 890,
-      "review": 8,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "러블리 티 박스",
+      "description": "즐겁고 행복한 티타임을 선사하는 달콤하고 향긋한 오설록만의 특별한 블렌디드 티 선물 세트",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/20211026141423508CU.png?quality=80",
+      "hover_img": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
+      "price_origin": "20,000",
+      "sale": null,
+      "sale_price": null
     },
     {
-      "id": 9,
-      "name": "9번상품",
-      "category": "잎차",
-      "price": 90000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 386,
-      "review": 9,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
-    },
-    {
-      "id": 10,
-      "name": "10번상품",
-      "category": "피라미드",
-      "price": 100000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 3697,
-      "review": 10,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
-    },
-    {
-      "id": 11,
-      "name": "11번상품",
-      "category": "티백",
-      "price": 110000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 2457,
-      "review": 11,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
-    },
-    {
-      "id": 12,
-      "name": "12번상품",
-      "category": "파우더",
-      "price": 120000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 8579,
-      "review": 12,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
-    },
-    {
-      "id": 13,
-      "name": "13번상품",
-      "category": "잎차",
-      "price": 130000,
-      "sale_price": 15000,
-      "sale_persent": 25,
-      "like": 567,
-      "review": 13,
-      "new": true,
-      "sold_out": false,
-      "img": {
-        "main": "https://www.osulloc.com/upload/kr/ko/adminImage/HB/XA/304_20211026141423508CU.png?quality=80",
-        "hover": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
-      }
+      "category": "tea-set",
+      "type": "pyramid",
+      "name": "베스트 티 컬렉션 9종",
+      "description": "순수차, 블렌디드티, 허브티를 모두 경험할 수 있는 오설록 베스트 티 선물세트",
+      "likeCount": "0",
+      "reviewCount": "0",
+      "default_img": "https://www.osulloc.com//upload/kr/ko/adminImage/XY/XF/304_20200311155726475QL.png?quality=80",
+      "hover_img": "https://www.osulloc.com//upload/kr/ko/adminImage/YF/WA/20200311155732906TX.png?quality=80&shrink=304:340",
+      "price_origin": "47,000",
+      "sale": null,
+      "sale_price": null
     }
   ]
 }

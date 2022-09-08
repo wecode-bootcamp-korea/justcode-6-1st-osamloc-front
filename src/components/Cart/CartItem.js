@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-do
 
 import "./CartItem.scss";
 
-function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name, img_url, price_origin, sale, wrap, present, status }) {
+function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name, img_url, price_origin, sale, price, status }) {
   const [itemQuantity, setItemQuantity] = useState(quantity);
   const [checkItem, setCheckItem] = useState(true);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -56,8 +56,13 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
   }, [check]);
 
   useEffect(() => {
-    setLastPrice(reNumber(itemQuantity * price_origin * (1 - sale)));
-    setTotalPrice(reNumber(itemQuantity * price_origin));
+    if (sale) {
+      setLastPrice(reNumber(itemQuantity * (Number(sale) * 1000)));
+    } else {
+      setLastPrice(reNumber(itemQuantity * (Number(price_origin) * 1000)));
+    }
+
+    setTotalPrice(reNumber(itemQuantity * (Number(price_origin) * 1000)));
   }, [itemQuantity]);
 
   return (
@@ -76,8 +81,10 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
               <p className="list-item-image-text-p1">
                 <a>{name}</a>
               </p>
-              <p className="list-item-image-text-p2">{wrap ? "포장가능" : "포장불가"}</p>
-              <p className="list-item-image-text-p3">{present ? "· 선물 가능한 상품입니다." : "· 선물 할 수 없는 상품입니다."}</p>
+              {/* <p className="list-item-image-text-p2">{wrap ? "포장가능" : "포장불가"}</p>
+              <p className="list-item-image-text-p3">{present ? "· 선물 가능한 상품입니다." : "· 선물 할 수 없는 상품입니다."}</p> */}
+              <p className="list-item-image-text-p2">포장가능</p>
+              <p className="list-item-image-text-p3">선물 가능한 상품입니다.</p>
             </div>
           </div>
           <div className="list-item-count-price">
@@ -93,18 +100,18 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
               </div>
             </div>
             <div className="list-item-price">
-              <p className="list-item-price-origin">{totalPrice}원</p>
+              {sale && <p className="list-item-price-origin">{totalPrice}원</p>}
               <p>{lastPrice}원</p>
             </div>
           </div>
           <div className="list-item-button flex-align-center">
-            <Link to={`../payment/${id}`}>
+            <Link to={`../payment/${id}?present=false`}>
               <button className="list-item-button-inner">바로구매</button>
             </Link>
           </div>
         </li>
       )}
-      {!status && (
+      {/* {!status && (
         <li className="list-item flex-bewteen">
           <div className="list-item-check flex-align-center">
             <input type="checkbox" className="checkbox" checked disabled />
@@ -131,7 +138,7 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
           </div>
           <div className="list-item-button flex-align-center" style={{ width: "115px" }}></div>
         </li>
-      )}
+      )} */}
     </>
   );
 }
