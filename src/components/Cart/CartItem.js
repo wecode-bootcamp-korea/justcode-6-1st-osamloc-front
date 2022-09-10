@@ -4,10 +4,14 @@ import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-do
 import "./CartItem.scss";
 
 function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name, img_url, price_origin, sale, price, status }) {
+  const navigate = useNavigate();
+
   const [itemQuantity, setItemQuantity] = useState(quantity);
   const [checkItem, setCheckItem] = useState(true);
   const [totalPrice, setTotalPrice] = useState(0);
   const [lastPrice, setLastPrice] = useState(0);
+
+  const [effectStatus, setEffectStatus] = useState(false);
 
   const minus = () => {
     if (itemQuantity > 1) {
@@ -51,6 +55,10 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
     return total;
   };
 
+  const setStatus = () => {
+    setEffectStatus(true);
+  };
+
   useEffect(() => {
     setCheckItem(check);
   }, [check]);
@@ -64,6 +72,30 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
 
     setTotalPrice(reNumber(itemQuantity * (Number(price_origin) * 1000)));
   }, [itemQuantity]);
+
+  useEffect(() => {
+    if (effectStatus === true) {
+      const body = {
+        cartId: id,
+        newQuantity: quantity,
+      };
+
+      fetch("http://localhost:10010/cart", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+        body: JSON.stringify(body),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setEffectStatus(false);
+          navigate(`../payment/${id}?present=false`);
+        });
+    }
+  }, [effectStatus]);
 
   return (
     <>
@@ -105,9 +137,9 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
             </div>
           </div>
           <div className="list-item-button flex-align-center">
-            <Link to={`../payment/${id}?present=false`}>
-              <button className="list-item-button-inner">바로구매</button>
-            </Link>
+            <button className="list-item-button-inner" onClick={setStatus}>
+              바로구매
+            </button>
           </div>
         </li>
       )}

@@ -29,7 +29,7 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
       pg: pg, // PG사
       pay_method: "card", // 결제수단
       merchant_uid: `mid_${new Date().getTime()}`, // 주문번호
-      amount: 100, // 결제금액
+      amount: Number(totalPrice.replace(",", "")), // 결제금액
       name: cartList[0].name, // 주문명
       buyer_name: sendName, // 구매자 이름
       buyer_tel: sendPhone, // 구매자 전화번호
@@ -72,6 +72,7 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
   let useSale = 0;
   let useWrap = 0;
   let useDelivery = 0;
+  let useTotalPrice = 0;
 
   const reNumber = (total) => {
     total = String(total);
