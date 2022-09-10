@@ -132,7 +132,6 @@ function Header () {
                                                 let arr = [...navItem];
                                                 arr[2].view = true;
                                                 setNavItem(arr);
-                                                console.log("다다일상", arr[2].view);
                                         }} 
                                         onMouseLeave={() => {
                                             let arr = [...navItem];
@@ -148,7 +147,6 @@ function Header () {
                                                 let arr = [...navItem];
                                                 arr[3].view = true;
                                                 setNavItem(arr);
-                                                console.log("브랜드",arr[3].view);
                                             }} 
                                             onMouseLeave={() => {
                                                 let arr = [...navItem];
@@ -177,7 +175,10 @@ function Header () {
                         </ul>
                         <ul className="nav_drop">
                             <li>
-                                <Link to="/login" className="login">로그인</Link>
+                                {localStorage.getItem('token') ? <Link to={''} className="login"
+                                onClick={()=>{
+                                  localStorage.removeItem('token');
+                                }}>안녕하세요</Link>:<Link to="/login" className="login">로그인</Link>}
                             </li>
                             <li>
                                 <Link to="/" className="language">KOREAN</Link>

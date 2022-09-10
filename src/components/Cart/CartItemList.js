@@ -8,6 +8,7 @@ function CartItemList({ cartList, checkedItems, checkedItemArrayPush, setQuantit
     <>
       <ul className="cart-items-list">
         {cartList.map((el) => {
+          console.log(el);
           return (
             <CartItem
               key={el.cartId}

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 
@@ -80,6 +81,7 @@ function CartForm() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log('장바구니',data.data);
         setCartList(data.data);
         setStockCartList(data.data);
         setCheckedArray(

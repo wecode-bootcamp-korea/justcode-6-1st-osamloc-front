@@ -1,6 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+// Header
+import Header from "../components/Header";
+
+// Footer
+import Footer from "../components/Footer/Footer";
+
 // 메인 페이지
 import Main from "./Main/\bindex";
 
@@ -30,11 +36,12 @@ import Detail from "../components/ProductDetail/Left/index";
 // 장바구니, 결제 페이지
 import Cart from "./Cart/Cart";
 import Payment from "./Cart/Payment";
-import Header from "../components/Header";
 
 function Router() {
   return (
     <BrowserRouter>
+      {/* Header */}
+      <Header />
       <Routes>
         {/* 메인 페이지 */}
         <Route path="/" element={<Main />} />
@@ -59,12 +66,13 @@ function Router() {
         <Route path="/products/detail" element={<Detail />} />
 
         {/* 제품 상세 페이지 */}
-        <Route path="/products/asd" element={<ProductDetail />} />
+        <Route path="/products/item/:id" element={<ProductDetail />} />
 
         {/* 장바구니, 결제 페이지 */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment/:cartlist" element={<Payment />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

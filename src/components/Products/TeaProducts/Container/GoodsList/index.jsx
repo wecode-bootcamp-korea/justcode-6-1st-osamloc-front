@@ -69,14 +69,12 @@ function GoodsList(props) {
         .get(`http://localhost:10010/products/category?name=${pageInfo.query}`)
         .then((res) => {
           setGoodsLength(res.data.data.length);
-          console.log('1',res.data.data.length);
         });
     } else {
       axios
         .get(`http://localhost:10010/products/category/type?name=${pageInfo.query}&type=${secondCategory}`)
         .then((res) => {
           setGoodsLength(res.data.data.length);
-          console.log('2',res.data.data.length);
         });
     }
   }, [secondCategory]);

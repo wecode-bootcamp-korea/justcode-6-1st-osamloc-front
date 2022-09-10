@@ -3,15 +3,15 @@ import "./index.scss";
 import Goods from "./Goods";
 
 function ListContent(props) {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const { products } = props;
 
   return (
     <div className="list-content">
       {props.children}
       <div className="goods-container">
-        {arr.map((el, i)=>{
+        {products.map((product, i)=>{
           return (
-            <Goods key={i} order={el} />
+            <Goods key={product.name} num={i + 1} product={product} />
           )
         })}
       </div>

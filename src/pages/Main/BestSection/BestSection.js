@@ -22,7 +22,6 @@ function BestSection() {
     const nextSlideBtn = () => {
         bestIdx === 4 ? setBestIdx(4) : setBestIdx(bestIdx + 1)
     }
- 
     
     // useEffect(() => {
     //     fetch("/data/main/best.json")
@@ -34,7 +33,7 @@ function BestSection() {
         fetch("http://localhost:10010/products?id=8&page=1")
             .then((res) => res.json())
             .then((res) => setBest(res.data))
-    }, []); 
+    }, []);
 
     return(
         <div className="best_layout">
