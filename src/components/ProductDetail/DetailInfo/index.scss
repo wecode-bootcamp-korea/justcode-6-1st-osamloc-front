@@ -1,4 +1,4 @@
-.detail-info{
+.detail-info {
   box-sizing: border-box;
   width: 47.3%;
   margin: 100px;
@@ -29,7 +29,7 @@
     font-size: 36px;
     margin-bottom: 6px;
   }
-  
+
   .item-amount {
     height: 60px;
     font-size: 20px;
@@ -47,18 +47,16 @@
     border-bottom: 1px #ececec solid;
 
     .func-span {
-        
-        .func-img {
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          margin-right: 10px;
-          cursor: pointer;
-        }
-      
+      .func-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        margin-right: 10px;
+        cursor: pointer;
+      }
     }
 
-    .func-price{
+    .func-price {
       margin-top: 7px;
       font-size: 28px;
       color: #7b7b7b;
@@ -68,7 +66,7 @@
       }
     }
   }
-  
+
   .buying-container {
     position: relative;
     min-height: 273px;
@@ -135,7 +133,7 @@
             font-size: 22px;
             color: #727272;
             line-height: 1.5;
-            
+
             strong {
               color: black;
             }
@@ -178,10 +176,10 @@
 
             img {
               width: 16px;
-            height: 16px;
+              height: 16px;
             }
           }
-          
+
           .num {
             margin: 0 2px 0 14px;
             font-size: 24px;
@@ -229,7 +227,7 @@
         width: 99.6%;
         border: 1px solid #e0e0e0;
         background: #ffffff;
-        
+
         li {
           display: flex;
           align-items: center;
@@ -260,7 +258,7 @@
         font-size: 18px;
         color: #505051;
       }
-      
+
       .sum-price {
         display: flex;
         justify-content: space-between;
@@ -281,10 +279,10 @@
 
             img {
               width: 16px;
-            height: 16px;
+              height: 16px;
             }
           }
-          
+
           .num {
             margin: 0 2px 0 14px;
             font-size: 24px;
@@ -307,17 +305,12 @@
     }
   }
 
-  
-
-  .label-zone{
-
+  .label-zone {
   }
 
   .value-amount {
-
   }
 
   .item-detail-payment {
-
   }
 }
