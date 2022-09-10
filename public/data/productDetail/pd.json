@@ -1,0 +1,93 @@
+{
+  "data": {
+    "id": 12,
+    "name": "베스트 티 컬렉션 3종",
+    "description": "일상의 기념일, 작은 선물을 위한 오설록 베스트 블렌디드티 큐브 세트",
+    "price_origin": 25000,
+    "sale_price": 20000,
+    "sale": 20,
+    "category": "티 세트",
+    "parentCategory": "티 제품",
+    "defaultImg": "https://www.osulloc.com//upload/kr/ko/adminImage/CZ/KU/304_20200903110337630SQ.png?quality=80",
+    "hoverImg": "https://www.osulloc.com//upload/kr/ko/adminImage/UU/FF/20200903112112601VD.png?quality=80&shrink=304:340",
+    "detailImgs": [
+      "https://www.osulloc.com/upload/kr/ko/item_view/18163/visual_main.jpg",
+      "https://www.osulloc.com/upload/kr/ko/item_view/common/tea_fermented.jpg?ver=210427",
+      "https://www.osulloc.com/upload/kr/ko/item_view/18163/about.jpg"
+    ],
+    "reviews": [
+      {
+        "id": 27,
+        "user_id": 1,
+        "account": "test1",
+        "content": "기대됩니다!!",
+        "image_url": null,
+        "rate": 4,
+        "date": "2022.09.05"
+      },
+      {
+        "id": 26,
+        "user_id": 2,
+        "account": "test2",
+        "content": "흠 그냥 그래요..",
+        "image_url": null,
+        "rate": 3,
+        "date": "2022.09.05"
+      },
+      {
+        "id": 8,
+        "user_id": 6,
+        "account": "test6",
+        "content": "정말 맛있습니다. 향이 좋네요.",
+        "image_url": null,
+        "rate": 5,
+        "date": "2022.09.05"
+      }
+    ],
+    "reviewAllCount": "3",
+    "imgReviewCount": "0",
+    "rateAverage": "4.0",
+    "options": [
+      {
+        "option_product_id": 74,
+        "name": "제주섬 녹차 라즈베리 트러플",
+        "price_origin": 13000,
+        "sale_price": 0,
+        "sale": null,
+        "view": false
+      },
+      {
+        "option_product_id": 50,
+        "name": "제주 동백꽃 티",
+        "price_origin": 9500,
+        "sale_price": 8550,
+        "sale": 10,
+        "view": false
+      },
+      {
+        "option_product_id": 40,
+        "name": "세작 20입",
+        "price_origin": 25000,
+        "sale_price": 0,
+        "sale": null,
+        "view": false
+      },
+      {
+        "option_product_id": 33,
+        "name": "오설록 제주 유채&꿀 티백 5EA (티백)",
+        "price_origin": 5000,
+        "sale_price": 0,
+        "sale": null,
+        "view": false
+      },
+      {
+        "option_product_id": 7,
+        "name": "메모리 인 제주 40입",
+        "price_origin": 68000,
+        "sale_price": 0,
+        "sale": null,
+        "view": false
+      }
+    ]
+  }
+}

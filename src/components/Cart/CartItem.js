@@ -99,50 +99,50 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
 
   return (
     <>
-      {status && (
-        <li className="list-item flex-bewteen">
-          <div className="list-item-check flex-align-center">
-            <input type="checkbox" className="checkbox" checked={checkItem} onChange={checkHandler} id={`${id}listItem`} />
-            <label for={`${id}listItem`}></label>
+      {/* {status && ( */}
+      <li className="list-item flex-bewteen">
+        <div className="list-item-check flex-align-center">
+          <input type="checkbox" className="checkbox" checked={checkItem} onChange={checkHandler} id={`${id}listItem`} />
+          <label for={`${id}listItem`}></label>
+        </div>
+        <div className="list-item-image flex-align-center">
+          <div className="list-item-image-box">
+            <img alt="" src={img_url} className="image-png" />
           </div>
-          <div className="list-item-image flex-align-center">
-            <div className="list-item-image-box">
-              <img alt="" src={img_url} className="image-png" />
-            </div>
-            <div className="list-item-image-text">
-              <p className="list-item-image-text-p1">
-                <a>{name}</a>
-              </p>
-              {/* <p className="list-item-image-text-p2">{wrap ? "포장가능" : "포장불가"}</p>
+          <div className="list-item-image-text">
+            <p className="list-item-image-text-p1">
+              <a>{name}</a>
+            </p>
+            {/* <p className="list-item-image-text-p2">{wrap ? "포장가능" : "포장불가"}</p>
               <p className="list-item-image-text-p3">{present ? "· 선물 가능한 상품입니다." : "· 선물 할 수 없는 상품입니다."}</p> */}
-              <p className="list-item-image-text-p2">포장가능</p>
-              <p className="list-item-image-text-p3">선물 가능한 상품입니다.</p>
+            <p className="list-item-image-text-p2">포장가능</p>
+            <p className="list-item-image-text-p3">선물 가능한 상품입니다.</p>
+          </div>
+        </div>
+        <div className="list-item-count-price">
+          <div className="list-item-count">
+            <div className="list-item-count-inner flex-bewteen">
+              <button className="list-item-count-inner-button" onClick={minus}>
+                -
+              </button>
+              <input type="text" className="list-item-count-inner-input" value={itemQuantity} onChange={inputQuantity}></input>
+              <button className="list-item-count-inner-button" onClick={plus}>
+                +
+              </button>
             </div>
           </div>
-          <div className="list-item-count-price">
-            <div className="list-item-count">
-              <div className="list-item-count-inner flex-bewteen">
-                <button className="list-item-count-inner-button" onClick={minus}>
-                  -
-                </button>
-                <input type="text" className="list-item-count-inner-input" value={itemQuantity} onChange={inputQuantity}></input>
-                <button className="list-item-count-inner-button" onClick={plus}>
-                  +
-                </button>
-              </div>
-            </div>
-            <div className="list-item-price">
-              {sale && <p className="list-item-price-origin">{totalPrice}원</p>}
-              <p>{lastPrice}원</p>
-            </div>
+          <div className="list-item-price">
+            {sale && <p className="list-item-price-origin">{totalPrice}원</p>}
+            <p>{lastPrice}원</p>
           </div>
-          <div className="list-item-button flex-align-center">
-            <button className="list-item-button-inner" onClick={setStatus}>
-              바로구매
-            </button>
-          </div>
-        </li>
-      )}
+        </div>
+        <div className="list-item-button flex-align-center">
+          <button className="list-item-button-inner" onClick={setStatus}>
+            바로구매
+          </button>
+        </div>
+      </li>
+      {/* )} */}
       {/* {!status && (
         <li className="list-item flex-bewteen">
           <div className="list-item-check flex-align-center">

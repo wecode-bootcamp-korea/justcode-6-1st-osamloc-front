@@ -174,7 +174,6 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             setSendData(false);
           });
       });

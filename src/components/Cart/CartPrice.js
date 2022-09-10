@@ -81,8 +81,6 @@ function CartPrice({ cartList, checkedArray }) {
           newQuantity: el.quantity,
         };
 
-        console.log(body);
-
         fetch("http://localhost:10010/cart", {
           method: "PATCH",
           headers: {
@@ -93,7 +91,6 @@ function CartPrice({ cartList, checkedArray }) {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             setEffectStatus(false);
             navigate(`../payment/${checkedArray.join("-")}?present=false`);
           });
