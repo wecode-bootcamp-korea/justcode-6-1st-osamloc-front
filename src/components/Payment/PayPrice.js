@@ -72,6 +72,7 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
   let useSale = 0;
   let useWrap = 0;
   let useDelivery = 0;
+  let useTotalPrice = 0;
 
   const reNumber = (total) => {
     total = String(total);

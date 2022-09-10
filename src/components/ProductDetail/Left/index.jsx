@@ -10,8 +10,9 @@ const ItemThumbWrapper = styled.div`
 
 const DivLeft = styled.div`
   position: relative;
-  width: 36.3%;
+  width: 55.3%;
   // width: 45.9%;
+  margin-top: 96px;
 `;
 
 const DivThumb = styled.div`
@@ -46,20 +47,20 @@ const Li = styled.li`
   ${(props) => {
     if (props.img === "ic01") {
       return css`
-        width: 200px;
+        width: 185px;
       `;
     } else if (props.img === "ic02") {
       return css`
-        width: 160px;
+        width: 150px;
       `;
     } else if (props.img === "ic03") {
       return css`
-        width: 160px;
+        width: 150px;
         padding: 0 0 0 35px;
       `;
     } else if (props.img === "ic04") {
       return css`
-        width: 200px;
+        width: 185px;
       `;
     } else if (props.img === "ic05") {
       return css`
@@ -147,11 +148,25 @@ const BtnViewReview = styled.a`
   padding: 20px 0 0 0;
   color: #9e9e9e;
   font-size: 20px;
+  cursor: pointer;
 `;
 
 const Strong = styled.strong`
   color: #2f2f2f;
   font-weight: normal;
+`;
+
+const After = styled.a`
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -6px;
+  width: 10px;
+  height: 14px;
+  content: " ";
+  background: url(https://www.osulloc.com/kr/ko/static_renew/images/item_detail/arr_10x14.png?quality=80) 50% 50% no-repeat;
 `;
 
 function DetailLeft() {
@@ -206,16 +221,16 @@ function DetailLeft() {
             <InnerP>리뷰 평점</InnerP>
             <StarPoint>
               <Starts>
-                <div class="bar"></div>
+                <div className="bar"></div>
               </Starts>
               <Number>4.8</Number>
             </StarPoint>
           </PointBoard>
           <BtnViewReview>
-            REVIEW <Strong>119</Strong>{" "}
+            REVIEW <Strong>119 &gt;</Strong>
           </BtnViewReview>
         </ReviewPoint>
-        <input type="hidden" name="attrOptItemCount" value="0" />
+        <input type="hidden" className="attrOptItemCount" value="0" />
       </DivLeft>
     </>
   );
