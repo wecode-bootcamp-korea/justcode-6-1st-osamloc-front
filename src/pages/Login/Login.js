@@ -31,7 +31,7 @@ function Login() {
   const handlePwInput = (e) =>{
     const pwValue = e.target.value;
     setPw(pwValue);
-    (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=8)
+    (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=1)
     ? setIsValid(true)
     :setIsValid(false)
   }; 

@@ -65,9 +65,38 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
     setTotalPrice(reNumber(itemQuantity * (Number(price_origin) * 1000)));
   }, [itemQuantity]);
 
+  const [effectStatus, setEffectStatus] = useState(false);
+
+  const setStatus = () => {
+    setEffectStatus(true);
+  };
+  
+  useEffect(() => {
+    if (effectStatus === true) {
+      const body = {
+        cartId: id,
+        newQuantity: quantity,
+      };
+      fetch("http://localhost:10010/cart", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+        body: JSON.stringify(body),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setEffectStatus(false);
+          navigate(`../payment/${id}?present=false`);
+        });
+    }
+  }, [effectStatus]);
+
+
   return (
     <>
-      {status && (
+      {/* {status && ( */}
         <li className="list-item flex-bewteen">
           <div className="list-item-check flex-align-center">
             <input type="checkbox" className="checkbox" checked={checkItem} onChange={checkHandler} id={`${id}listItem`} />
@@ -106,11 +135,11 @@ function CartItem({ checkedItemArrayPush, setQuantity, id, check, quantity, name
           </div>
           <div className="list-item-button flex-align-center">
             <Link to={`../payment/${id}?present=false`}>
-              <button className="list-item-button-inner">바로구매</button>
+              <button className="list-item-button-inner" onClick={setStatus}>바로구매</button>
             </Link>
           </div>
         </li>
-      )}
+      {/* )} */}
       {/* {!status && (
         <li className="list-item flex-bewteen">
           <div className="list-item-check flex-align-center">

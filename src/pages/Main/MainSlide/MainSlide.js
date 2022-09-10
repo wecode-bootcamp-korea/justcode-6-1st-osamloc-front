@@ -50,10 +50,6 @@ function MainSlide() {
     const prevSlide =() => {
         slideIdx === slideimg.length - 5 ? setSlideIdx(4) : setSlideIdx(slideIdx - 1);
     }
-    
-    // useEffect(() => {
-    //     console.log('fade 효과');
-    // }, [slideIdx])
 
     return(<>
         <div className="main_bg">
