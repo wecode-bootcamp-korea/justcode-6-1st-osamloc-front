@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
@@ -125,7 +126,6 @@ const Starts = styled.div`
   bottom: 5px;
   width: 176px;
   height: 32px;
-  background: url(https://www.osulloc.com/kr/ko/static_renew/images/item_detail/bg_stars.png?quality=80) 0 -40px no-repeat;
 `;
 
 const Number = styled.span`
@@ -170,6 +170,9 @@ const After = styled.a`
 `;
 
 function DetailLeft() {
+  const [data, setData] = useState("");
+  const [posit, setPosit] = useState(0);
+
   // useEffect(() => {
   //   fetch(`http://localhost:10010/products/item/${id}`, {
   //     method: "GET",
@@ -184,12 +187,34 @@ function DetailLeft() {
 
   // })
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:10010${location.pathname}`)
+      // axios.get('/data/productDetail/pd.json')
+      .then((res) => {
+        setData(res.data.data);
+        if (Math.round(res.data.data.rateAverage) === 1) {
+          setPosit("-139px");
+        } else if (Math.round(res.data.data.rateAverage) === 2) {
+          setPosit("-103px");
+        } else if (Math.round(res.data.data.rateAverage) === 3) {
+          setPosit("-67px");
+        } else if (Math.round(res.data.data.rateAverage) === 4) {
+          setPosit("-31px");
+        } else if (Math.round(res.data.data.rateAverage) === 5) {
+          setPosit("0px");
+        } else if (Math.round(res.data.data.rateAverage) === 0) {
+          setPosit("-139px");
+        }
+      });
+  }, []);
+
   return (
     <>
       <DivLeft>
         <ItemThumbWrapper>
           <DivThumb>
-            <Img src="https://www.osulloc.com/upload/kr/ko/adminImage/PO/NH/20220818165938742EU.png?quality=80" alt="러블리 티 박스" />
+            <Img src={data.defaultImg} alt={data.name} />
           </DivThumb>
           <BuyerBenefits>
             <Li img="ic01">
@@ -220,14 +245,14 @@ function DetailLeft() {
           <PointBoard>
             <InnerP>리뷰 평점</InnerP>
             <StarPoint>
-              <Starts>
+              <Starts style={{ background: `url(https://www.osulloc.com/kr/ko/static_renew/images/item_detail/bg_stars.png?quality=80) ${posit} -40px no-repeat` }}>
                 <div className="bar"></div>
               </Starts>
-              <Number>4.8</Number>
+              <Number>{data.rateAverage}</Number>
             </StarPoint>
           </PointBoard>
           <BtnViewReview>
-            REVIEW <Strong>119 &gt;</Strong>
+            REVIEW <Strong>{data.reviewAllCount} &gt;</Strong>
           </BtnViewReview>
         </ReviewPoint>
         <input type="hidden" className="attrOptItemCount" value="0" />

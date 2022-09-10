@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 import "./index.scss";
@@ -53,6 +54,17 @@ function DetailBottom() {
     }
   };
 
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:10010${location.pathname}`)
+      // axios.get('/data/productDetail/pd.json')
+      .then((res) => {
+        setData(res.data.data.detailImgs);
+      });
+  }, []);
+
   return (
     <>
       <Bottom>
@@ -69,7 +81,16 @@ function DetailBottom() {
                 {/* <!--DefaultInfo--> */}
                 <div className="detail_default_info">
                   <div className="bakery_detail_info" tabindex="0">
-                    <div className="sec_detail_info d_info_w_cut">
+                    {data &&
+                      data.map((el) => {
+                        return (
+                          <div className="sec_detail_info d_info_w_cut" key={el}>
+                            <img src={el} alt="오 땡큐 티 박스" className="w_view" />
+                          </div>
+                        );
+                      })}
+
+                    {/* <div className="sec_detail_info d_info_w_cut">
                       <img src="https://www.osulloc.com/upload/kr/ko/item_view/15263/img_01.jpg" alt="오 땡큐 티 박스" className="w_view" />
                     </div>
                     <div className="sec_detail_info d_info_w_cut">
@@ -97,7 +118,7 @@ function DetailBottom() {
                     </div>
                     <div className="sec_detail_info d_info_w_cut">
                       <img src="https://www.osulloc.com/upload/kr/ko/item_view/15263/img_08_1.jpg" alt="Size" className="w_view" />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
