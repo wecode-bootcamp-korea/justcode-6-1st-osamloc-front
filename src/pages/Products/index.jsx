@@ -1,6 +1,8 @@
+import { useLocation, useParams } from "react-router-dom";
 import { TeaProducts } from "../../components/Products";
 
 function TeaSet() {
+
   const pageInfo = {
     name: "티 세트",
     query: "tea-set",

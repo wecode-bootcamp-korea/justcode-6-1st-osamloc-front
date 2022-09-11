@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link,useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./Footer.scss"
 
 
@@ -13,6 +13,7 @@ function Footer(){
       localStorage.removeItem("token");
     };
 
+    if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
 
     return(
         <div className='footer-container'>

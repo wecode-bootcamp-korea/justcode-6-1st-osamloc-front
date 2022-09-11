@@ -7,11 +7,11 @@ import styled from "styled-components";
 
 function TeaProducts(props) {
 
-  const { pageInfo } = props
+  const { pageInfo } = props;
 
   // 제품 데이터
   const [goodsList, setGoodsList] = useState([]);
-  
+
   const [firstCategory, setFirstCategory] = useState('review');
   const [secondCategory, setSecondCategory] = useState('');
   const [pageNum, setPageNum] = useState(1);

@@ -206,16 +206,16 @@ function PayPrice({ cartList, agree, name, phone, addressPost, addressMain, addr
             <p>{totalPrice}원</p>
           </div>
           <div className="price-info-button">
-            {sendApprove && (
+            {/* {sendApprove && ( */}
               <button className="price-info-button-inner" onClick={onClickPayment}>
                 결제하기
               </button>
-            )}
-            {!sendApprove && (
+            {/* )} */}
+            {/* {!sendApprove && (
               <button className="price-info-button-inner" onClick={modalUpBtn}>
                 결제하기
               </button>
-            )}
+            )} */}
             {modalup && <Modal modalUpBtn={modalUpBtn} state={errorMessage} />}
           </div>
         </div>
