@@ -17,7 +17,11 @@ const DivLeft = styled.div`
 `;
 
 const DivThumb = styled.div`
+  display: flex;
+  justify-content: center;
   max-width: 480px;
+  margin: 0;
+  padding: 0;
 `;
 
 const BuyerBenefits = styled.ul`

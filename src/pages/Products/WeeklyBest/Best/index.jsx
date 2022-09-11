@@ -12,7 +12,7 @@ function Best() {
   useEffect(()=>{
     axios.get(`http://localhost:10010/products/best/weekly`)
     .then((res) => {setProducts(res.data.data)})
-  })
+  }, [])
 
   return (
     <div className="best">

@@ -1,9 +1,15 @@
+.header-none {
+  display: none;
+}
+
 .header {
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width: 100%;
     z-index: 100;
+    // background: #fff;
+    // color: #727272;
     background: linear-gradient(to bottom, rgba(0,0,0,.25), transparent);
     transition: all .3s ease-in-out;
 
@@ -75,7 +81,6 @@
                 }
             }
         }
-
     }
     .header_wrapper {
         max-width: 1540px;
