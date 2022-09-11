@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link,useLocation,useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./Footer.scss"
 
 
@@ -13,19 +13,10 @@ function Footer(){
       localStorage.removeItem("token");
     };
 
-    const location = useLocation();
-    const [style, setStyle] = useState();
-
-    useEffect(()=>{
-      if(location.pathname === '/signup' || '/login'){
-        setStyle('footer-container-none');
-      } else {
-        setStyle('footer-container');
-      }
-    }, [])
+    if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
 
     return(
-        <div className={style}>
+        <div className='footer-container'>
             <div className='footer-bar footer-flex'>
                 {localStorage.getItem('token') ? <button onClick={goLoginPage} className='footer-login-btn'>안녕하세요</button> : <button onClick={goLoginPage} className='footer-login-btn'>로그인</button>}
                 <img onClick={()=>{window.open("https://www.facebook.com/Jeju.OSULLOC",'_blank')}} className='footer-align' src='/image/footer/facebook.png'/>

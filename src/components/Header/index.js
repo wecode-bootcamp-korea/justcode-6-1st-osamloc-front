@@ -1,23 +1,10 @@
 import React, {useEffect, useState} from 'react';
 
-import { Link, useLocation, useParams } from "react-router-dom";
-import "./index.scss"
-import Navlist from './Navlist'; 
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "./index.scss";
+import Navlist from './Navlist';
 
 function Header () {
-
-  const location = useLocation();
-  const [style, setStyle] = useState();
-
-
-  useEffect(()=>{
-    if(location.pathname === '/signup' || '/login'){
-      setStyle('header-none');
-    } else {
-      setStyle('header');
-    }
-  }, [])
 
     const [navItem, setNavItem] = useState ([ 
         {
@@ -40,7 +27,6 @@ function Header () {
             link : "/",
             view: false
         },
-    
     ]);
     
     const menuItems = {
@@ -88,6 +74,8 @@ function Header () {
         
     }
 
+    const navigator = useNavigate();
+
     const [open, setOpen] = useState(false);
     const closeNav = () => {
         let arr = [...navItem];
@@ -95,10 +83,11 @@ function Header () {
         setNavItem(arr);
 
     }
-    // const [ style, setStyle ] = useState({display: 'none'});
+
+    if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
 
     return (<>
-        <header className={style}>
+        <header className='header'>
             <div className="header_wrapper">
                 <div className="header_inner"> 
                     <div className="header_left">
