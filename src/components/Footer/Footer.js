@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Footer.scss"
 
-
-
 function Footer(){
 
     const navigator = useNavigate();
@@ -12,8 +10,6 @@ function Footer(){
       navigator("/login");
       localStorage.removeItem("token");
     };
-
-    if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
 
     return(
         <div className='footer-container'>

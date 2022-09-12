@@ -3,6 +3,12 @@ import Footer from "../Footer/Footer";
 
 function LayOut(props) {
   return (
-    <Header></Header>
+    <>
+      <Header />
+        {props.children}
+      <Footer />
+    </>
   )
 }
+
+export default LayOut;
