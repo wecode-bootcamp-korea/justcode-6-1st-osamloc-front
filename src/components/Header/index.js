@@ -74,8 +74,6 @@ function Header () {
         
     }
 
-    const navigator = useNavigate();
-
     const [open, setOpen] = useState(false);
     const closeNav = () => {
         let arr = [...navItem];
@@ -84,7 +82,7 @@ function Header () {
 
     }
 
-    if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
+    // if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
 
     return (<>
         <header className='header'>
