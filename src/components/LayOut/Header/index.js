@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import "./index.scss";
+import { Link } from "react-router-dom";
+// import "./index.scss";
 import Navlist from './Navlist';
 
 function Header () {
@@ -82,8 +82,6 @@ function Header () {
 
     }
 
-    // if (window.location.pathname === '/signup' || window.location.pathname === '/login') return <></>;
-
     return (<>
         <header className='header'>
             <div className="header_wrapper">
@@ -91,10 +89,10 @@ function Header () {
                     <div className="header_left">
                     <h1 className="logo">
                             <Link to="/" className="logo_white" >
-                                <img src="./../../image/header/logo_osamloc_white.png" style={{width: 108}} alt="오설록 로고"/>
+                                <img src="../../../image/header/logo_osamloc_white.png" style={{width: 108}} alt="오설록 로고"/>
                             </Link>
                             <Link to="/" className="logo_black" >
-                                <img src="./../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
+                                <img src="../../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
 
                             </Link>
                         </h1>

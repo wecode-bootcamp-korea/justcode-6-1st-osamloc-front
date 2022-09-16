@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+// 레이아웃
+import LayOut from "../components/LayOut"
+
 // 메인 페이지
 import Main from "./Main/\bindex";
 
@@ -24,14 +27,10 @@ import MilkTea from "./Products/TeaProduct/MilkTea";
 
 // 제품 상세 페이지
 import ProductDetail from "../components/ProductDetail";
-// 제품 상세페이지
-import Detail from "../components/ProductDetail/Left/index";
 
 // 장바구니, 결제 페이지
 import Cart from "./Cart/Cart";
 import Payment from "./Cart/Payment";
-
-import LayOut from "../components/LayOut"
 
 function Router() {
   return (

@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": 38,
+      "user_id": 1,
+      "account": "test1",
+      "contents": "굿!!",
+      "image_url": "http://localhost:10010/images/review_image6.jpg",
+      "rate": 5,
+      "date": "2022.09.06"
+    },
+    {
+      "id": 35,
+      "user_id": 1,
+      "account": "test1",
+      "contents": "진짜 맛있어 보여요!",
+      "image_url": "http://localhost:10010/images/review_image12.jpg",
+      "rate": 5,
+      "date": "2022.09.06"
+    },
+    {
+      "id": 37,
+      "user_id": 1,
+      "account": "test1",
+      "contents": "좋아요!!",
+      "image_url": "http://localhost:10010/images/review_image6.jpg",
+      "rate": 5,
+      "date": "2022.09.06"
+    },
+    {
+      "id": 36,
+      "user_id": 1,
+      "account": "test1",
+      "contents": "좋아요!!",
+      "image_url": "http://localhost:10010/images/review_image6.jpg",
+      "rate": 5,
+      "date": "2022.09.06"
+    },
+    {
+      "id": 30,
+      "user_id": 4,
+      "account": "test4",
+      "contents": "좋았습니다..!",
+      "image_url": "http://localhost:10010/images/review_image3.jpg",
+      "rate": 5,
+      "date": "2022.09.05"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "account": "test1",
+      "contents": "정말 맛있습니다. 향이 좋네요.",
+      "image_url": "http://localhost:10010/images/review_image1.jpg",
+      "rate": 5,
+      "date": "2022.09.05"
+    }
+  ]
+}

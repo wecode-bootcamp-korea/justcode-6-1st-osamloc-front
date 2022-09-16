@@ -1,6 +1,7 @@
 import DetailInfo from "./DetailInfo";
 import DetailLeft from "./Left";
 import DetailBottom from "./Bottom";
+import Comment from "./Comment";
 
 function ProductDetail() {
   return (
@@ -10,6 +11,7 @@ function ProductDetail() {
         <DetailInfo />
       </div>
       <DetailBottom />
+      <Comment />
     </>
   );
 }
