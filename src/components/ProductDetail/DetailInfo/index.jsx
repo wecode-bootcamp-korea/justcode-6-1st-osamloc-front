@@ -314,7 +314,7 @@ function DetailInfo() {
 
         {/* <div className="label-zone"></div> */}
 
-        {finalPrice > 100000 && <div className="free-dil">무료배송</div>}
+        {finalPrice >= 50000 && <div className="free-dil">무료배송</div>}
         <div className="value-amount">
           <div className="final-price">
             상품금액 합계

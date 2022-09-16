@@ -1,7 +1,3 @@
-.header-none {
-  display: none;
-}
-
 .header {
     position: fixed;
     top:0;
@@ -55,17 +51,17 @@
                     ul.nav_util {
                         li {
                             a.nav_search {
-                                background: url("../../../public/image/header/icon_search_black.png") center no-repeat;
+                                background: url("/public/image/header/icon_search_black.png") center no-repeat;
                                 background-size: cover;
                             }
 
                             a.nav_cart {
-                                background: url("../../../public/image/header/icon_cart_black.png") center no-repeat;
+                                background: url("/public/image/header/icon_cart_black.png") center no-repeat;
                                 background-size: cover;
                             }
 
                             a.nav_more {
-                                background: url("../../../public/image/header/icon_more_black.png") center no-repeat;
+                                background: url("/public/image/header/icon_more_black.png") center no-repeat;
                                 background-size: cover;
                             }
                         }
@@ -237,30 +233,30 @@
                         }
 
                         a.nav_search {
-                            background: url("../../../public/image/header/icon_search_white.png") center no-repeat;
+                            background: url("/public/image/header/icon_search_white.png") center no-repeat;
                             background-size: cover;
                             &:hover {
-                                background: url("../../../public/image/header/icon_search_hover.png") center no-repeat;
+                                background: url("/public/image/header/icon_search_hover.png") center no-repeat;
                                 background-size: cover;
                             }
                         }
 
                         a.nav_cart {
-                            background: url("../../../public/image/header/icon_cart_white.png") center no-repeat;
+                            background: url("/public/image/header/icon_cart_white.png") center no-repeat;
                             background-size: cover;
                             
                             &:hover {
-                                background: url("../../../public/image/header/icon_cart_hover.png") center no-repeat;
+                                background: url("/public/image/header/icon_cart_hover.png") center no-repeat;
                                 background-size: cover;
                             }
                         }
 
                         a.nav_more {
-                            background: url("../../../public/image/header/icon_more_white.png") center no-repeat;
+                            background: url("/public/image/header/icon_more_white.png") center no-repeat;
                             background-size: cover;
                             
                             &:hover {
-                                background: url("../../../public/image/header/icon_more_hover.png") center no-repeat;
+                                background: url("/public/image/header/icon_more_hover.png") center no-repeat;
                                 background-size: cover;
                             }
                         }

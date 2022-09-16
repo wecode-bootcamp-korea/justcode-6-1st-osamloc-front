@@ -80,7 +80,7 @@ function DetailBottom() {
               <div className="prod_detail_area">
                 {/* <!--DefaultInfo--> */}
                 <div className="detail_default_info">
-                  <div className="bakery_detail_info" tabindex="0">
+                  <div className="bakery_detail_info" tabIndex="0">
                     {data &&
                       data.map((el) => {
                         return (
