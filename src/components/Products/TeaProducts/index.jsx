@@ -18,9 +18,9 @@ function TeaProducts(props) {
 
   const [typeURL, setTypeURL] = useState(["", ""]);
   useEffect(() => {
-    axios
+    axios 
       .get(
-        `http://localhost:10010/products/category/${typeURL[0]}${firstCategory}?name=${pageInfo.query}${typeURL[1]}${secondCategory}&page=${pageNum}`
+        `http://localhost:10010/products/category${typeURL[0]}/sort?name=${pageInfo.query}${typeURL[1]}${secondCategory}&sort=${firstCategory}&page=${pageNum}`
       )
       // .get('/data/product/product.json')
       .then((res) => {
@@ -32,7 +32,7 @@ function TeaProducts(props) {
   useEffect(() => {
     let arr = [];
     if (secondCategory.length) {
-      arr = ["type/", "&type="];
+      arr = ["/type", "&type="];
       setTypeURL(arr);
     } else {
       arr = ["", ""];
@@ -52,9 +52,7 @@ function TeaProducts(props) {
   
   return goodsList && (
     <div className="tea-products">
-      <ProductHeader
-      //  className="product-header"
-       >
+      <ProductHeader>
         <h2 className="product-title">{pageInfo.name}</h2>
       </ProductHeader>
       <div className="container">
