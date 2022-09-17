@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-import { Link } from "react-router-dom";
-import "./index.scss"
-import Navlist from './Navlist'; 
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "./index.scss";
+import Navlist from './Navlist';
 
 function Header () {
 
@@ -28,30 +27,55 @@ function Header () {
             link : "/",
             view: false
         },
-    
     ]);
-    
     const menuItems = {
         product : [
             {
                 title : "베스트",
-                detail : ["위클리 베스트", "베스트"]
+                detail : [
+                    {
+                        subtitle: '위클리 베스트',
+                        link: '/products/weeklybest'
+                    },
+                    {
+                        subtitle: '베스트',
+                        link: '/products/weeklybest/best'
+                    }
+                ]
             },
             {
                 title : "티 제품",
-                detail : ["티 세트", "명차", "녹차/말차", "발효차/홍차", "블렌디드티", "허브티", "밀크티/아이스티"]
+                detail : [
+                    {subtitle: '티 세트', link: '/'},
+                    {subtitle: '명차', link: '/'},
+                    {subtitle: '녹차/말차', link: '/'},
+                    {subtitle: '발효차/홍차', link: '/'},
+                    {subtitle: '블렌디드티', link: '/'},
+                    {subtitle: '허브티', link: '/'},
+                    {subtitle: '밀크티/아이스티', link: '/'},
+                ]
             },
             {
                 title : "티푸드",
-                detail : ["과자/초콜릿", "베이커리", "아이스크림"] 
+                detail : [
+                    {subtitle: '과자/초콜릿', link: '/'},
+                    {subtitle: '베이커리', link: '/'},
+                    {subtitle: '아이스크림', link: '/'},
+                ]
             },
             {
                 title : "티웨어",
-                detail : ["용도별", "브랜드별"]
+                detail : [
+                    {subtitle: '용도별', link: '/'},
+                    {subtitle: '브랜드별', link: '/'},
+                ]
             },
             {
                 title : "라이프스타일",
-                detail : ["건강기능식품", "스킨케어"]
+                detail : [
+                    {subtitle: '건강기능식품', link: '/'},
+                    {subtitle: '스킨케어', link: '/'},
+                ]
             },
         ],
         daily : [
@@ -75,18 +99,8 @@ function Header () {
         ]
         
     }
-
-    const [open, setOpen] = useState(false);
-    const closeNav = () => {
-        let arr = [...navItem];
-        arr[0].view = false;
-        setNavItem(arr);
-
-    }
-    // const [ style, setStyle ] = useState({display: 'none'});
-
     return (<>
-        <header className="header">
+        <header className='header'>
             <div className="header_wrapper">
                 <div className="header_inner"> 
                     <div className="header_left">
@@ -96,69 +110,25 @@ function Header () {
                             </Link>
                             <Link to="/" className="logo_black" >
                                 <img src="./../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
-
                             </Link>
                         </h1>
                         <nav className="nav">
                             <ul className="nav_list">
-                                    <li className="nav_depth1"
-                                    >
-                                        <Link to={navItem[0].link} className="nav_depth1_item" 
-                                            onMouseEnter={() => {
-                                                let arr = [...navItem];
-                                                arr[0].view = true;
-                                                setNavItem(arr);
-                                            }} 
-                                            onMouseLeave={() => {
-                                                let arr = [...navItem];
-                                                arr[0].view = false;
-                                                setNavItem(arr);
-                                            }}
-
-                                        >{navItem[0].title}</Link>
-                                            {navItem[0].view && <Navlist
-                                                items={menuItems["product"]}
-                                            />}
-                                      
-                                    </li>
-                                    <li className="nav_depth1">
-                                        <Link to="/" className="nav_depth1_item" >{navItem[1].title}</Link>
-                                    </li>
-                                    <li className="nav_depth1"
-                                    
-                                    >
-                                        <Link to="/" className="nav_depth1_item"
-                                            onMouseEnter={() => {
-                                                let arr = [...navItem];
-                                                arr[2].view = true;
-                                                setNavItem(arr);
-                                                console.log("다다일상", arr[2].view);
-                                        }} 
-                                        onMouseLeave={() => {
-                                            let arr = [...navItem];
-                                            arr[2].view = false;
-                                            setNavItem(arr);
-                                        }}
-                                        >{navItem[2].title}</Link>
-                                        {navItem[2].view && <Navlist items={menuItems["daily"]}/>}
-                                    </li>
-                                    <li className="nav_depth1">
-                                        <Link to="/" className="nav_depth1_item"
-                                            onMouseEnter={() => {
-                                                let arr = [...navItem];
-                                                arr[3].view = true;
-                                                setNavItem(arr);
-                                                console.log("브랜드",arr[3].view);
-                                            }} 
-                                            onMouseLeave={() => {
-                                                let arr = [...navItem];
-                                                arr[3].view = false;
-                                                setNavItem(arr);
-                                            }}
-                                        >{navItem[3].title}</Link>
-                                        {navItem[3].view && <Navlist items={menuItems["brand"]}/>}
-                                  
-                                    </li>
+                                <li className="nav_depth1">
+                                    <Link to={navItem[0].link} className="nav_depth1_item">{navItem[0].title}</Link>
+                                    <Navlist items={menuItems["product"]}/>
+                                </li>
+                                <li className="nav_depth1">
+                                    <Link to="/" className="nav_depth1_item" >{navItem[1].title}</Link>
+                                </li>
+                                <li className="nav_depth1">
+                                    <Link to="/" className="nav_depth1_item">{navItem[2].title}</Link>
+                                    <Navlist items={menuItems["daily"]}/>
+                                </li>
+                                <li className="nav_depth1">
+                                    <Link to="/" className="nav_depth1_item">{navItem[3].title}</Link>
+                                    <Navlist items={menuItems["brand"]}/>
+                                </li>
                             
                             </ul>
                         </nav>
@@ -177,7 +147,10 @@ function Header () {
                         </ul>
                         <ul className="nav_drop">
                             <li>
-                                <Link to="/login" className="login">로그인</Link>
+                                {localStorage.getItem('token') ? <Link to={''} className="login"
+                                onClick={()=>{
+                                  localStorage.removeItem('token');
+                                }}>안녕하세요</Link>:<Link to="/login" className="login">로그인</Link>}
                             </li>
                             <li>
                                 <Link to="/" className="language">KOREAN</Link>
