@@ -175,7 +175,7 @@ function Header () {
                                 {localStorage.getItem('token') ? <Link to={''} className="login"
                                 onClick={()=>{
                                   localStorage.removeItem('token');
-                                }}>안녕하세요</Link>:<Link to="/login" className="login">로그인</Link>}
+                                }}>{localStorage.getItem('account')}</Link>:<Link to="/login" className="login">로그인</Link>}
                             </li>
                             <li>
                                 <Link to="/" className="language">KOREAN</Link>
