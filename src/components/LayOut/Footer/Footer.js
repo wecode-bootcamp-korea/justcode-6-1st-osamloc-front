@@ -14,7 +14,7 @@ function Footer(){
     return(
         <div className='footer-container'>
             <div className='footer-bar footer-flex'>
-                {localStorage.getItem('token') ? <button onClick={goLoginPage} className='footer-login-btn'>안녕하세요</button> : <button onClick={goLoginPage} className='footer-login-btn'>로그인</button>}
+                {localStorage.getItem('token') ? <button onClick={goLoginPage} className='footer-login-btn'>{localStorage.getItem('account')}</button> : <button onClick={goLoginPage} className='footer-login-btn'>로그인</button>}
                 <img onClick={()=>{window.open("https://www.facebook.com/Jeju.OSULLOC",'_blank')}} className='footer-align' src='/image/footer/facebook.png'/>
                 <img onClick={()=>{window.open("https://www.instagram.com/osulloc_official/",'_blank')}} className='footer-align'src='/image/footer/instagram.png'/>
             </div>

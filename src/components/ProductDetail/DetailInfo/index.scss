@@ -2,7 +2,7 @@
   box-sizing: border-box;
   width: 47.3%;
   margin: 100px 0 100px 100px;
-
+  
   .location {
     margin-bottom: 10px;
 
@@ -59,7 +59,7 @@
     .func-price {
       display: flex;
       flex-direction: column;
-      justify-content: end;
+      justify-content: flex-end;
       margin-top: 7px;
       font-size: 28px;
       color: #7b7b7b;

@@ -12,7 +12,7 @@ function InputComment() {
 
   const addComment = () => {
     if(inputValue.current.value.length > 60){
-      alert('리뷰 글자 수는 60자가 최대입니다.');
+      alert('리뷰 글자 수는 최대 60자입니다.');
     } else{
       axios.post(`http://localhost:10010${location.pathname}`, {
         content: inputValue.current.value,
@@ -24,6 +24,7 @@ function InputComment() {
         }
       })
       inputValue.current.value = '';
+      console.log('실행');
       window.location.replace(`${location.pathname}`);
     }
   };

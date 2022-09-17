@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Goods(props) {
 
-//   // 통신테스트용
+// 통신테스트용
   const { name, price_origin, sale_price, sale, likeCount, reviewCount, default_img, hover_img, productId } = props.goods;
   const [boolean, setBoolean] = useState(true);
 
