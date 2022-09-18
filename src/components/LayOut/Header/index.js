@@ -1,10 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-<<<<<<< HEAD:src/components/Header/index.js
-import { Link, useLocation, useNavigate } from "react-router-dom";
-=======
 import { Link } from "react-router-dom";
->>>>>>> main:src/components/LayOut/Header/index.js
 import "./index.scss";
 import Navlist from './Navlist';
 
@@ -52,13 +48,13 @@ function Header () {
             {
                 title : "티 제품",
                 detail : [
-                    {subtitle: '티 세트', link: '/'},
-                    {subtitle: '명차', link: '/'},
-                    {subtitle: '녹차/말차', link: '/'},
-                    {subtitle: '발효차/홍차', link: '/'},
-                    {subtitle: '블렌디드티', link: '/'},
-                    {subtitle: '허브티', link: '/'},
-                    {subtitle: '밀크티/아이스티', link: '/'},
+                    {subtitle: '티 세트', link: '/products'},
+                    {subtitle: '명차', link: '/products/greattea'},
+                    {subtitle: '녹차/말차', link: '/products/greentea'},
+                    {subtitle: '발효차/홍차', link: '/products/blacktea'},
+                    {subtitle: '블렌디드티', link: '/products/blendedtea'},
+                    {subtitle: '허브티', link: '/products/herbtea'},
+                    {subtitle: '밀크티/아이스티', link: '/products/milktea'},
                 ]
             },
             {
@@ -115,12 +111,7 @@ function Header () {
                                 <img src="../../../image/header/logo_osamloc_white.png" style={{width: 108}} alt="오설록 로고"/>
                             </Link>
                             <Link to="/" className="logo_black" >
-<<<<<<< HEAD:src/components/Header/index.js
                                 <img src="./../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
-=======
-                                <img src="../../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
-
->>>>>>> main:src/components/LayOut/Header/index.js
                             </Link>
                         </h1>
                         <nav className="nav">
