@@ -65,10 +65,10 @@
         - 요청받아오는 상품 갯수에 따라 구현
         
 - 김정연
- - main ui / 기능 구현 
- - main api 연동 
- - header 
- 
+   - main ui / 기능 구현 
+   - main api 연동 
+   - header 
+
 - 이동호
   - cart
     - filter
