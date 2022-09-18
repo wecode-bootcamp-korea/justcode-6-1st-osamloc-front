@@ -38,6 +38,7 @@
 ## 4. 적용 기술 및 구현 기능
 
 ### 4-1. 적용 기술(수정 필요)
++ front-end : JavaScript, react.js
 + Back-end : JavaScript, Node.js, Express, Bcrypt, JWT
 + Database : MySQL 
 + HTTP : Postman, live share  
