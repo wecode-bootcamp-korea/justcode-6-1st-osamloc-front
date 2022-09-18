@@ -71,11 +71,11 @@
    - Header 
 
 - 이동호
-  - Cart
+  - 장바구니
     - Filter
     - Modal
     - Checkbox
-  - Payment
+  - 결제 
     - Filter
     - Modal
     - 정규식 검증
