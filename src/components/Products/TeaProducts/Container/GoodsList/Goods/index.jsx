@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 function Goods(props) {
 
-//   // 통신테스트용
-  const { name, price_origin, sale_price, sale, likeCount, reviewCount, default_img, hover_img } = props.goods;
+// 통신테스트용
+  const { name, price_origin, sale_price, sale, likeCount, reviewCount, default_img, hover_img, productId } = props.goods;
   const [boolean, setBoolean] = useState(true);
 
   return (
     <div className="goods">
-      <Link to={""} className="window">
+      <Link to={`/products/item/${productId}`} className="window">
         <div
           onMouseOver={() => {
             setBoolean(false);
@@ -27,7 +27,7 @@ function Goods(props) {
       </Link>
       {/* <div className="label-box">신제품</div> */}
       <p className="name">
-        <Link to={""} className="goods-name">
+        <Link to={`/products/item/${productId}`} className="goods-name">
           {name}
         </Link>
       </p>

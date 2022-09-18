@@ -175,7 +175,6 @@ p {
     
 }
 
-
 //Notice
 .notice_layout {
     margin: 48px 0;
@@ -242,13 +241,12 @@ p {
                 color: #fff;
             }
         }
-
     }
     .best_item_layout {
         display: flex;
         justify-content: space-between;
     }
-    
+
     .best_slide_btn {
         position: absolute;
         top: 30%;
@@ -282,6 +280,8 @@ p {
 }
 // Bestitem
 .best_item {
+    text-decoration: none;
+    color: #444;
     // margin-right: 20px;
     margin: 0 10px;
     // hover 효과
@@ -314,7 +314,7 @@ p {
         .best_item_cost {
             font-size: 14px;
             color: #999;
-            text-decoration: line-through;
+            // text-decoration: line-through;
         }
 
         .best_item_price {

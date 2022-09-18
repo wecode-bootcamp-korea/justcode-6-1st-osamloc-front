@@ -59,7 +59,6 @@ function PayForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUserData(data.data[0]);
       });
   }, []);

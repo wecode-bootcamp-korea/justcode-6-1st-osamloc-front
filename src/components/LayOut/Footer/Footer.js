@@ -1,22 +1,20 @@
-import React from 'react';
-import { Link,useNavigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./Footer.scss"
-
-
 
 function Footer(){
 
     const navigator = useNavigate();
 
-    const goLoginPage = ()=>{
-    navigator("/login")
-}
-
+    const goLoginPage = () => {
+      navigator("/login");
+      localStorage.removeItem("token");
+    };
 
     return(
         <div className='footer-container'>
             <div className='footer-bar footer-flex'>
-                <button onClick={goLoginPage} className='footer-login-btn'>로그인</button>
+                {localStorage.getItem('token') ? <button onClick={goLoginPage} className='footer-login-btn'>{localStorage.getItem('account')}</button> : <button onClick={goLoginPage} className='footer-login-btn'>로그인</button>}
                 <img onClick={()=>{window.open("https://www.facebook.com/Jeju.OSULLOC",'_blank')}} className='footer-align' src='/image/footer/facebook.png'/>
                 <img onClick={()=>{window.open("https://www.instagram.com/osulloc_official/",'_blank')}} className='footer-align'src='/image/footer/instagram.png'/>
             </div>
@@ -72,7 +70,7 @@ function Footer(){
                     
                 <div className='address-container'>
                     <p className='address-style'>㈜ 오삼록</p>
-                    <p className='address-style'>대표이사:000 주소:서울특별시 용산구 한강대로 100, 14층(한강로2가) 사업자등록번호: 390-87-01499</p>
+                    <p className='address-style'>대표이사:000 주소:저스트코드 사업자등록번호: 390-87-01499</p>
                     <p className='address-style'>통신판매업신고번호:2019-서울용산-1173호 호스팅제공자: ㈜오삼록</p>
                     <p className='address-style'>(주)오삼록은 오삼록 브랜드를 제외한 입점 브랜드에 대해서는 통신판매중개자 이며 통신판매의 당사자가 아닙니다.<br/>따라서 입점판매자가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.</p>
                 </div>

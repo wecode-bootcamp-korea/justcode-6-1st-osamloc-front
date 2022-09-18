@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from 'react';
 
+<<<<<<< HEAD:src/components/Header/index.js
 import { Link, useLocation, useNavigate } from "react-router-dom";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> main:src/components/LayOut/Header/index.js
 import "./index.scss";
 import Navlist from './Navlist';
+
 
 function Header () {
 
@@ -27,6 +32,7 @@ function Header () {
             link : "/",
             view: false
         },
+    
     ]);
     const menuItems = {
         product : [
@@ -106,10 +112,15 @@ function Header () {
                     <div className="header_left">
                     <h1 className="logo">
                             <Link to="/" className="logo_white" >
-                                <img src="./../../image/header/logo_osamloc_white.png" style={{width: 108}} alt="오설록 로고"/>
+                                <img src="../../../image/header/logo_osamloc_white.png" style={{width: 108}} alt="오설록 로고"/>
                             </Link>
                             <Link to="/" className="logo_black" >
+<<<<<<< HEAD:src/components/Header/index.js
                                 <img src="./../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
+=======
+                                <img src="../../../image/header/logo_osamloc_black.png" style={{width: 108}} alt="오설록 로고"/>
+
+>>>>>>> main:src/components/LayOut/Header/index.js
                             </Link>
                         </h1>
                         <nav className="nav">
@@ -150,7 +161,7 @@ function Header () {
                                 {localStorage.getItem('token') ? <Link to={''} className="login"
                                 onClick={()=>{
                                   localStorage.removeItem('token');
-                                }}>안녕하세요</Link>:<Link to="/login" className="login">로그인</Link>}
+                                }}>{localStorage.getItem('account')}</Link>:<Link to="/login" className="login">로그인</Link>}
                             </li>
                             <li>
                                 <Link to="/" className="language">KOREAN</Link>

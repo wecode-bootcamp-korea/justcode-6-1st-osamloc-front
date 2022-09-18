@@ -31,36 +31,35 @@ function Login() {
   const handlePwInput = (e) =>{
     const pwValue = e.target.value;
     setPw(pwValue);
-    (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=8)
+    (id.length<13 && id.length>=4)&&(pwValue.length<17&&pwValue.length>=1)
     ? setIsValid(true)
     :setIsValid(false)
   }; 
       //signup api
-      const loginBtnClick = ()=>{
+      const loginBtnClick = () => {
         const body = {
-          account : id,
+          account: id,
           password: pw,
-        }
-        fetch('http://localhost:10010/users/login',{
-          method:"POST",
-          headers : {
-            "Content-Type" : "application/json"
+        };
+        fetch("http://localhost:10010/users/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-          body : JSON.stringify(body)
-        }).then(res => res.json())
-          .then(json => {
-            if(json.message == "LOGIN_SUCCESS"){
-              alert('로그인에 성공하였습니다.')
-              localStorage.setItem("token", json.token)
-              naviagte('/');
-            }else{
-              alert('아이디와 비밀번호를 다시 확인해주세요 ');
-              
-          }
+          body: JSON.stringify(body),
+        })
+          .then((res) => res.json())
+          .then((json) => {
+            if (json.message == "LOGIN_SUCCESS") {
+              alert("로그인에 성공하였습니다.")
+              localStorage.setItem("token", json.token.token);
+              localStorage.setItem("account", json.token.account);
+              naviagte("/");
+            } else {
+              alert("아이디와 비밀번호를 다시 확인해주세요 ");
             }
-        
-        )
-    };
+          });
+      };
   
   return (
     <div className='container-wrapper'>

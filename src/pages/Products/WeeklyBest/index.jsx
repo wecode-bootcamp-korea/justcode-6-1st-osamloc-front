@@ -1,8 +1,19 @@
 import "./index.scss"
 
+import axios from "axios";
+
 import { ListContent, TabBtn } from "../../../components/Products";
+import { useEffect, useState } from "react";
 
 function WeeklyBest() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=>{
+    axios.get(`http://localhost:10010/products/best/weekly`)
+    .then((res) => {setProducts(res.data.data)})
+  }, [])
+
   return (
     <div className="weekly-best">
       <div className="product-header">
@@ -11,9 +22,9 @@ function WeeklyBest() {
       {/* 메뉴 탭 */}
       <TabBtn />
       <div className="container">
-        <ListContent>
+        <ListContent products={products}>
           <div className="date-filter">
-            22년 8월 5째주
+            22년 9월 2째주
             <button className="filter">판매순</button>
           </div>
         </ListContent>

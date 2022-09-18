@@ -80,6 +80,7 @@ function CartForm() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log("장바구니", data.data);
         setCartList(data.data);
         setStockCartList(data.data);
         setCheckedArray(

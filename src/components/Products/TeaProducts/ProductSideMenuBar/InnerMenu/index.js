@@ -2,8 +2,8 @@ import TeaProductsInnerMenu from "./TeaProductsInnerMenu";
 import TeaFoodInnerMenu from "./TeaFoodInnerMenu";
 import LifeStyleInnerMenu from "./LifeStyleInnerMenu";
 
-export { 
+export {
   TeaProductsInnerMenu,
   TeaFoodInnerMenu,
   LifeStyleInnerMenu
- };
+};
