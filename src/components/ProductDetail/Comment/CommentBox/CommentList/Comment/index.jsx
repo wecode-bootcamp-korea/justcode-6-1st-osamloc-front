@@ -62,6 +62,8 @@ function Comment(props) {
     }
   }
 
+  console.log(LSAccount);
+
   return (
     <CommentInfo>
       <CommentLeft>
@@ -88,7 +90,7 @@ function Comment(props) {
           </>
         )}
       </CommentRight>
-      {LSAccount === account && (
+      {LSAccount && LSAccount === account && (
         <>
           <Modify onClick={()=>{setModifyView(true)}} />
           <DeleteComment onClick={deleteComment} />

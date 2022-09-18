@@ -9,6 +9,7 @@ function Footer(){
     const goLoginPage = () => {
       navigator("/login");
       localStorage.removeItem("token");
+      localStorage.removeItem('account');
     };
 
     return(

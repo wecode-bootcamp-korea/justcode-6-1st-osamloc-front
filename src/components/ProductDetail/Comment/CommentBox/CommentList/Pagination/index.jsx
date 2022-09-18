@@ -31,7 +31,7 @@ function Pagination(props) {
       </Button>
     </Nav>
   );
-}
+};
 
 const Nav = styled.nav`
   display: flex;
