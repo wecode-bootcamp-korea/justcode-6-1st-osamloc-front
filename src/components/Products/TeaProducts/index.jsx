@@ -40,19 +40,10 @@ function TeaProducts(props) {
     }
   }, [secondCategory]);
 
-  const ProductHeader = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 380px;
-    margin: 0 0 40px 0;
-    background: url(${pageInfo.background})
-      50% 50% no-repeat;
-  `;
   
   return goodsList && (
     <div className="tea-products">
-      <ProductHeader>
+      <ProductHeader pageInfo={pageInfo.background}>
         <h2 className="product-title">{pageInfo.name}</h2>
       </ProductHeader>
       <div className="container">
@@ -73,7 +64,16 @@ function TeaProducts(props) {
       </div>
     </div>
   );
+};
 
-}
+  const ProductHeader = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    margin: 0 0 40px 0;
+    background: url(${props => `${props.pageInfo}`})
+      50% 50% no-repeat;
+  `;
 
 export default TeaProducts;
