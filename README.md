@@ -2,7 +2,7 @@
 
 - 국내 대표 차(Tea) 브랜드 '[오설록](https://www.osulloc.com/kr/ko)'을 모티브로 한 프로젝트입니다.
 - 사이트 선정 이유
-  -  처음 프로젝트인 만큼 그동안 배운 지식을 활용하여 e-커머스에 crud 기반으로 직접 기능들을 구현해보고 적용해볼 수 있는 사이트를 선정
+  -  처음 프로젝트인 만큼 그동안 배운 지식을 활용하여 e-커머스에 CRUD 기반으로 직접 기능들을 구현해보고 적용해볼 수 있는 사이트를 선정
 
 ![오설록](https://user-images.githubusercontent.com/108418225/190359024-709b2df0-3249-4708-8e2f-7d6bcb38c07a.png)
 
@@ -12,12 +12,12 @@
 
 - __개발 기간__  : 2022.08.29 ~ 2022.09.08(11일)
 
-- __프론트엔드__ : 유상호, 김정연, 이동호, 이유나  
+- __프론트엔드__ : 유상호, 김정연, 이동호, 이유나 (4명)
 
-- __백엔드__ : 김교은, 박지은  
+- __백엔드__ : 김교은, 박지은 (2인) 
 
 - __[프론트엔드 GitHub](https://github.com/wecode-bootcamp-korea/justcode-6-1st-osamloc-front)__ 
-- __[백엔드 github 링크](https://github.com/wecode-bootcamp-korea/justcode-6-1st-osamloc-back)__
+- __[백엔드 GitHub](https://github.com/wecode-bootcamp-korea/justcode-6-1st-osamloc-back)__
 
 - __[팀 노션](https://www.notion.so/wecode/93b4fdf1dd4b49dd9b2fe71f7b85d8d0)__
 
@@ -38,10 +38,10 @@
 ## 4. 적용 기술 및 구현 기능
 
 ### 4-1. 적용 기술(수정 필요)
-+ front-end : JavaScript, react.js
-+ Back-end : JavaScript, Node.js, Express, Bcrypt, JWT
++ Front-end : JavaScript, React.js
++ Back-end : JavaScript, Node.js, Express, bcrypt, JWT
 + Database : MySQL 
-+ HTTP : Postman, live share  
++ HTTP : Postman
 + Common : Slack, Zep, Notion, Git&Github
 
 
@@ -50,7 +50,7 @@
 >프론트엔드
 
 - 유상호
- - - 제품 상세페이지
+  - 제품 상세페이지
     - 제품별 댓글
         - 로그인 했을때만 댓글 추가가능
         - 내가 쓴 댓글만 삭제, 수정 가능
@@ -58,34 +58,34 @@
         - 장바구니 클릭시 상품 갯수 포함 api 전달
         - 장바구니에 이미 존재하는 상품일 때 갯수만 추가
 - 제품 리스트 UI
-    - 상위 필터 api
+    - 상위 필터 API
         - 리뷰많은순, 판매순, 신상품순, 높은 가격순, 낮은 가격순
-    - 하위 필터 api
+    - 하위 필터 API
         - 전체, 잎차, 피라미드, 티백, 파우더
     - pagination
         - 요청받아오는 상품 갯수에 따라 구현
         
 - 김정연
-   - main ui / 기능 구현 
-   - main api 연동 
-   - header 
+   - Main UI / 기능 구현 
+   - Main API 연동 
+   - Header 
 
 - 이동호
-  - cart
-    - filter
-    - modal
-    - checkbox
-  - payment
-    - filter
-    - modal
+  - Cart
+    - Filter
+    - Modal
+    - Checkbox
+  - Payment
+    - Filter
+    - Modal
     - 정규식 검증
-    - 주소 api 연동
-    - 결제 api 연동
+    - 주소 API 연동
+    - 결제 API 연동
     
 - 이유나
-  - 로그인/ 회원가입 ui 기능 구현 
-  - 로그인/ 회원 가입 api 연동
-  - footer 
+  - 로그인/ 회원가입 UI 기능 구현 
+  - 로그인/ 회원 가입 API 연동
+  - Footer 
 
 >백엔드
 
