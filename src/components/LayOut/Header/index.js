@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import { Link } from "react-router-dom";
-// import "./index.scss";
+import "./index.scss";
 import Navlist from './Navlist';
 
 function Header () {
