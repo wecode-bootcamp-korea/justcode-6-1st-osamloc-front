@@ -1,0 +1,73 @@
+{
+ "menuItems" : {
+    "product" : [
+        {
+            "title" : "베스트",
+            "detail" : [
+                {
+                    "subtitle": "위클리 베스트",
+                    "link": "/products/weeklybest"
+                },
+                {
+                    "subtitle": "베스트",
+                    "link": "/products/weeklybest/best"
+                }
+            ]
+        },
+        {
+            "title" : "티 제품",
+            "detail" : [
+                {"subtitle": "티 세트", "link": "/"},
+                {"subtitle": "명차", "link": "/"},
+                {"subtitle": "녹차/말차", "link": "/"},
+                {"subtitle": "발효차/홍차", "link": "/"},
+                {"subtitle": "블렌디드티", "link": "/"},
+                {"subtitle": "허브티", "link": "/"},
+                {"subtitle": "밀크티/아이스티", "link": "/"}
+            ]
+        },
+        {
+            "title" : "티푸드",
+            "detail" : [
+                {"subtitle": "과자/초콜릿", "link": "/"},
+                {"subtitle": "베이커리", "link": "/"},
+                {"subtitle": "아이스크림", "link": "/"}
+            ]
+        },
+        {
+            "title" : "티웨어",
+            "detail" : [
+                {"subtitle": "용도별", "link": "/"},
+                {"subtitle": "브랜드별", "link": "/"}
+            ]
+        },
+        {
+            "title" : "라이프스타일",
+            "detail" : [
+                {"subtitle": "건강기능식품", "link": "/"},
+                {"subtitle": "스킨케어", "link": "/"}
+            ]
+        }
+    ],
+    "daily" : [
+        {
+            "title" : "다다일상 구독"
+        },
+        {
+            "title" : "다다일상 기록"
+        }
+    ],
+    "brand" : [
+        {
+            "title" : "오설록 스토리"
+        },
+        {
+            "title" : "제주 티뮤지엄"
+        },
+        {
+            "title" : "티하우스 북촌"
+        }
+    ]
+    
+}
+}
