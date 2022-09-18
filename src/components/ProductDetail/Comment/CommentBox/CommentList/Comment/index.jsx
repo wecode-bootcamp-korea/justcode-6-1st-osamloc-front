@@ -96,7 +96,7 @@ function Comment(props) {
       )}
     </CommentInfo>
   );
-}
+};
 
 const CommentInfo = styled.div`
   position: relative;
